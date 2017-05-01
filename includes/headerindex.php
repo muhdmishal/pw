@@ -305,6 +305,7 @@ background-repeat:no-repeat;
             }
             else {
               alert("post code:" + searchPostalCode);
+              input.val(searchPostalCode);
             }
           }
         });
