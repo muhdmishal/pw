@@ -9,23 +9,28 @@
 /******************* ACTIVATION BY FORM**************************/
 if ($_POST['doReset']=='Reset')
 {
+
+  echo "working 1";
 $err = array();
 $msg = array();
 
 foreach($_POST as $key => $value) {
+  echo "working foreach";
 	$data[$key] = filter($value);
 }
 if(!isEmail($data['user_email'])) {
+  echo "working error";
 $err[] = "ERROR - Please enter a valid email";
 }
 
 $user_email = $data['user_email'];
-
+echo "working 2";
 //check if activ code and user is valid as precaution
 $rs_check = mysqli_query($link,"select user_id from users where user_email='$user_email'") or die (mysqli_error());
 $num = mysqli_num_rows($rs_check);
-  // Match row found with more than 1 results  - the user is authenticated. 
+  // Match row found with more than 1 results  - the user is authenticated.
     if ( $num <= 0 ) {
+      echo "working 3";
 	$err[] = "Error - Sorry no such account exists or registered.";
 	//header("Location: forgot.php?msg=$msg");
 	//exit();
@@ -33,7 +38,7 @@ $num = mysqli_num_rows($rs_check);
 
 
 if(empty($err)) {
-
+echo "working 4";
 $new_pwd = GenPwd();
 $pwd_reset = PwdHash($new_pwd);
 //$sha1_new = sha1($new);
@@ -45,7 +50,7 @@ $host  = $_SERVER['HTTP_HOST'];
 $host_upper = strtoupper($host);
 
 //send email
-
+echo "working 5";
 $message =
 "Here are your new password details ...\n
 User Email: $user_email \n
@@ -65,12 +70,13 @@ THIS IS AN AUTOMATED RESPONSE.
      "X-Mailer: PHP/" . phpversion());
 
 $msg[] = "Your account password has been reset and a new password has been sent to your email address.";
-
+echo "working 6";
 //$msg = urlencode();
 //header("Location: forgot.php?msg=$msg");
 //exit();
  }
 }
+die();
 include 'includes/headerindex.php';
 ?>
 
