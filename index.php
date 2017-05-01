@@ -1,7 +1,9 @@
 <?php
-$userID = $_SESSION[user_id] ;
-		if($userID > 0)
+session_start();
+
+if(isset($_SESSION['user_id']) && $_SESSION['user_id'] > 0)
 {
+  $userID = $_SESSION[user_id] ;
 	include 'includes/header1.php';
 }
 else{
