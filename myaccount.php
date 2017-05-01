@@ -188,9 +188,9 @@ background-repeat:no-repeat;
               </div>
 
 			  </div>
-              <a href='http://propertywing.co.uk/new/showprop.php?idprop=<?php echo $propID ?>' class='btn  viewfull button pull-right'>View Full Detials</a>
-               <a href='http://propertywing.co.uk/new/edit_property.php?idprop=<?php echo $propID ?>' class='btn  viewfull button pull-right'>Edit Property Details</a>
-               <a href='http://propertywing.co.uk/new/facebook-advert.php?idprop=<?php echo $propID ?>' class='btn  viewfull button pull-right'>Boost Advet on facebook</a>
+              <a href='showprop.php?idprop=<?php echo $propID ?>' class='btn  viewfull button pull-right'>View Full Detials</a>
+               <a href='edit_property.php?idprop=<?php echo $propID ?>' class='btn  viewfull button pull-right'>Edit Property Details</a>
+               <a href='facebook-advert.php?idprop=<?php echo $propID ?>' class='btn  viewfull button pull-right'>Boost Advet on facebook</a>
 			  <div class='clear'></div>
        </div>
 
