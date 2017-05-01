@@ -183,8 +183,16 @@
             ].join(' ');
 
             var address_zip = place.address_components;
+            var zipcode = address_zip[address_zip.length].long_name;
+            alert("code0:" + zipcode);
             var zipcode = address_zip[address_zip.length - 1].long_name;
-            alert("code:" + zipcode);
+            alert("code1:" + zipcode);
+            var zipcode = address_zip[address_zip.length - 2].long_name;
+            alert("code2:" + zipcode);
+            var zipcode = address_zip[address_zip.length - 3].long_name;
+            alert("code3:" + zipcode);
+            var zipcode = address_zip[address_zip.length - 4].long_name;
+            alert("code4:" + zipcode);
           }
 
           infowindowContent.children['place-icon'].src = place.icon;
