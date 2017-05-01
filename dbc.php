@@ -28,8 +28,13 @@ define ("DB_USER", "drinkdri_myprop"); // set database user
 define ("DB_PASS","wingproperty"); // set database password
 define ("DB_NAME","drinkdri_propertywing"); // set database name
 
-$link = mysql_connect(DB_HOST, DB_USER, DB_PASS) or die("Couldn't make connection.");
-$db = mysql_select_db(DB_NAME, $link) or die("Couldn't select database");
+$link = mysqli_connect(DB_HOST,DB_USER,DB_PASS,DB_NAME);
+
+// Check connection
+if (mysqli_connect_errno())
+{
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+}
 
 /* Registration Type (Automatic or Manual)
  1 -> Automatic Registration (Users will receive activation code and they will be automatically approved after clicking activation link)
@@ -90,8 +95,8 @@ if (!isset($_SESSION['user_id']) && !isset($_SESSION['user_name']) )
 	/* we double check cookie expiry time against stored in database */
 
 	$cookie_user_id  = filter($_COOKIE['user_id']);
-	$rs_ctime = mysql_query("select `ckey`,`ctime` from `users` where `user_id` ='$cookie_user_id'") or die(mysql_error());
-	list($ckey,$ctime) = mysql_fetch_row($rs_ctime);
+	$rs_ctime = mysqli_query($link,"select `ckey`,`ctime` from `users` where `user_id` ='$cookie_user_id'") or die(mysqli_error());
+	list($ckey,$ctime) = mysqli_fetch_row($rs_ctime);
 	// coookie expiry
 	if( (time() - $ctime) > 60*60*24*COOKIE_TIME_OUT) {
 
@@ -106,7 +111,7 @@ if (!isset($_SESSION['user_id']) && !isset($_SESSION['user_name']) )
 		  $_SESSION['user_id'] = $_COOKIE['user_id'];
 		  $_SESSION['user_name'] = $_COOKIE['user_name'];
 		/* query user level from database instead of storing in cookies */
-		  list($user_level) = mysql_fetch_row(mysql_query("select user_level from users where `user_id`='$_SESSION[user_id]'"));
+		  list($user_level) = mysqli_fetch_row(mysqli_query($link,"select user_level from users where `user_id`='$_SESSION[user_id]'"));
 
 		  $_SESSION['user_level'] = $user_level;
 		  $_SESSION['HTTP_USER_AGENT'] = md5($_SERVER['HTTP_USER_AGENT']);
@@ -132,7 +137,7 @@ function filter($data) {
 	if (get_magic_quotes_gpc())
 		$data = stripslashes($data);
 
-	$data = mysql_real_escape_string($data);
+	$data = mysqli_real_escape_string($link,$data);
 
 	return $data;
 }
@@ -252,13 +257,13 @@ session_start();
 
 
 
-$sess_user_id = strip_tags(mysql_real_escape_string($_SESSION['user_id']));
-$cook_user_id = strip_tags(mysql_real_escape_string($_COOKIE['user_id']));
+$sess_user_id = strip_tags(mysqli_real_escape_string($link,$_SESSION['user_id']));
+$cook_user_id = strip_tags(mysqli_real_escape_string($link,$_COOKIE['user_id']));
 
 if(isset($sess_user_id) || isset($cook_user_id)) {
-mysql_query("update `users`
+mysqli_query($link,"update `users`
 			set `ckey`= '', `ctime`= ''
-			where `user_id`='$sess_user_id' OR  `user_id` = '$cook_user_id'") or die(mysql_error());
+			where `user_id`='$sess_user_id' OR  `user_id` = '$cook_user_id'") or die(mysqli_error());
 }
 
 
@@ -311,8 +316,8 @@ function checkAdmin() {
 
 $sql = 'SELECT * FROM `users` WHERE `user_id` = '.$_SESSION['user_id'].' AND `admin` = 1';
 
-$rs_duplicate = mysql_query($sql);
-if(mysql_num_rows($rs_duplicate) > 0)
+$rs_duplicate = mysqli_query($link,$sql);
+if(mysqli_num_rows($rs_duplicate) > 0)
 {
 	return 1;
 }
