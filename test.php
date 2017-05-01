@@ -183,14 +183,13 @@
             ].join(' ');
 
             var address_zip = place.address_components;
-            var zipcode = address_zip[address_zip.length - 1].long_name;
-            alert("code1:" + zipcode);
-            var zipcode = address_zip[address_zip.length - 2].long_name;
-            alert("code2:" + zipcode);
-            var zipcode = address_zip[address_zip.length - 3].long_name;
-            alert("code3:" + zipcode);
-            var zipcode = address_zip[address_zip.length - 4].long_name;
-            alert("code4:" + zipcode);
+            $.each(address_zip, function(){
+              alert(this.short_name);
+                if(this.types[0]=="postal_code"){
+                  alert("post code:" + this.short_name);
+                    searchPostalCode=this.short_name;
+                }
+            });
           }
 
           infowindowContent.children['place-icon'].src = place.icon;
