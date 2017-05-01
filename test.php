@@ -126,6 +126,9 @@
             if (searchPostalCode == "") {
               alert("No post code for the selected address. Please try another");
             }
+            else {
+              alert("post code:" + searchPostalCode);
+            }
           }
         });
 
