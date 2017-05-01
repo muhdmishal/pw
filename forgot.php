@@ -11,6 +11,7 @@ if ($_POST['doReset']=='Reset')
 {
 
   echo "working 1";
+  die();
 $err = array();
 $msg = array();
 
@@ -76,7 +77,7 @@ echo "working 6";
 //exit();
  }
 }
-die();
+
 include 'includes/headerindex.php';
 ?>
 
