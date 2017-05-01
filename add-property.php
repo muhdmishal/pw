@@ -107,7 +107,7 @@ $rs_settings = mysqli_query($link,"select * from users where user_id='$_SESSION[
 			)
 			";
 
-		mysqli_query($sql_insert,$link) or die("Insertion Failed:" . mysqli_error());
+		mysqli_query($link, $sql_insert) or die("Insertion Failed:" . mysqli_error());
 		$property_id = mysqli_insert_id($link);
 
 		//$newProp = new Property($idUser , $price,  $type ,$street ,$address2 ,$town ,$country , $postCode , $bedrooms ,$bathrooms ,$gardenSize ,$description );
@@ -195,7 +195,7 @@ $rs_settings = mysqli_query($link,"select * from users where user_id='$_SESSION[
 			)
 			";
 
-		mysqli_query($sql_insert,$link) or die("Insertion Failed:" . mysqli_error());
+		mysqli_query($link,$sql_insert) or die("Insertion Failed:" . mysqli_error());
 
 
 

@@ -6,7 +6,7 @@ foreach($_GET as $key => $value) {
 	$get[$key] = filter($value);
 }
 
-$user = mysqli_real_escape_string($get['user']);
+$user = mysqli_real_escape_string($link,$get['user']);
 
 if(isset($get['cmd']) && $get['cmd'] == 'check') {
 
