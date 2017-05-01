@@ -133,7 +133,13 @@ if (!isset($_SESSION['user_id']) && !isset($_SESSION['user_name']) )
 
 function filter($data) {
 	$data = trim(htmlentities(strip_tags($data)));
+  $link = mysqli_connect(DB_HOST,DB_USER,DB_PASS,DB_NAME);
 
+  // Check connection
+  if (mysqli_connect_errno())
+  {
+    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }
 	if (get_magic_quotes_gpc())
 		$data = stripslashes($data);
 
