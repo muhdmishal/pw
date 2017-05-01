@@ -8,7 +8,7 @@
 	MySQL Connect
 ************************************************/
 
-require_once './dbapi.php';
+require_once 'dbapi.php';
 
 $dbc = new DBAPI();
 
@@ -32,7 +32,7 @@ $search_string = preg_replace("/[^A-Za-z0-9]/", " ", $_POST['query']);
 $res = $dbc->autocomplete($search_string);
 
 foreach ($res as $r)
-	echo $r ; 
+	echo $r ;
 
 
 

@@ -48,11 +48,11 @@ $rs_settings = mysqli_query($link,"select * from users where user_id='$_SESSION[
 
 
 
-	   require_once './dbapi.php' ;
+	   require_once 'dbapi.php' ;
 
 
 
-	require_once './property.php';
+	require_once 'property.php';
 
 
 

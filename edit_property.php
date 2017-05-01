@@ -36,9 +36,9 @@
 
 		//$ids = mysqli_fetch_row($rs_settings );
 
-	   require_once './dbapi.php' ;
+	   require_once 'dbapi.php' ;
 
-	require_once './property.php';
+	require_once 'property.php';
 
 	   $dbc = new DBAPI();
 

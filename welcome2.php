@@ -5,17 +5,17 @@
 <?php
 session_start();
 
-require_once './dbapi.php' ;
+require_once 'dbapi.php' ;
 
 $uid = $_SESSION['uid'];
 
 
 $dbc = new DBAPI();
 
-echo $uid ; 
+echo $uid ;
 
 
-$usr = $dbc->getFBUserByUid($uid) ; 
+$usr = $dbc->getFBUserByUid($uid) ;
 
 ?>
 
@@ -57,7 +57,7 @@ $usr = $dbc->getFBUserByUid($uid) ;
     </div>
 
     <div class="container">
-	
+
   		<div class="content">
 
   		  <div class="page-header">
@@ -80,13 +80,13 @@ $usr = $dbc->getFBUserByUid($uid) ;
               <div style="margin: 20px;">
                 <a href="logout.php"><button class="btn btn-inverse">Logout</button></a>
               </div>
-      
+
             </div>
           </div>
           <div class="span4">
-            <h3>Instructions:</h3> 
+            <h3>Instructions:</h3>
             <div style="padding: 20px;">
-              This is a tutorial to show you how to sign up users to your application using their facebook account. 
+              This is a tutorial to show you how to sign up users to your application using their facebook account.
               <br/><br/>
               You can read the tutorial <a href="http://aniri.ro/geek/tutorials/how-to-make-website-registration-easier-using-facebook-accounts">here</a>.
               <br/><br/>
@@ -98,6 +98,6 @@ $usr = $dbc->getFBUserByUid($uid) ;
   		</div>
 
 
-    </div> 
+    </div>
   </body>
 </html>

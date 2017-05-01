@@ -1,12 +1,12 @@
 <?php
-		
-			
-		
+
+
+
 		include 'dbc.php';
 		page_protect();
 		include 'includes/myaccount-header.html';
- 
- 
+
+
  		function redirect($url)
 		{
 			if (!headers_sent())
@@ -21,73 +21,73 @@
 				echo '</script>';
 				echo '<noscript>';
 				echo '<meta http-equiv="refresh" content="0;url='.$url.'" />';
-				echo '</noscript>'; 
+				echo '</noscript>';
 				exit;
 			}
 		}
- 
- 
- 
- 
- 
- 
-		$rs_settings = mysqli_query($link,"select * from users where id='$_SESSION[user_id]'"); 
+
+
+
+
+
+
+		$rs_settings = mysqli_query($link,"select * from users where id='$_SESSION[user_id]'");
 
 		$ids = mysqli_fetch_row($rs_settings );
 
-	   require_once './dbapi.php' ;
-	
-	require_once './property.php';
-	   
+	   require_once 'dbapi.php' ;
+
+	require_once 'property.php';
+
 	   $dbc = new DBAPI();
-	   
+
 	   if ( isset($_GET['priceMin']) && !empty($_GET['priceMin']))
 	   		$priceMin = $_GET['priceMin'];
 		else
-			$priceMin =  0 ; 
-			
+			$priceMin =  0 ;
+
 	   if (isset($_GET['priceTo']) && !empty($_GET['priceTo']))
 	   		$priceTo = $_GET['priceTo'];
 		else
-			$priceTo =  999999999999  ; 
-			
+			$priceTo =  999999999999  ;
+
 	   if (isset($_GET['type']) && !empty($_GET['type']))
 	   		$type = $_GET['type'];
 		else
-			$type =  '' ; 	
-	   
+			$type =  '' ;
+
 	   if (isset($_GET['postcode']) && !empty($_GET['postcode']))
 	   		$postcode = $_GET['postcode'];
 		else
-			$postcode =  '' ; 	
-			
+			$postcode =  '' ;
+
 	   if (isset($_GET['bedMin']) && !empty($_GET['bedMin']))
 	   		$bedMin = $_GET['bedMin'];
 		else
-			$bedMin =  0 ; 	
-			
+			$bedMin =  0 ;
+
 		if (isset($_GET['bedTo']) && !empty($_GET['bedTo']))
 	   		$bedTo = $_GET['bedTo'];
 		else
-			$bedTo =  999999 ;	
-			
-		
-		$sqlSearch = "SELECT * FROM `property` WHERE `price` <= '$priceTo'  AND `price` >= '$priceMin' AND `type`=$type AND `bedrooms` <= '$bedTo'";			
+			$bedTo =  999999 ;
+
+
+		$sqlSearch = "SELECT * FROM `property` WHERE `price` <= '$priceTo'  AND `price` >= '$priceMin' AND `type`=$type AND `bedrooms` <= '$bedTo'";
 		$sqlSearch .= " AND `bedrooms` >= '$bedMin' ";
-		
+
 		if ($postcode != '')
-			$sqlSearch .= " AND `postcode` = '$postcode' " ; 
-		
-		
-		$results = $dbc->searchProperties($sqlSearch) ; 
-		
-		
+			$sqlSearch .= " AND `postcode` = '$postcode' " ;
+
+
+		$results = $dbc->searchProperties($sqlSearch) ;
+
+
 		if ($results == 0 )
-			echo "No results ! " ; 
+			echo "No results ! " ;
 		else {
 		 while ($row = $results->fetch_assoc()) {
         	//	printf ("%s (%s)\n", $row["Name"], $row["CountryCode"]);
-    	
+
 			$propID = $row['id'];
 			$propPrice = $row['price'];
 			$propType = $dbc->getHouseType($row['type']);
@@ -99,35 +99,35 @@
 			$propBeds = $row['bedrooms'];
 			$propBaths = $row['bathrooms'];
 			$propDesc = $row['description'];
-			
+
 			$propDescR = substr($propDesc , 0 , 100);
-			
-			
+
+
 			//get  3 images of a prop
-			
-			
+
+
 			$images = $dbc->getPropImages($propID);
-			
+
 			$numimgs = sizeof($images);
-			
+
 			$img1 = './';
 			$img2 = './';
 			$img3 = './';
-			
+
 			if($numimgs > 0 )
 				$img1 = $images[0];
-			
+
 			if($numimgs > 1 )
 				$img2 = $images[1];
-			
+
 			if($numimgs > 2 )
 				$img3 = $images[2];
 			include 'includes/sidebar.html';
-			
-			
-			
+
+
+
 		echo 	'
-		
+
 			<div class="search-result">
   <div class="listing-right">
     <div class="mini-description">
@@ -151,16 +151,16 @@ echo '
 </div>
 
 
-		
-		
+
+
 		';
-			
-			
-			
+
+
+
 	}
-	   
-	      
-	 
+
+
+
 }
 
 

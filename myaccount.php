@@ -4,13 +4,13 @@ page_protect();
 include 'includes/header1.php';
 /*include 'includes/sidebar.html';
 */
-$rs_settings = mysqli_query($link,"select * from users where user_id='$_SESSION[user_id]'"); 
+$rs_settings = mysqli_query($link,"select * from users where user_id='$_SESSION[user_id]'");
 
 $userID = $_SESSION[user_id]   ;
 
-require_once './dbapi.php';
-require_once './property.php';
-require_once './getmessages.php';
+require_once 'dbapi.php';
+require_once 'property.php';
+require_once 'getmessages.php';
 
 
 
@@ -80,7 +80,7 @@ background-repeat:no-repeat;
 #margin {
 	height:350px !important;
 }
-@media only screen and (max-width : 420px) {	
+@media only screen and (max-width : 420px) {
 .suggestionsBox {
 	width:100%;
 }
@@ -90,33 +90,33 @@ background-repeat:no-repeat;
 }
 </style>
 <div class=" bg-image-fixed">
-<div class="container"  style="overflow:visible !important;">    
+<div class="container"  style="overflow:visible !important;">
     <div class="col-sm-8"  style="overflow:visible !important;">
     <div class="col-sm-12 form-back" style="overflow:visible !important;">
     	<form role="form"  style="overflow:visible !important;"  methos="GET" action="continuesearch.php" enctype="multipart/form-data" action="continuesearch.php">
-        	
+
       			 <div id="suggest"  style="overflow:visible !important; ">
       			<input type="text" class="basic-grey form-control" onkeyup="suggest(this.value);" onblur="fill();"  id="whattosearch" name="whattosearch" placeholder="Quick Search Properties">
-      			 
+
                 <div class="suggestionsBox" id="suggestions" style="display: none;"> <img src="images/arrow1.png" style="position: relative; top: -12px; left: 30px;" alt="upArrow" />
         <div class="suggestionList" id="suggestionsList"> &nbsp; </div></div>
         </div>
-   		 
+
         </form>
     </div>
 
 
-<?php 
+<?php
 
 		$sqlSearch = "SELECT * FROM `property` WHERE `user_id` ='$userID'";
-		
-		
-		
-		$results = $dbc->searchProperties($sqlSearch) ; 
-		
-		
+
+
+
+		$results = $dbc->searchProperties($sqlSearch) ;
+
+
 		if ($results == 0 )
-			echo '<div class="col-sm-12 form-back"> No Properties Added yet ! Click here to <a style="color:blue" href="add-property.php"> add a property</a></div>' ; 
+			echo '<div class="col-sm-12 form-back"> No Properties Added yet ! Click here to <a style="color:blue" href="add-property.php"> add a property</a></div>' ;
 		else {
 		 while ($row = $results->fetch_assoc()) {
         	//	printf ("%s (%s)\n", $row["Name"], $row["CountryCode"]);
@@ -135,72 +135,72 @@ background-repeat:no-repeat;
 			$propBaths = $row['bathrooms'];
 			$propDesc = $row['description'];
 			$status = $row['status'];
-			
+
 			$propDescR = substr($propDesc , 0 , 100);
-			
-			
+
+
 			//get  3 images of a prop
-			
-			
+
+
 			$images = $dbc->getPropImages($propID);
-			
+
 			$numimgs = sizeof($images);
-			
+
 			$img1 = './';
 			$img2 = './';
 			$img3 = './';
-			
+
 			if($numimgs > 0 )
 				$img1 = $images[0];
-			
+
 			if($numimgs > 1 )
 				$img2 = $images[1];
-			
+
 			if($numimgs > 2 )
 				$img3 = $images[2];
-                
+
                 ?>
     <div class="col-sm-12 form-back">
     <div class='col-sm-12  searchresult'>
-                 
+
 		   <div class="row"><h2 class='pull-left'>&pound<?php echo '  '.number_format ( $propPrice ,0 ,"." , "," )?> </h2>
 			<h2 class='pull-right color-green'><strong><?php echo $propType.' for Sale' ; ?></strong></h2></div>
               <div class='block-img col-xs-3'>
                   <img src="<?php echo $img1 ?>" />
-                  <?php 
+                  <?php
                   if ($img2 != './')
   						echo '<div class="small-images-left"> <img src="'.$img2.'" /> </div>';
   				if ($img3 != './')
   						echo '<div class="small-images-right"> <img src="'.$img3.'" /> </div>';
 					?>
               </div>
-              <div class='block-text col-xs-9'> 
-                    
-                 
+              <div class='block-text col-xs-9'>
 
- 
-          
+
+
+
+
          <h3><?php echo $propStreet.' '.$propAdd2.' , '.$propTown.' , '.$propCountry.' , '.$propPostCode ?></h3>
 					<div class='hidden-xs'>
 					<p><strong>Description</strong></p>
                   <p class='para'><?php echo $propDescR ;?>.....<a href='http://propertywing.co.uk/new/showprop.php?idprop=<?php echo $propID ?>' class='atag1'>read more</a></p>
                  <p class='para2'><a href='http://propertywing.co.uk/new/showprop.php?idprop=<?php echo $propID ?>' class='atag1'>View Property</a></p>
               </div>
-			  
+
 			  </div>
               <a href='http://propertywing.co.uk/new/showprop.php?idprop=<?php echo $propID ?>' class='btn  viewfull button pull-right'>View Full Detials</a>
                <a href='http://propertywing.co.uk/new/edit_property.php?idprop=<?php echo $propID ?>' class='btn  viewfull button pull-right'>Edit Property Details</a>
                <a href='http://propertywing.co.uk/new/facebook-advert.php?idprop=<?php echo $propID ?>' class='btn  viewfull button pull-right'>Boost Advet on facebook</a>
 			  <div class='clear'></div>
        </div>
-    
-    
-    
+
+
+
     </div>
-    
-    
+
+
 <?php }} ?>   </div>
-    
+
        <div class="col-sm-3">
 
      <?php
@@ -208,14 +208,14 @@ include ('sidebar.php') ;
 ?>
 </div>
 
-   
+
 <div class="col-sm-8">
   		<div class="col-sm-12 form-back" >
-        
+
          <span class="title innhead">Welcome to your account home page <?php echo $_SESSION['user_name'];?></span>
-        
-        	
-        
+
+
+
         	<section class="row">
         	<div class="col-sm-4 ">
             		<article class="services-list services-color-04">
@@ -242,9 +242,9 @@ There will never be a charge for using our website
 Selling online couldnt be easier
                     </p>
             </div>
-            
+
             <div class="col-sm-4 ">
-            
+
             		<article class="services-list services-color-04">
                       		<a href="#"><img src="images/social-networks.jpg" align="" class="img-responsive"/></a>
                     </article>
@@ -255,15 +255,15 @@ Selling online couldnt be easier
 We will post your property on our social Networks
 Your property will be added to our mailing list
                 </p>
-            
+
             </div>
         </section>
-        
- 
 
-        
+
+
+
         </div>
- 
+
 
 
 
@@ -330,18 +330,18 @@ Your property will be added to our mailing list
 <p></p>
 
 </div>
-	  
-	  
-	  
-	  
+
+
+
+
 	</div>
 </div>-->
 </div>
 </div>
-<?php include 'footer.php';?> 
+<?php include 'footer.php';?>
 <script>
 function suggest(inputString){
-	
+
 		if(inputString.length == 0) {
 			$('#suggestions').fadeOut();
 		} else {

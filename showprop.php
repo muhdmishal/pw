@@ -17,8 +17,8 @@ else{
 	include 'includes/headerindex.php';
 }
 
-require_once './dbapi.php';
-require_once './property.php';
+require_once 'dbapi.php';
+require_once 'property.php';
 
 $dbc = new DBAPI();
 $imgStat = '';

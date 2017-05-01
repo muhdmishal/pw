@@ -1,19 +1,19 @@
-<?php 
+<?php
 include 'dbc.php';
 page_protect();
 include 'includes/myaccount-header.html';
- 
-$rs_settings = mysqli_query($link,"select * from users where id='$_SESSION[user_id]'"); 
+
+$rs_settings = mysqli_query($link,"select * from users where id='$_SESSION[user_id]'");
 
 
-require_once './dbapi.php';
-require_once './property.php';
+require_once 'dbapi.php';
+require_once 'property.php';
 
 $dbc = new DBAPI();
 
   if( isset($_GET['idprop']) )
   	$idp = 	$_GET['idprop'] ;
-	
+
     $newAddedProp = $dbc->loadProperty($idp);
 
 ?>
@@ -22,7 +22,7 @@ $dbc = new DBAPI();
 
 <body onload="javascript:fg_hideform('fg_formContainer','fg_backgroundpopup');">
 
-      
+
 
 
 
@@ -63,17 +63,17 @@ $dbc = new DBAPI();
 <form class="search-form">
 
 	<h1>Search Properties</h1>
-		
-			 
-			
-			
-	<label for="minPrice"><span>Price �:</span></label>	
+
+
+
+
+	<label for="minPrice"><span>Price �:</span></label>
 	<select id="minPrice" name="minPrice" class="double"><option value="" selected="selected">No min</option><option value="50000">50,000</option><option value="60000">60,000</option><option value="70000">70,000</option><option value="80000">80,000</option><option value="90000">90,000</option><option value="100000">100,000</option><option value="110000">110,000</option><option value="120000">120,000</option><option value="125000">125,000</option><option value="130000">130,000</option><option value="140000">140,000</option><option value="150000">150,000</option><option value="160000">160,000</option><option value="170000">170,000</option><option value="175000">175,000</option><option value="180000">180,000</option><option value="190000">190,000</option><option value="200000">200,000</option><option value="210000">210,000</option><option value="220000">220,000</option><option value="230000">230,000</option><option value="240000">240,000</option><option value="250000">250,000</option><option value="260000">260,000</option><option value="270000">270,000</option><option value="280000">280,000</option><option value="290000">290,000</option><option value="300000">300,000</option><option value="325000">325,000</option><option value="350000">350,000</option><option value="375000">375,000</option><option value="400000">400,000</option><option value="425000">425,000</option><option value="450000">450,000</option><option value="475000">475,000</option><option value="500000">500,000</option><option value="550000">550,000</option><option value="600000">600,000</option><option value="650000">650,000</option><option value="700000">700,000</option><option value="800000">800,000</option><option value="900000">900,000</option><option value="1000000">1,000,000</option><option value="1250000">1,250,000</option><option value="1500000">1,500,000</option><option value="1750000">1,750,000</option><option value="2000000">2,000,000</option><option value="2500000">2,500,000</option><option value="3000000">3,000,000</option><option value="4000000">4,000,000</option><option value="5000000">5,000,000</option><option value="7500000">7,500,000</option><option value="10000000">10,000,000</option><option value="15000000">15,000,000</option><option value="20000000">20,000,000</option><option value="">No min</option>
-	</select> 
+	</select>
 	<label for="max"><span>To:</span></label>
 	<select id="maxPrice" name="maxPrice" class="double"><option value="" selected="selected">No max</option><option value="50000">50,000</option><option value="60000">60,000</option><option value="70000">70,000</option><option value="80000">80,000</option><option value="90000">90,000</option><option value="100000">100,000</option><option value="110000">110,000</option><option value="120000">120,000</option><option value="125000">125,000</option><option value="130000">130,000</option><option value="140000">140,000</option><option value="150000">150,000</option><option value="160000">160,000</option><option value="170000">170,000</option><option value="175000">175,000</option><option value="180000">180,000</option><option value="190000">190,000</option><option value="200000">200,000</option><option value="210000">210,000</option><option value="220000">220,000</option><option value="230000">230,000</option><option value="240000">240,000</option><option value="250000">250,000</option><option value="260000">260,000</option><option value="270000">270,000</option><option value="280000">280,000</option><option value="290000">290,000</option><option value="300000">300,000</option><option value="325000">325,000</option><option value="350000">350,000</option><option value="375000">375,000</option><option value="400000">400,000</option><option value="425000">425,000</option><option value="450000">450,000</option><option value="475000">475,000</option><option value="500000">500,000</option><option value="550000">550,000</option><option value="600000">600,000</option><option value="650000">650,000</option><option value="700000">700,000</option><option value="800000">800,000</option><option value="900000">900,000</option><option value="1000000">1,000,000</option><option value="1250000">1,250,000</option><option value="1500000">1,500,000</option><option value="1750000">1,750,000</option><option value="2000000">2,000,000</option><option value="2500000">2,500,000</option><option value="3000000">3,000,000</option><option value="4000000">4,000,000</option><option value="5000000">5,000,000</option><option value="7500000">7,500,000</option><option value="10000000">10,000,000</option><option value="15000000">15,000,000</option><option value="20000000">20,000,000</option><option value="">No max</option>
 	</select>
-			
+
 			<label for="houseTypeID"><span>Type:</span></label>
 				<select id="houseTypeID" class="basic-grey" tabindex="3" name="houseTypeID" >
 					<option value="1">Detached House</option>
@@ -87,19 +87,19 @@ $dbc = new DBAPI();
 					<option value="10">Other</option>
 				</select>
 
-	
+
 		<label for="housePCode"><span>Postcode</span></label>
 			<input type="text" tabindex="10" class="txtBox" id="housePCode" name="housePCode" value="" />
-				
-		
+
+
 
 		<label for="minBedrooms"><span>Beds:</span></label>
 			<select id="minBedrooms" name="minBedrooms" class="double"><option value="" selected="selected">No min</option><option value="0">Studio</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select>
-		<label for="maxBedrooms"><span>to:</span></label>	
+		<label for="maxBedrooms"><span>to:</span></label>
 			<select id="maxBedrooms" name="maxBedrooms" class="double"><option value="" selected="selected">No max</option><option value="0">Studio</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select>
 		<input type="button" class="button" id="submitPropertyFormS" name="submitPropertyFormS" value="Find Property"  onClick="myredirect()" action="" />
-	
-	
+
+
 	 	<script>
 		function myredirect() {
    				var priceMin = document.getElementById("minPrice").value ;
@@ -108,21 +108,21 @@ $dbc = new DBAPI();
 				var postcode = document.getElementById("housePCode").value ;
 				var bedMin = document.getElementById("minBedrooms").value ;
 				var bedTo = document.getElementById("maxBedrooms").value ;
-				
+
 				var root = 'http://propertywing.co.uk/login2/showsearchresults.php?';
 				var urlt = '';
 				urlt = urlt.concat(root , 'priceMin=' , priceMin , '&priceTo=', priceTo , '&type=',type  , '&postcode=',postcode , '&bedMin=' , bedMin , '&bedTo=' , bedTo );
-				
-								
+
+
 				window.location.replace(urlt);
-						
-				
+
+
 			}
 </script>
-		
-		
-	</form>	
-		
+
+
+	</form>
+
 </div>
 <div id="box2">
 <p><a href="mailto:<? echo $row_settings['user_email']; ?>">Email Seller</a></p>
@@ -191,31 +191,31 @@ $dbc = new DBAPI();
 
 <ul class="slides">
 
-<?php 
-	
+<?php
+
 	for ($idximg = 0 ; $idximg < sizeof( $newAddedProp->images )  ; $idximg++ ){
-				
+
 		$imgid = 'img-'.($idximg+1);
-		
+
 		echo "<input type='radio' name='radio-btn' id='".$imgid."'".( $idximg == 0 ? " checked" : " ")."/>";
-		echo ' <li class="slide-container"><div class="slide">' ; 
-		echo '<img src="./'.$newAddedProp->images[$idximg].'" />';
+		echo ' <li class="slide-container"><div class="slide">' ;
+		echo '<img src="'.$newAddedProp->images[$idximg].'" />';
 		echo '</div><div class="nav">';
-		
-		$prev = ($idximg == 0 ) ? sizeof($newAddedProp->images)-1 : $idximg-1 ; 
-		$nxt = ($idximg == sizeof($newAddedProp->images) -1 ) ? 0 : $idximg+1 ; 
-		
+
+		$prev = ($idximg == 0 ) ? sizeof($newAddedProp->images)-1 : $idximg-1 ;
+		$nxt = ($idximg == sizeof($newAddedProp->images) -1 ) ? 0 : $idximg+1 ;
+
 		echo '<label for="img-'.($prev+1).'" class="prev">&#x2039;</label>';
-		echo '<label for="img-'.($nxt+1).'" class="next">&#x203a;</label>';			
-		echo '</div></li>';	
-	
-	
+		echo '<label for="img-'.($nxt+1).'" class="next">&#x203a;</label>';
+		echo '</div></li>';
+
+
 	}
 
 	echo '<li class="nav-dots">' ;
 
-	for ($idximg = 0 ; $idximg < sizeof( $newAddedProp->images ) ; $idximg++ ){  
-		$imgid = 'img-'.($idximg+1) ; 
+	for ($idximg = 0 ; $idximg < sizeof( $newAddedProp->images ) ; $idximg++ ){
+		$imgid = 'img-'.($idximg+1) ;
   		echo '<label for="'.$imgid.'" class="nav-dot" id="'.$imgid.'"></label>';
      }
 	 echo '</li></ul> ';
@@ -234,26 +234,26 @@ $dbc = new DBAPI();
             <div id="view1">
                <h2> Full description<h2>
 <?php echo $newAddedProp->description ; ?>
-            
+
 			</div>
-			
-						
-			
+
+
+
             <div id="view2">
 				<h2>Floor Plan</h2>
-					<img src="property-images/floorplan-lf.png"/>              
+					<img src="property-images/floorplan-lf.png"/>
             </div>
 			<div id="view3">
-                <h2>Property on the Map</h2> 
+                <h2>Property on the Map</h2>
 				<h3>For Street view</h3>
-<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2503.1617751942354!2d0.28354349999999995!3d51.14236779999999!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47df467f3142383d%3A0xddd02b60c6899e06!2sSandhurst+Rd!5e0!3m2!1sen!2suk!4v1399382088840" width="600" height="450" frameborder="0" style="border:0"></iframe>			
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2503.1617751942354!2d0.28354349999999995!3d51.14236779999999!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47df467f3142383d%3A0xddd02b60c6899e06!2sSandhurst+Rd!5e0!3m2!1sen!2suk!4v1399382088840" width="600" height="450" frameborder="0" style="border:0"></iframe>
             </div>
             <div id="view4">
                 <h2>Arrange a Viewing</h2>
             </div>
-			
+
 			<div id="view5">
-                <h2>Conveyancing Quote</h2>  
+                <h2>Conveyancing Quote</h2>
 
 <h2 style="font-family:verdana; margin-top:-10px; font-weight:300;">Legal Fees</h2>
 <p style="font-family:verdana; font-size:10pt;">Please see below an estimate of the legal fees for this property</p>
@@ -331,20 +331,20 @@ $dbc = new DBAPI();
 </tr>
 
 
-</table>				
+</table>
             </div>
         </div>
-		
+
 		<div id="view6">
-                <h2>Mortgage Calculator</h2> 
+                <h2>Mortgage Calculator</h2>
 				</div>
-		
+
     </div>
 
 </div>
 
-	
-	
+
+
 
 
 
@@ -357,8 +357,8 @@ $dbc = new DBAPI();
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-	  
-	  
+
+
 	  <?PHP
 /*
     Contact Form from HTML Form Guide
@@ -367,7 +367,7 @@ $dbc = new DBAPI();
 
 */
 //1. First, include the file popup-contactform.php
-require_once('./contact/popup-contactform.php');
+require_once('contact/popup-contactform.php');
 
 //2. link to the style file contact.css
 ?>
@@ -384,12 +384,12 @@ Click on the button below to open the popup.
 <?PHP
 //3. php include contactform-code.php at the end of the page
 
-require_once('./contact/contactform-code.php');
+require_once('contact/contactform-code.php');
 ?>
-	  
-	  
-	  
-	  
+
+
+
+
 
 </body>
 </html>

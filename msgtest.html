@@ -1,14 +1,14 @@
-<?php 
+<?php
 include 'dbc.php';
 page_protect();
 include 'includes/myaccount-header.html';
 
 
-$rs_settings = mysqli_query($link,"select * from users where id='$_SESSION[user_id]'"); 
+$rs_settings = mysqli_query($link,"select * from users where id='$_SESSION[user_id]'");
 
 
-require_once './dbapi.php';
-require_once './property.php';
+require_once 'dbapi.php';
+require_once 'property.php';
 
 $dbc = new DBAPI();
 
@@ -54,7 +54,7 @@ body {
 
 #contactForm, .statusMessage, input[type="submit"], input[type="button"] {
   -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;  
+  -webkit-border-radius: 10px;
   border-radius: 10px;
 }
 
@@ -65,7 +65,7 @@ body {
   color: #666;
   background-color: #ebedf2;
   background: -webkit-gradient( linear, left bottom, left top, color-stop(0,#dfe1e5), color-stop(1, #ebedf2) );
-  background: -moz-linear-gradient( center bottom, #dfe1e5 0%, #ebedf2 100% );  
+  background: -moz-linear-gradient( center bottom, #dfe1e5 0%, #ebedf2 100% );
   border: 1px solid #aaa;
   -moz-box-shadow: 0 0 1em rgba(0, 0, 0, .5);
   -webkit-box-shadow: 0 0 1em rgba(0, 0, 0, .5);
@@ -127,12 +127,12 @@ body {
   letter-spacing: .05em;
   margin: 0 0 1em -.75em;
   padding: 1em;
-  width: 19.5em;  
+  width: 19.5em;
   color: #aeb6aa;
   background: #dfe0e5 url(../contactmess/images/stamp.jpg) no-repeat 15em -3em; /* http://morguefile.com/archive/display/606433 */
   border-bottom: 1px solid #aaa;
   -moz-border-radius: 10px 10px 0 0;
-  -webkit-border-radius: 10px 10px 0 0;  
+  -webkit-border-radius: 10px 10px 0 0;
   border-radius: 10px 10px 0 0;
 }
 
@@ -180,7 +180,7 @@ input, textarea {
   font-size: 1em;
   border: 1px solid #aaa;
   -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;    
+  -webkit-border-radius: 5px;
   border-radius: 5px;
   -moz-box-shadow: rgba(0,0,0,.2) 0 1px 4px inset;
   -webkit-box-shadow: rgba(0,0,0,.2) 0 1px 4px inset;
@@ -222,7 +222,7 @@ input[type="submit"], input[type="button"] {
   padding: .5em;
   border: 1px solid #666;
   -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;  
+  -webkit-border-radius: 10px;
   border-radius: 10px;
   -moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
   -webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
@@ -352,12 +352,12 @@ function init() {
 
     return false;
   } );
-  
+
   // When the "Cancel" button is clicked, close the form
-  $('#cancel').click( function() { 
+  $('#cancel').click( function() {
     $('#contactForm').fadeOut();
     $('#content').fadeTo( 'slow', 1 );
-  } );  
+  } );
 
   // When the "Escape" key is pressed, close the form
   $('#contactForm').keydown( function( event ) {
@@ -445,9 +445,9 @@ function submitFinished( response ) {
 <div id="content">
 
   <p style="padding-bottom: 50px; font-weight: bold; text-align: center;"><a href="#contactForm">~ Send us an email ~</a></p>
-  
+
   <p style="padding-top: 50px; font-weight: bold; text-align: center;"><a href="#contactForm">~ Send us an email ~</a></p>
- 
+
 </div>
 
 <form id="contactForm" action="../contactmess/processForm.php" method="post">
@@ -489,4 +489,3 @@ function submitFinished( response ) {
 
 </body>
 </html>
-

@@ -8,7 +8,7 @@
 	MySQL Connect
 ************************************************/
 
-require_once './dbapi.php';
+require_once 'dbapi.php';
 
 $dbc = new DBAPI();
 

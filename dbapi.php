@@ -14,9 +14,9 @@
 		private $db ;
 
 		function __construct(){
-			require_once './dbhandler.php';
-			require_once './property.php';
-			require_once './Message.php';
+			require_once 'dbhandler.php';
+			require_once 'property.php';
+			require_once 'Message.php';
 
 			//connecting to the database
 			$this->db = new DBHandler();
@@ -851,7 +851,7 @@ THIS IS AN AUTOMATED RESPONSE.
 				return false ;
 		}
 
-		//$file = fopen('./logs.txt' , 'a');
+		//$file = fopen('logs.txt' , 'a');
 		//fwrite($file , $sql.PHP_EOL);
 
 		while($row = $res->fetch_assoc())
@@ -881,7 +881,7 @@ THIS IS AN AUTOMATED RESPONSE.
 				return false ;
 		}
 
-		//$file = fopen('./logs.txt' , 'a');
+		//$file = fopen('logs.txt' , 'a');
 		//fwrite($file , $sql.PHP_EOL);
 
 		while($row = $res->fetch_assoc())
@@ -912,7 +912,7 @@ THIS IS AN AUTOMATED RESPONSE.
 				return false ;
 		}
 
-		//$file = fopen('./logs.txt' , 'a');
+		//$file = fopen('logs.txt' , 'a');
 		//fwrite($file , $sql.PHP_EOL);
 
 		while($row = $res->fetch_assoc())
@@ -943,7 +943,7 @@ THIS IS AN AUTOMATED RESPONSE.
 				echo "Errors in query ! ";
 				return false ;
 		}
-				//$file = fopen('./logs.txt' , 'a');
+				//$file = fopen('logs.txt' , 'a');
 		//fwrite($file , $sql.PHP_EOL);
 
 		while($row = $res->fetch_assoc())
@@ -957,7 +957,7 @@ THIS IS AN AUTOMATED RESPONSE.
 				echo "Errors in query ! ";
 				return false ;
 		}
-				//$file = fopen('./logs.txt' , 'a');
+				//$file = fopen('logs.txt' , 'a');
 		//fwrite($file , $sql.PHP_EOL);
 
 		while($row = $res->fetch_assoc())
@@ -972,7 +972,7 @@ THIS IS AN AUTOMATED RESPONSE.
 				echo "Errors in query ! ";
 				return false ;
 		}
-				//$file = fopen('./logs.txt' , 'a');
+				//$file = fopen('logs.txt' , 'a');
 		//fwrite($file , $sql.PHP_EOL);
 
 		while($row = $res->fetch_assoc())
@@ -1030,7 +1030,7 @@ function isPropertyInRange($fixed  , $myadd  , $distanceRange ){
 
 	$distance = $this->Haversine($start, $finish);
 
-	$f = fopen('./dist.txt' , 'a');
+	$f = fopen('dist.txt' , 'a');
 	fwrite($f , $distance .PHP_EOL);
 	fclose($f);
 

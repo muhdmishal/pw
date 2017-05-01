@@ -1,46 +1,46 @@
 <?php
 		include 'dbc.php';
 		page_protect();
-		
-		
+
+
 		include 'includes/myaccount-header.html';
 
-require_once './dbapi.php';
-require_once './property.php';
+require_once 'dbapi.php';
+require_once 'property.php';
 
 $dbc = new DBAPI();
 
 
 
 	$idp = $_POST['idprop'];
-	$userID = $_POST['userID']; 
-	
-	
-	
-	//get the message details add them to the database 
-	
-	//get the idprop owner 
-	$idrecev = $dbc->getPropertyOwner($idp); 
+	$userID = $_POST['userID'];
+
+
+
+	//get the message details add them to the database
+
+	//get the idprop owner
+	$idrecev = $dbc->getPropertyOwner($idp);
 
 	$detail = htmlspecialchars($_POST['detail']);
-	
-	
-	
+
+
+
 	$msgSubject ='Subject ';//$_POST['subject'];
-	
-	
+
+
 	//create a new Thread Message
-	//$threadId = $dbc->createMessageThread($msgSubject) ; 
+	//$threadId = $dbc->createMessageThread($msgSubject) ;
 	$threadID = uniqid($idrecev.'_'.$userID.'_'.$idp.'_' , true);
-	
-	$msg = new Message($threadID , $idrecev , $userID , $msgSubject , $detail , $idp ) ; 
-	
-	if ( $dbc->startThreadMessage($msg) ) 
-	
-		$success = true ; 
-	
-	else 
-		$success = false ; 
+
+	$msg = new Message($threadID , $idrecev , $userID , $msgSubject , $detail , $idp ) ;
+
+	if ( $dbc->startThreadMessage($msg) )
+
+		$success = true ;
+
+	else
+		$success = false ;
 
 
 // Return an appropriate response to the browser
@@ -64,5 +64,3 @@ if ( isset($_GET["ajax"]) ) {
 
 
 ?>
-
-

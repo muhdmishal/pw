@@ -1,12 +1,12 @@
 <?php
-		
-			
-		
+
+
+
 		include 'dbc.php';
 		page_protect();
 		include 'includes/myaccount-header.html';
  include 'includes/account-sidebar-header.html';
- 
+
  		function redirect($url)
 		{
 			if (!headers_sent())
@@ -21,43 +21,43 @@
 				echo '</script>';
 				echo '<noscript>';
 				echo '<meta http-equiv="refresh" content="0;url='.$url.'" />';
-				echo '</noscript>'; 
+				echo '</noscript>';
 				exit;
 			}
 		}
- 
- 
- 
- 
- 
- 
-		$rs_settings = mysqli_query($link,"select * from users where id='$_SESSION[user_id]'"); 
+
+
+
+
+
+
+		$rs_settings = mysqli_query($link,"select * from users where id='$_SESSION[user_id]'");
 
 		$ids = mysqli_fetch_row($rs_settings );
 
-		
-		$userID = $_SESSION[user_id] ; 
 
-	   require_once './dbapi.php' ;
-	
-	require_once './property.php';
-	   
+		$userID = $_SESSION[user_id] ;
+
+	   require_once 'dbapi.php' ;
+
+	require_once 'property.php';
+
 	   $dbc = new DBAPI();
-	   
-	  
+
+
 		$sqlSearch = "SELECT * FROM `property` WHERE `iduser` ='$userID'";
-		
-		
-		
-		$results = $dbc->searchProperties($sqlSearch) ; 
-		
-		
+
+
+
+		$results = $dbc->searchProperties($sqlSearch) ;
+
+
 		if ($results == 0 )
-			echo "No results ! " ; 
+			echo "No results ! " ;
 		else {
 		 while ($row = $results->fetch_assoc()) {
         	//	printf ("%s (%s)\n", $row["Name"], $row["CountryCode"]);
-    	
+
 			$propID = $row['id'];
 			$propPrice = $row['price'];
 			$propType = $dbc->getHouseType($row['type']);
@@ -69,35 +69,35 @@
 			$propBeds = $row['bedrooms'];
 			$propBaths = $row['bathrooms'];
 			$propDesc = $row['description'];
-			
+
 			$propDescR = substr($propDesc , 0 , 100);
-			
-			
+
+
 			//get  3 images of a prop
-			
-			
+
+
 			$images = $dbc->getPropImages($propID);
-			
+
 			$numimgs = sizeof($images);
-			
+
 			$img1 = './';
 			$img2 = './';
 			$img3 = './';
-			
+
 			if($numimgs > 0 )
 				$img1 = $images[0];
-			
+
 			if($numimgs > 1 )
 				$img2 = $images[1];
-			
+
 			if($numimgs > 2 )
 				$img3 = $images[2];
-			
-			
-			
-			
+
+
+
+
 		echo 	'
-		
+
 			<div class="search-result">
   <div class="listing-right">
     <div class="mini-description">
@@ -121,16 +121,16 @@ echo '
 </div>
 
 
-		
-		
+
+
 		';
-			
-			
-			
+
+
+
 	}
-	   
-	      
-	 
+
+
+
 }
 
 
@@ -138,7 +138,7 @@ echo '
 
 
 
- include 'footer.php';?> 
+ include 'footer.php';?>
 <script>
   document.title = "Propertywing :: Your properties";
 </script>

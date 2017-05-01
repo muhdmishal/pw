@@ -7,7 +7,7 @@
 
 		$ids = mysqli_fetch_row($rs_settings );
 
-	 //  require_once './dbapi.php' ;
+	 //  require_once 'dbapi.php' ;
 	//   include ('prop.php') ;
 	//   include ('DBAPI.php');
 

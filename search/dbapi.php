@@ -1,55 +1,55 @@
-<?php 
-	
+<?php
+
 /******************************************************************
 *	File : dbapi.php
-*   Purpose :     implements function to store data into database    		
+*   Purpose :     implements function to store data into database
 *
 *                 storeMovieIntoTable
-*******************************************************************/	
-	
-		
-		
+*******************************************************************/
+
+
+
 	class DBAPI {
-	
-		private $db ; 
-		
+
+		private $db ;
+
 		function __construct(){
-			require_once './dbhandler.php';		
-			
-			
+			require_once 'dbhandler.php';		
+
+
 			//connecting to the database
 			$this->db = new DBHandler();
 			$this->db->connect();
 		}
-		
+
 		function __destruct(){
 		}
-		
-	
-	
+
+
+
 	function getPrediction($key){
 		$sql = "SELECT * from `property` WHERE `town` LIKE '%{$key}%'";
-		
+
 		$array = array();
-		
+
 		if ( ! ($res = $this->db->query($sql))){
 				echo "Errors in query ! ";
-				return false ; 
+				return false ;
 		}
-		
+
 		while($row = $res->fetch_assoc())
 		{
 			$array[] = $row['town'];
 		}
-		
-		
+
+
 		return $array;
-	
+
 	}
-	
-	
+
+
 	function autocomplete($key){
-		
+
 		// Define Output HTML Formating
 $html = '';
 $html .= '<li class="result">';
@@ -59,16 +59,16 @@ $html .= '<h3>country</h3>';
 $html .= '<h4>postcode</h4>';
 $html .= '</a>';
 $html .= '</li>';
-		
-		
-		
+
+
+
 		// Get Search
-		
+
 		$search_string = $this->db->dbcon->real_escape_string($key);
 		$search_string = trim($search_string);
 
 		$resaut = array();
-		
+
 		// Check Length More Than One Character
 		if (strlen($search_string) >= 1 && $search_string !== ' ') {
 			// Build Query
@@ -76,9 +76,9 @@ $html .= '</li>';
 
 			if ( ! ($res = $this->db->query($query))){
 				echo "Errors in query ! ";
-				return false ; 
+				return false ;
 			}
-						
+
 			while($results = $res->fetch_array()) {
 				$result_array[] = $results;
 			}
@@ -105,7 +105,7 @@ $html .= '</li>';
 
 				// Output
 				//echo($output);
-				$resaut[] = $output ; 
+				$resaut[] = $output ;
 		}
 	}else{
 
@@ -115,16 +115,16 @@ $html .= '</li>';
 			$output = str_replace('postcode', 'Sorry :(', $output);
 
 			// Output
-			$resaut[] = $output ; 
+			$resaut[] = $output ;
 			//echo($output);
 		}
 	}
-	
-	return $resaut ; 
 
-	
+	return $resaut ;
+
+
 	}
-		
-		
-} 
+
+
+}
 ?>

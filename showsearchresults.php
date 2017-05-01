@@ -1,7 +1,7 @@
-<?php			
-		
-				
-		require_once ('./dbc.php');		
+<?php
+
+
+		require_once ('dbc.php');
 		//page_protect();
 		$userID = $_SESSION[user_id] ;
 		if($userID > 0)
@@ -12,16 +12,16 @@ else{
 	include 'includes/headerindex.php';
 }
 /*           include 'includes/sidebar.html';
-*/ 
- 
+*/
+
  	?>
 <div class=" bg-image-fixed">
-<div class="container"> 
+<div class="container">
   <div class="row">
     <div class="col-sm-8">
     <span style="color:#000000; font-size:24px; font-weight:normal !important; text-align:left !important;" class="title form-back">Your Search Results</span>
-      <?php	
- 
+      <?php
+
  		function redirect($url)
 		{
 			if (!headers_sent())
@@ -36,69 +36,69 @@ else{
 				echo '</script>';
 				echo '<noscript>';
 				echo '<meta http-equiv="refresh" content="0;url='.$url.'" />';
-				echo '</noscript>'; 
+				echo '</noscript>';
 				exit;
 			}
 		}
- 
- 	
-		
- 
- 
-		$rs_settings = mysqli_query($link,"select * from users where `user_id`='$_SESSION[user_id]'"); 
+
+
+
+
+
+		$rs_settings = mysqli_query($link,"select * from users where `user_id`='$_SESSION[user_id]'");
 
 		$ids = mysqli_fetch_row($rs_settings );
 
-	   	require_once './dbapi.php' ;
-	
-		require_once './property.php';
-	   
+	   	require_once 'dbapi.php' ;
+
+		require_once 'property.php';
+
 	   $dbc = new DBAPI();
-	  
-	   
-			
+
+
+
 	   $searchfor = '';
 		if (isset($_GET['locationIdentifier'] ))
 		{
-			
+
 			$searchfor = $_GET['locationIdentifier'];
-			$locations = $dbc->getPostcode($searchfor) ; 
+			$locations = $dbc->getPostcode($searchfor) ;
 			$locationIdentifier = $locations[0];
 		}
- 		else 
+ 		else
 			$locationIdentifier = '';
- 		
-		
-		
-		
- 		
+
+
+
+
+
 		$locations = array();
- 
+
  		if ($searchfor != ''){
-			
-			$locations = $dbc->getPostcode($searchfor) ; 
+
+			$locations = $dbc->getPostcode($searchfor) ;
 		}
-	   
+
 	   if ( isset($_GET['priceMin']) && !empty($_GET['priceMin']))
 	   		$priceMin = $_GET['priceMin'];
 		else
-			$priceMin =  0 ; 
-			
+			$priceMin =  0 ;
+
 	   if (isset($_GET['priceTo']) && !empty($_GET['priceTo']))
 	   		$priceTo = $_GET['priceTo'];
 		else
-			$priceTo =  999999999999  ; 
-			
+			$priceTo =  999999999999  ;
+
 	   if (isset($_GET['houseTypeID']) && !empty($_GET['houseTypeID']))
 	   		$type = $_GET['houseTypeID'];
 		else
-			$type =  '' ; 	
-	   	
+			$type =  '' ;
+
 	   if (isset($_GET['bedMin']) && !empty($_GET['bedMin']))
 	   		$bedMin = $_GET['bedMin'];
 		else
-			$bedMin =  0 ; 	
-			
+			$bedMin =  0 ;
+
 		if (isset($_GET['bedTo']) && !empty($_GET['bedTo']))
 	   		$bedTo = $_GET['bedTo'];
 		else
@@ -106,29 +106,29 @@ else{
 		if (isset($_GET['status']) && !empty($_GET['status']))
 	   		$searchstatus = $_GET['status'];
 		else
-			$searchstatus =  1 ;	
-			
-		
-		$sqlSearch = "SELECT * FROM `property` WHERE `price` <= '$priceTo'  AND `price` >= '$priceMin' AND `bedrooms` <= '$bedTo'";			
+			$searchstatus =  1 ;
+
+
+		$sqlSearch = "SELECT * FROM `property` WHERE `price` <= '$priceTo'  AND `price` >= '$priceMin' AND `bedrooms` <= '$bedTo'";
 		$sqlSearch .= " AND `bedrooms` >= '$bedMin' AND `status` = '$searchstatus'";
-		
+
 		if ($type != '')
 			$sqlSearch .= " AND `type`='".$type."'";
-		
+
 		if ($postcode != '')
-			$sqlSearch .= " AND `postcode` = '$postcode' " ; 
-		
-		
-		$results = $dbc->searchProperties($sqlSearch) ; 
-		
-		
-		if(isset($_GET['radius']))	
+			$sqlSearch .= " AND `postcode` = '$postcode' " ;
+
+
+		$results = $dbc->searchProperties($sqlSearch) ;
+
+
+		if(isset($_GET['radius']))
 		{
-			if($_GET['radius'] != 0.0)	
+			if($_GET['radius'] != 0.0)
 			{
 				$milesRange = $_GET['radius'];
 			}
-			else 
+			else
 			{
 				$milesRange = 999999;
 			}
@@ -137,36 +137,36 @@ else{
 		{
 			$milesRange = 999999;
 		}
-		
-		
+
+
 		//get all properties
 		 $allprops = array();
 		 if ($results == 0 )
-			echo "No results ! " ; 
-		else 
+			echo "No results ! " ;
+		else
 		{
-		 	while ($row = $results->fetch_assoc()) 
-		 	$allprops[] = $row ; 	
+		 	while ($row = $results->fetch_assoc())
+		 	$allprops[] = $row ;
 		}
 		//search for distance
 		$propsInRange = array();
 		if($locationIdentifier != '')
 		foreach ($allprops as $row ){
-			
+
 			if ($dbc->isPropertyInRange($locationIdentifier ,$row['postcode'] , $milesRange))
-				$propsInRange[] = $row ; 
-		
+				$propsInRange[] = $row ;
+
 		}
-		else 
+		else
 			$propsInRange = $allprops;
-		
+
 		if (sizeof($propsInRange) == 0 )
 			echo "No results !";
 		else {
 		foreach( $propsInRange as $row){
         	//	printf ("%s (%s)\n", $row["Name"], $row["CountryCode"]);
     		$status = $row['status'];
-			
+
 			$propID = $row['property_id'];
 			$propPrice = $row['price'];
 			$propType = $dbc->getHouseType($row['type']);
@@ -178,32 +178,32 @@ else{
 			$propBeds = $row['bedrooms'];
 			$propBaths = $row['bathrooms'];
 			$propDesc = $row['description'];
-			
+
 			$propDescR = substr($propDesc , 0 , 200);
-			
-			
+
+
 			//get  3 images of a prop
-			
-			
+
+
 			$images = $dbc->getPropImages($propID);
-			
+
 			$numimgs = sizeof($images);
-			
+
 			$img1 = './';
 			$img2 = './';
 			$img3 = './';
-			
+
 			if($numimgs > 0 )
 				$img1 = $images[0];
-			
+
 			if($numimgs > 1 )
 				$img2 = $images[1];
-			
+
 			if($numimgs > 2 )
 				$img3 = $images[2];
-				
+
 echo "<div class='col-sm-12 form-back searchresult'>
-                <div class='row'> 
+                <div class='row'>
 		   <h2 class='pull-left'>&pound;".number_format ( $propPrice ,2 ,"." , "," )."</h2>
 			<h2 class='pull-right color-green'><strong>".$propBeds." Bedrooms ".$propType."</strong></h2>
 			</div>
@@ -216,12 +216,12 @@ echo "<div class='col-sm-12 form-back searchresult'>
 
                  echo  "
               </div>
-              <div class='block-text col-sm-9'> 
-                    
-                 
+              <div class='block-text col-sm-9'>
 
- 
-          
+
+
+
+
          <h3>".$propStreet." ".$propAdd2." , ".$propTown." , ".$propCountry." , ".$propPostCode."</h3>
 					<div class='hidden-xs'>
 					<p><strong>Description</strong></p>
@@ -231,10 +231,10 @@ echo "<div class='col-sm-12 form-back searchresult'>
 			  <a href='http://propertywing.co.uk/new/showprop.php?idprop=".$propID."' class='btn  viewfull button pull-right'>View Full Detials</a>
 			  </div>
 			  <div class='clear'></div>
-       </div>"    
-			
+       </div>"
+
 	?>
-      <?php		
+      <?php
 /*echo 	'<div class="col-sm-9 form-back">
   <div class="listing-right" style="overflow:hidden;">
     <div class="mini-description">
@@ -255,14 +255,14 @@ echo "<div class='col-sm-12 form-back searchresult'>
   	echo '<div class="small-images-right"> <img src="'.$img3.'" /> </div>';
 
 echo '
-</div>	';*/	
+</div>	';*/
 ?>
-      <?php	
+      <?php
 	}?>
       <?php }
 ?>
     </div>
-    
+
     <div class="col-sm-4 ">
       <!--<div class="section"> <span class="title txttitle">My Account</span>
         <div class="footer-icon"> <a href="#" class="footicon-text"><span class="ft-icon"><img src="images/user-ico.png" alt="map" /></span><strong>My Account Settings</strong></a> </div>
@@ -271,7 +271,7 @@ echo '
       <div >
         <span style="color:#000000; font-size:24px; font-weight:normal !important; text-align:left !important;" class="title form-back">Refine Search</span>
         <form role="form" class="form-back" method="get" enctype="multipart/form-data" action="showsearchresults.php">
-          
+
           <div class="col-xs-12 selectContainer">
       <center><div class="btn-group" data-toggle="buttons">
   		<label class="btn btn-primary active">
@@ -280,17 +280,17 @@ echo '
   		<label class="btn btn-primary">
     		<input type="radio" onchange="price(this.value)"  name="status" id="option2" value="2" autocomplete="off"> Property To Let
   		</label>
- 
-    	
+
+
   	</div>
   	</center>
-  
+
 
 	</div>
       <div class="col-xs-12 selectContainer">
       <div id="suggest">
         <label for="InputName">Location : <?php echo $searchfor ?> </label>
-        
+
         <input type="text" style="background-color:#FFFFFF !important;" class="double form-control input-border" id="locationIdentifier" name="locationIdentifier"  onkeyup="suggest(this.value);" onblur="fill();" value="<?php echo $locationsfull ?>" />
          <div class="suggestionsBox" id="suggestions" style="display: none;"> <img src="images/arrow1.png" style="position: relative; top: -12px; left: 30px;" alt="upArrow" />
         <div class="suggestionList" id="suggestionsList"> &nbsp; </div></div>
@@ -450,7 +450,7 @@ echo '
               <option value="">No max</option>
             </select>
           </div>
-          
+
           <div class="col-sm-6 selectContainer">
             <label for="minBedrooms">Beds</label>
             <select id="minBedrooms" name="minBedrooms" class="double form-control input-border">
@@ -487,10 +487,10 @@ echo '
 <?php include 'footer.php';  ?>
 <script>
 function suggest(inputString){
-		
+
 		if(inputString.length == 0) {
 			$('#suggestions').fadeOut();
-			
+
 		} else {
 		$('#locationIdentifier').addClass('load');
 			$.post("autosuggest.php", {queryString: ""+inputString+""}, function(data){
@@ -598,7 +598,7 @@ background-repeat:no-repeat;
 #margin {
 	height:350px !important;
 }
-@media only screen and (max-width : 420px) {	
+@media only screen and (max-width : 420px) {
 .suggestionsBox {
 	width:100%;
 }

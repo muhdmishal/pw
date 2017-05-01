@@ -1,32 +1,32 @@
-<?php 
+<?php
 include 'dbc.php';
 page_protect();
 include 'includes/header1.php';
- 
-$rs_settings = mysqli_query($link,"select * from users where `user_id`='$_SESSION[user_id]'"); 
+
+$rs_settings = mysqli_query($link,"select * from users where `user_id`='$_SESSION[user_id]'");
 
 
 ?>
 
 
-      
 
 
 
 
 
-<div class="container">    
+
+<div class="container">
 
 
-<?php 
+<?php
 
-$userID = $_SESSION[user_id]   ; 
+$userID = $_SESSION[user_id]   ;
 
 
 
-require_once './dbapi.php';
+require_once 'dbapi.php';
 
-require_once './property.php';
+require_once 'property.php';
 
 
 
@@ -38,13 +38,13 @@ $dbc = new DBAPI();
 
   	$idMesg = 	$_GET['idmsg'] ;
 
-	
+
 
     $ms = $dbc->loadMessage($idMesg);
 ?>
 
       <span class="title">My Inbox</span>
-     
+
 
 <?php
 
@@ -53,7 +53,7 @@ $dbc = new DBAPI();
   <a href='messages.php'><input type='submit' name='submit' id='submit' value='Inbox' class='btn btn-info  msg-btn'></a>
   <a href='sent-messages.php'><input type='submit' name='submit' id='submit' value='Sent Message' class='btn btn-info  msg-btn'></a>
   <input type='submit' name='submit' id='submit' value='Contact Solicitor' class='btn btn-info  msg-btn'>
-  <input type='submit' name='submit' id='submit' value='Contact Mortgage Broker' class='btn btn-info  msg-btn'>           
+  <input type='submit' name='submit' id='submit' value='Contact Mortgage Broker' class='btn btn-info  msg-btn'>
 ";
 
  echo "<form role='form' action='' method='post'>
@@ -73,7 +73,7 @@ echo      "<div class='form-group'>
           <span class='input-group-addon'></span></div>
       </div>";
 
- 
+
 echo      "<div class='form-group'>
         <label for='InputMessage'>Message :</label>
         <div class='input-group'>
@@ -87,42 +87,42 @@ echo "</div></form></div>";
 ?>
       <hr class="featurette-divider hidden-lg">
   <div class="col-lg-4 col-md-push-1">
-    
+
    		<div class="section">
         	 <span class="title txttitle">My Account</span>
-            
-            <div class="footer-icon">    
+
+            <div class="footer-icon">
                  <a href="myaccount.php" class="footicon-text"><span class="ft-icon"><img src="images/user-ico.png" alt="map" /></span><strong>My Account Settings</strong></a>
             </div>
-            
-            <div class="footer-icon">    
+
+            <div class="footer-icon">
                  <a href="logout.php" class="footicon-text"><span class="ft-icon"><img src="images/log.png" alt="cell" /></span><strong>Log Out</strong></a>
             </div>
-        </div>    
-       
-        
+        </div>
+
+
   </div>
 </div>
 <?php
   if ( isset($_POST['reply_msg'])){
 
-  
+
 
   		if ( $dbc->replyMessage($ms , $_POST['message']))
 
-	
+
 
 		echo "Reply sent ! ! "  ;
 
-	
 
-		else 
 
-			echo "Error occured ! " ;  	
+		else
 
-	
+			echo "Error occured ! " ;
 
-  
+
+
+
 
   }
 
@@ -132,7 +132,7 @@ echo "</div></form></div>";
 
 
 
-if ($ms->sender != $userID ) //received message -> print Reply to Form 
+if ($ms->sender != $userID ) //received message -> print Reply to Form
 
 
 
@@ -140,7 +140,7 @@ if ($ms->sender != $userID ) //received message -> print Reply to Form
 
 
 
-	
+
 
 echo '
 
@@ -152,7 +152,7 @@ echo '
 
 
 
-	
+
 
 <form id="contactForm1" action="" method="post" class="search-form" style="width:550px; margin-left:70px; background-color:#fff; float: left;">
 
@@ -184,7 +184,7 @@ echo '
 
     <input type="submit" class="button" id="reply_msg" name="reply_msg" value="Send" style="margin-left:0px;" />
 
-	
+
 
   </div>
 
@@ -196,7 +196,7 @@ echo '
 
 
 
-	
+
 
 ?>
 
@@ -205,18 +205,11 @@ echo '
 
 </div>
 
-	  
-<?php include 'footer.php';?> 	  
-	  
-	  
-	  
+
+<?php include 'footer.php';?>
+
+
+
 
 </body>
 </html>
-
-
-
-
-
-
-
