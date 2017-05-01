@@ -45,16 +45,16 @@ if (strpos($user_email,'@') === false) {
 }
 
 
-$result = mysql_query("SELECT `user_id`,`password`,`full_name`,`status`,`user_email` FROM users WHERE 
+$result = mysqli_query($link,"SELECT `user_id`,`password`,`full_name`,`status`,`user_email` FROM users WHERE
            $user_cond
 			AND `banned` = '0'
-			") or die (mysql_error());
-$num = mysql_num_rows($result);
+			") or die (mysqli_error());
+$num = mysqli_num_rows($result);
 
   // Match row found with more than 1 results  - the user is authenticated.
     if ( $num > 0 ) {
 
-	list($id,$pwd,$full_name,$status,$user_email) = mysql_fetch_row($result);
+	list($id,$pwd,$full_name,$status,$user_email) = mysqli_fetch_row($result);
 
 	if($status == 0) {
 	//$msg = urlencode("Account not activated. Please check your email for activation code");
@@ -83,7 +83,7 @@ $num = mysql_num_rows($result);
 		//update the timestamp and key for cookie
 		$stamp = time();
 		$ckey = GenKey();
-		//mysql_query("update login_history set `ctime`='$stamp', `ckey` = '$ckey' where id='$id'") or die(mysql_error());
+		//mysqli_query($link,"update login_history set `ctime`='$stamp', `ckey` = '$ckey' where id='$id'") or die(mysqli_error());
 
 
 		// set login history
@@ -92,7 +92,7 @@ $num = mysql_num_rows($result);
 		$sql_insert = "INSERT into `login_history`
   			(`user_id`,`user_ip`,`login_date`)
 		    VALUES ('$id','$user_ip','".date("Y-m-d H:i:s")."')";
-			mysql_query($sql_insert,$link) or die("Insertion Failed:" . mysql_error());
+			mysqli_query($link,$sql_insert) or die("Insertion Failed:" . mysqli_error());
 
 
 
