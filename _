@@ -2,16 +2,16 @@
 		include 'dbc.php';
 		page_protect();
 		include 'includes/myaccount-header.html';
- 
-		$rs_settings = mysql_query("select * from users where id='$_SESSION[user_id]'"); 
 
-		$ids = mysql_fetch_row($rs_settings );
+		$rs_settings = mysqli_query($link,"select * from users where id='$_SESSION[user_id]'");
+
+		$ids = mysqli_fetch_row($rs_settings );
 
 	 //  require_once './dbapi.php' ;
-	//   include ('prop.php') ; 
+	//   include ('prop.php') ;
 	//   include ('DBAPI.php');
-	   
-	      
+
+
 	 ?>
 
 
@@ -19,21 +19,21 @@
 <div><div style="background-color:#40659c; height:30px; margin-bottom:20px;"><h3 style="padding-left:20px; color:white; padding-top:3px;">Send Message</h3></div><p style="padding-left:20px; font-size:10pt; width:900px;">We recommend that you use our email templates when making, accepting or rejecting offers, to save any disagreements later on in the process of buying or selling your home.</p><p style="padding-left:20px; font-size:10pt; width:900px;">We also recommend that you do nt have any other contact with your buyer or seller other than via this website or your solicitors.</p>
 <form class="grey" action="" method="post" enctype="">
 <div><p style="margin-left:20px;">Email Templates - <a href="email-form.php">Blank message</a> - <a href="formal-offer.php"> Make formal offer</a> - <a href="accept-offer.php">Accept Formal Offer</a> - <a href="reject-offer.php">Reject Formal Offer</a></p></div>
-			 
+
 			<p><label><span>Your First Name:</span></label>
 			<input id="name" type="text" name="name" id="first-name" placeholder="Your First Name" />
 			</p>
 		<label for="emailcontent"><span>Message:</span></label>
-			<textarea tabindex="18" id="emailcontent" name="emailcontent"  rows="22" cols="80" class="basic-grey" >Hi,						We would be happy to accept your offer of £100,000 subject to contract.												We will now contact our solicitors and provide them with all the details in this matter.												Please can you provide me with your Solicitors address and contact them so we can pass on all the details.												Many thanks						
+			<textarea tabindex="18" id="emailcontent" name="emailcontent"  rows="22" cols="80" class="basic-grey" >Hi,						We would be happy to accept your offer of £100,000 subject to contract.												We will now contact our solicitors and provide them with all the details in this matter.												Please can you provide me with your Solicitors address and contact them so we can pass on all the details.												Many thanks
 
 	</textarea>
-				
-					
-			
+
+
+
 </br>
 				<input type="submit" class="button" id="submitPropertyForm" name="submitPropertyForm" value="Send Message" />
-	</form>	<div style="background-color:#40659c; height:30px;">	<h3 style=" padding-left:20px; color:white; padding-top:3px;">Message History</h3></div>		<table class="results-table">	<th>Subject</th><th>Content</th>	<tr><td>Subject goes here</td><td ><a href="#link-to-reply">Contents goes here</a></td></tr><tr><td>Subject goes here</td><td><a href="#link-to-reply">Contents goes here</a></td></tr><tr><td>Subject goes here</td><td><a href="#link-to-reply">Contents goes here</a></td></tr><tr><td>Subject goes here</td><td><a href="#link-to-reply">Contents goes here</a></td></tr><tr><td>Subject goes here</td><td><a href="#link-to-reply">Contents goes here</a></td></tr></table>		
-</div> 
+	</form>	<div style="background-color:#40659c; height:30px;">	<h3 style=" padding-left:20px; color:white; padding-top:3px;">Message History</h3></div>		<table class="results-table">	<th>Subject</th><th>Content</th>	<tr><td>Subject goes here</td><td ><a href="#link-to-reply">Contents goes here</a></td></tr><tr><td>Subject goes here</td><td><a href="#link-to-reply">Contents goes here</a></td></tr><tr><td>Subject goes here</td><td><a href="#link-to-reply">Contents goes here</a></td></tr><tr><td>Subject goes here</td><td><a href="#link-to-reply">Contents goes here</a></td></tr><tr><td>Subject goes here</td><td><a href="#link-to-reply">Contents goes here</a></td></tr></table>
+</div>
 
 
-<?php include 'footer.php';?>   
+<?php include 'footer.php';?>

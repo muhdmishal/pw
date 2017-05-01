@@ -3,7 +3,7 @@ include 'dbc.php';
 page_protect();
 include 'includes/myaccount-header.html';
  
-$rs_settings = mysql_query("select * from users where id='$_SESSION[user_id]'"); 
+$rs_settings = mysqli_query($link,"select * from users where id='$_SESSION[user_id]'"); 
 
 $userID = $_SESSION[user_id]   ; 
 

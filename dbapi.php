@@ -789,7 +789,7 @@ THIS IS AN AUTOMATED RESPONSE.
 		
 		//get ID property 
 		$uID = $this->db->dbcon->insert_id ; 	
-		//mysql_query($sql_insert,$link) or die("Insertion Failed:" . mysql_error());
+		//mysqli_query($sql_insert,$link) or die("Insertion Failed:" . mysqli_error());
 		
 		$md5_id = md5($uID);
 		

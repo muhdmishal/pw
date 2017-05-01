@@ -57,7 +57,7 @@ $token_url = "https://graph.facebook.com/oauth/access_token?"
 		//update the timestamp and key for cookie
 		$stamp = time();
 		$ckey = GenKey();
-		$dbc->executeSQL("update users set `ctime`='$stamp', `ckey` = '$ckey' where fbid='$idr'") ;// or die(mysql_error());
+		$dbc->executeSQL("update users set `ctime`='$stamp', `ckey` = '$ckey' where fbid='$idr'") ;// or die(mysqli_error());
 		
 		//set a cookie 	
 	    setcookie("user_id", $_SESSION['user_id'], time()+60*60*24*COOKIE_TIME_OUT, "/");
@@ -80,7 +80,7 @@ $token_url = "https://graph.facebook.com/oauth/access_token?"
 		$stamp = time();
 		$ckey = GenKey();
 		$idr = $dbuser['user_id'];
-		$dbc->executeSQL("update users set `ctime`='$stamp', `ckey` = '$ckey' where user_id='$idr'") ;// or die(mysql_error());
+		$dbc->executeSQL("update users set `ctime`='$stamp', `ckey` = '$ckey' where user_id='$idr'") ;// or die(mysqli_error());
 		
 		
 		setcookie("user_id", $_SESSION['user_id'], time()+60*60*24*COOKIE_TIME_OUT, "/");

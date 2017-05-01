@@ -36,9 +36,9 @@ else{
 		}
 		
 		
-				$rs_settings = mysql_query("select * from users where `user_id`='$_SESSION[user_id]'"); 
+				$rs_settings = mysqli_query($link,"select * from users where `user_id`='$_SESSION[user_id]'"); 
 
-		$ids = mysql_fetch_row($rs_settings );
+		$ids = mysqli_fetch_row($rs_settings );
 
 	   	require_once './dbapi.php' ;
 	

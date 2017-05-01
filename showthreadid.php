@@ -3,7 +3,7 @@ include 'dbc.php';
 page_protect();
 include 'includes/header1.php';
  
-$rs_settings = mysql_query("select * from users where `user_id`='$_SESSION[user_id]'"); 
+$rs_settings = mysqli_query($link,"select * from users where `user_id`='$_SESSION[user_id]'"); 
 
 
 
@@ -74,7 +74,7 @@ $dbc->updateMessageStatus($threadId);
 	 $sql_insert = "INSERT INTO `message`( `message_thread`, `receiver_id`, `sender_id`, `sender_email`, `send_date`,`status`, `message_subject`, `message_content`,`viewedstatus`) 
 	 VALUES ('$message_thread','$_SESSION[responderid]','$_SESSION[user_id]','$Email','".date("Y-m-d H:i:s")."','1','$msgSubject','$detail','1')";
 	
-	if(mysql_query($sql_insert,$link))
+	if(mysqli_query($sql_insert,$link))
 	{
 		echo '<center><div class="container form-back">Your message send Successfully</div></center>';	
 	}

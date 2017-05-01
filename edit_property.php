@@ -32,9 +32,9 @@
  	$userID = $_SESSION['user_id']   ; 
  		
 
-		$rs_settings = mysql_query("select * from `users` where `user_id`='$userID'"); 
+		$rs_settings = mysqli_query($link,"select * from `users` where `user_id`='$userID'"); 
 
-		//$ids = mysql_fetch_row($rs_settings );
+		//$ids = mysqli_fetch_row($rs_settings );
 
 	   require_once './dbapi.php' ;
 	
@@ -124,7 +124,7 @@ $propertyStatus = array(
 				
 		//	echo $sql ; 			
 			
-			mysql_query($sql,$link);
+			mysqli_query($sql,$link);
 		//$newProp->id= $propID ;			
 				
 		//$idp = $dbc->updatePropertyFromDatabase($newProp);
@@ -249,7 +249,7 @@ $propertyStatus = array(
 		    ('$propID','$idUser','$localPath','1','','".date("Y-m-d H:i:s")."','".date("Y-m-d H:i:s")."'
 			)
 			";
-			mysql_query($sql_insert,$link) or die("Insertion Failed:" . mysql_error());
+			mysqli_query($sql_insert,$link) or die("Insertion Failed:" . mysqli_error());
 					}
 			}
 	   }
@@ -267,7 +267,7 @@ $propertyStatus = array(
 				
 		//	echo $sql ; 			
 			
-			mysql_query($sql,$link);
+			mysqli_query($sql,$link);
 		    //echo $sql;
 			redirect('http://propertywing.co.uk/new/myaccount.php');
 	   }

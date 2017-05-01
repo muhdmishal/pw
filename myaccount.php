@@ -4,7 +4,7 @@ page_protect();
 include 'includes/header1.php';
 /*include 'includes/sidebar.html';
 */
-$rs_settings = mysql_query("select * from users where user_id='$_SESSION[user_id]'"); 
+$rs_settings = mysqli_query($link,"select * from users where user_id='$_SESSION[user_id]'"); 
 
 $userID = $_SESSION[user_id]   ;
 

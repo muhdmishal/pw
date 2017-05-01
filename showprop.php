@@ -5,13 +5,13 @@ session_start();
 
 $userID = $_SESSION['user_id']   ;
 
-$rs_settings = mysql_query("select * from users where user_id='$userID'"); 
+$rs_settings = mysqli_query($link,"select * from users where user_id='$userID'"); 
 
 
 if($userID > 0)
 {
 	include 'includes/header1.php';
-	$userdetails = mysql_fetch_row($rs_settings );
+	$userdetails = mysqli_fetch_row($rs_settings );
 }
 else{
 	include 'includes/headerindex.php';
@@ -38,9 +38,9 @@ $imgStat = '';
 		
 		//$idrecev = $dbc->getPropertyOwner($idp); 
 		
-		$rs_settings = mysql_query("select * from users where user_id='".$newAddedProp['values']['user_id']."'"); 
+		$rs_settings = mysqli_query($link,"select * from users where user_id='".$newAddedProp['values']['user_id']."'"); 
 		
-		$ownerdetails = mysql_fetch_row($rs_settings );
+		$ownerdetails = mysqli_fetch_row($rs_settings );
 		
 		$detail = htmlspecialchars($_POST['message']);
 	
@@ -70,7 +70,7 @@ $imgStat = '';
 	 $sql_insert = "INSERT INTO `message`( `message_thread`, `property_id`, `receiver_id`, `sender_id`, `sender_email`, `send_date`,`status`, `message_subject`, `message_content`,`viewedstatus`) 
 	 VALUES ('$message_thread','$idp','$ownerdetails[0]','$userdetails[0]','$Email','".date("Y-m-d H:i:s")."','1','$msgSubject','$detail','1')";
 	
-	if(mysql_query($sql_insert,$link))
+	if(mysqli_query($sql_insert,$link))
 	{
 		echo '<center><div class="container form-back">Message sent successfully</div></center>';	
 	}
@@ -146,7 +146,7 @@ $imgStat = '';
 	<form class="search-form">
 		<h1>Search Properties</h1>
 			
-			<label for="minPrice"><span>Price £:</span></label>	
+			<label for="minPrice"><span>Price ï¿½:</span></label>	
 				<select id="minPrice" name="minPrice" class="double">
 						<option value="" selected="selected">No min</option>
 						<option value="50000">50,000</option>
@@ -577,14 +577,14 @@ $imgStat = '';
 		 <tr>
 			<td style="width:200px;">Solicitors Fee </td>
 
-			<td style="padding-left:20px;">£700.00 inc VAT</td>
+			<td style="padding-left:20px;">ï¿½700.00 inc VAT</td>
 		</tr>
 
 		<tr>
 
 			<td style="width:200px;">Local Authority Search Fee</td>
 
-			<td style="padding-left:20px;">£110.00</td>
+			<td style="padding-left:20px;">ï¿½110.00</td>
 
 		</tr>
 
@@ -592,7 +592,7 @@ $imgStat = '';
 
 			<td>Drainage Search Fee </td>
 
-			<td style="padding-left:20px;">£54.90</td>
+			<td style="padding-left:20px;">ï¿½54.90</td>
 
 		</tr>
 
@@ -601,7 +601,7 @@ $imgStat = '';
 			<td>Enviro Search Fee</td>
 
 
-			<td style="padding-left:20px;">£55.20</td>
+			<td style="padding-left:20px;">ï¿½55.20</td>
 
 		</tr>
 
@@ -610,7 +610,7 @@ $imgStat = '';
 			<td>Land Registry Search Fee </td>
 
 
-			<td style="padding-left:20px;">£2.00 (per name if obtaining mortgage)</td>
+			<td style="padding-left:20px;">ï¿½2.00 (per name if obtaining mortgage)</td>
 
 		</tr>
 
@@ -619,7 +619,7 @@ $imgStat = '';
 			<td>Land Charge Search Fee </td>
 
 
-			<td style="padding-left:20px;">£3.00</td>
+			<td style="padding-left:20px;">ï¿½3.00</td>
 
 		</tr>
 
@@ -631,7 +631,7 @@ $imgStat = '';
 			<td>Land Registry Registration Fee </td>
 
 
-			<td style="padding-left:20px;">£270.00</td>
+			<td style="padding-left:20px;">ï¿½270.00</td>
 
 		</tr>
 

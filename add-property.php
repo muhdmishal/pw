@@ -1,10 +1,10 @@
-<?php 
-				
-		require_once ('dbc.php');	
+<?php
+
+		require_once ('dbc.php');
 		page_protect();
 include 'includes/header1.php';
- 
-$rs_settings = mysql_query("select * from users where user_id='$_SESSION[user_id]'"); 
+
+$rs_settings = mysqli_query($link,"select * from users where user_id='$_SESSION[user_id]'");
 
  		function redirect($url)
 
@@ -31,7 +31,7 @@ $rs_settings = mysql_query("select * from users where user_id='$_SESSION[user_id
 
 				echo '<meta http-equiv="refresh" content="0;url='.$url.'" />';
 
-				echo '</noscript>'; 
+				echo '</noscript>';
 
 				exit;
 
@@ -39,38 +39,38 @@ $rs_settings = mysql_query("select * from users where user_id='$_SESSION[user_id
 
 		}
 
- 
-	$rs_settings = mysql_query("select * from users where user_id='$_SESSION[user_id]'"); 
+
+	$rs_settings = mysqli_query($link,"select * from users where user_id='$_SESSION[user_id]'");
 
 
 
-		$ids = mysql_fetch_row($rs_settings );
+		$ids = mysqli_fetch_row($rs_settings );
 
 
 
 	   require_once './dbapi.php' ;
 
-	
+
 
 	require_once './property.php';
 
-	   
+
 
 	   $dbc = new DBAPI();
 
-	   
+
 
 	   if ( isset($_POST['submitPropertyForm'])){
 
-	   
-
-	   		
-
-		$userID = $_SESSION['user_id']   ; 
 
 
 
-		
+
+		$userID = $_SESSION['user_id']   ;
+
+
+
+
 
 		$idUser = $userID ;
 
@@ -92,12 +92,12 @@ $rs_settings = mysql_query("select * from users where user_id='$_SESSION[user_id
 
 		$bathrooms = $_POST['houseNumBathrooms'];
 
-		$gardenSize = $_POST['houseGardenSize'];	
+		$gardenSize = $_POST['houseGardenSize'];
 
 		$description = $_POST['houseDesc'];
 		$status = $_POST['status'];
 
-		
+
 
 		$sql_insert = "INSERT INTO `property`
   			(`user_id`, `price`, `type`, `street`, `address`, `town`, `country`, `postcode`, `bedrooms`, `bathrooms`, `gardensize`, `description`, `status`, `user_ip`, `created_date`, `updated_date`	)
@@ -106,36 +106,36 @@ $rs_settings = mysql_query("select * from users where user_id='$_SESSION[user_id
 			,'".date("Y-m-d H:i:s")."','".date("Y-m-d H:i:s")."'
 			)
 			";
-	
-		mysql_query($sql_insert,$link) or die("Insertion Failed:" . mysql_error());
-		$property_id = mysql_insert_id($link);  			
+
+		mysqli_query($sql_insert,$link) or die("Insertion Failed:" . mysqli_error());
+		$property_id = mysqli_insert_id($link);
 
 		//$newProp = new Property($idUser , $price,  $type ,$street ,$address2 ,$town ,$country , $postCode , $bedrooms ,$bathrooms ,$gardenSize ,$description );
 
-				
+
 
 		//$idp = $dbc->storePropertyToDatabase($newProp);
 
-		//print_r($idp);		
+		//print_r($idp);
 
 		//echo '<h1> PROP ID Returned : '.$idp.'</h1>' ;
 
-		
-		if ($idp ) 		
 
-			$property_id = $idp ; 
+		if ($idp )
+
+			$property_id = $idp ;
 
 		else
 
-			echo '<h1>Wrong ! </h1>' ; 
+			echo '<h1>Wrong ! </h1>' ;
 
 		for($idx = 1 ; $idx < 11 ; $idx ++ ){
 
 			//upload images and store to the database
 
-			$formel = 'houseImage'.$idx ; 
+			$formel = 'houseImage'.$idx ;
 
-			
+
 
 			if(isset($_FILES[$formel]) && $_FILES[$formel]['size'] > 0){
 					$errors= array();
@@ -146,9 +146,9 @@ $rs_settings = mysql_query("select * from users where user_id='$_SESSION[user_id
 
 					$file_tmp =$_FILES[$formel]['tmp_name'];
 
-					$file_type=$_FILES[$formel]['type'];   
+					$file_type=$_FILES[$formel]['type'];
 
-					
+
 
 					 $value = explode(".", $file_name);
 
@@ -158,13 +158,13 @@ $rs_settings = mysql_query("select * from users where user_id='$_SESSION[user_id
 
   					 $fileName = array_shift($value);  //Line 34
 
-					
 
-				
 
-					
 
-					$expensions= array("jpeg","jpg","png"); 		
+
+
+
+					$expensions= array("jpeg","jpg","png");
 
 					if(in_array($file_ext,$expensions)=== false){
 
@@ -176,35 +176,35 @@ $rs_settings = mysql_query("select * from users where user_id='$_SESSION[user_id
 
 					$errors[]='File size must be excately 2 MB';
 
-					}				
+					}
 
 					if(empty($errors)==true){
 
-						
 
-						$localPath = "uploads/prop".$property_id.$file_name ;					
+
+						$localPath = "uploads/prop".$property_id.$file_name ;
 
 						move_uploaded_file($file_tmp, $localPath );
 
-						
 
-						//store it into the database 
+
+						//store it into the database
 						$sql_insert = "INSERT INTO `images`( `property_id`, `user_id`, `image_name`, `status`, `user_ip`, `created_date`, `updated_date`)
 		    VALUES
 		    ('$property_id','$idUser','$localPath','1','','".date("Y-m-d H:i:s")."','".date("Y-m-d H:i:s")."'
 			)
 			";
-	
-		mysql_query($sql_insert,$link) or die("Insertion Failed:" . mysql_error());
-			
 
-						
-						
-						//$dbc->storeImage($newProp , $localPath) ; 
+		mysqli_query($sql_insert,$link) or die("Insertion Failed:" . mysqli_error());
 
-						
 
-						
+
+
+						//$dbc->storeImage($newProp , $localPath) ;
+
+
+
+
 
 					}else{
 
@@ -212,34 +212,34 @@ $rs_settings = mysql_query("select * from users where user_id='$_SESSION[user_id
 
 					}
 
-			
+
 
 				}
 
 			}
 
-	   
 
-	   
+
+
 
 	     redirect('http://propertywing.co.uk/new/showprop.php?idprop='.$property_id);
 
 	   } else  {
-	   echo '  
+	   echo '
 <div>
 <div class=" bg-image-fixed">
-<div class="container">    
+<div class="container">
     <div class="col-sm-8">
       <span style="font-size:24px" class="form-back">Add Your Property</span>
-        
-        	
-    
+
+
+
     <div class="row">
 
   <form role="form" action="" method="post" enctype="multipart/form-data">
     <div class="col-sm-12 form-back">
-      
-     
+
+
       <div class="col-xs-12 selectContainer">
       <center><div class="btn-group" data-toggle="buttons">
   		<label style="min-width:200px;" class="btn btn-primary active">
@@ -248,17 +248,17 @@ $rs_settings = mysql_query("select * from users where user_id='$_SESSION[user_id
   		<label style="min-width:200px;" class="btn btn-primary">
     		<input type="radio" onchange="price(this.value)"  name="propertyStatus" id="option2" value="2" autocomplete="off"> Property To Let
   		</label>
- 
-    	
+
+
   	</div>
   	</center>
-  
+
 
 	</div>
       <div class="col-xs-6 selectContainer">
         <label for="housePrice">Price</label>
-        
-		
+
+
           <select id="housePrice" style="background-color:#fff !important" class="form-control add-property-input" tabindex="11" name="housePrice"  required="required">';
 
 				for($i=20000; $i<= 1000000 ; $i = $i + 5000 )
@@ -268,48 +268,48 @@ $rs_settings = mysql_query("select * from users where user_id='$_SESSION[user_id
 
 			echo '</select>
       </div>
-      
+
       <div class="col-xs-6 selectContainer">
         <label for="housePCode">Post Code</label>
          <div id="suggest">
-		    
+
 		<input type="text"  class="form-control add-property-input" tabindex="2" autocomplete="off"   onkeyup="suggest(this.value);" onblur="fill();" class="txtBox" id="housePCode" name="housePCode" value="" onfocusout="clearInput()" required="required" placeholder="Start typing your postcode and select from the options below"/>
            <div class="suggestionsBox" id="suggestions" style="display: none;"> <img src="images/arrow1.png" style="position: relative; top: -12px; left: 30px;" alt="upArrow" />
 		   <div class="suggestionList" id="suggestionsList"> &nbsp; </div></div>
         </div>
       </div>
-      
-      
-      
+
+
+
       <div class="col-xs-6 selectContainer">
         <label for="houseStreet">Street Name</label>
-        
+
 			<input type="text" tabindex="4"  placeholder=" Without door number"  class="add-property-input form-control" id="houseStreet" name="houseStreet" value="" />
-          
+
       </div>
-      
-     
-      
+
+
+
       <div class="col-xs-6 selectContainer">
         <label for="houseTown">Town</label>
-        
+
 		  <input type="text" tabindex="6"  class="form-control add-property-input" id="houseTown" name="houseTown" value=""  required="required"/>
-          
+
       </div>
-      
+
      <div class="col-xs-6 selectContainer">
         <label for="houseCountyID">County</label>
 		 <input type="text" tabindex="7"  class="form-control add-property-input" id="houseCountyID" name="houseCountyID" value=""  required="required"/>
-					
 
-    
+
+
 
         </div>
-      
-     
+
+
 	  <div class="col-xs-6 selectContainer">
         <label for="houseTypeID">Type</label>
-				
+
 				<select id="houseTypeID" tabindex="3"  style="background-color:#fff !important" class="form-control add-property-input" tabindex="3" name="houseTypeID" >
 
 					<option value="1">Detached House</option>
@@ -333,11 +333,11 @@ $rs_settings = mysql_query("select * from users where user_id='$_SESSION[user_id
 				</select>
 
         </div>
-      
+
      <div class="col-xs-6 selectContainer">
         <label for="houseNumBedrooms">Bedrooms</label>
-        
-		
+
+
           <select id="houseNumBedrooms" style="background-color:#fff !important" class="form-control add-property-input" tabindex="9" name="houseNumBedrooms"  required="required">
 
 				<option value="1">1</option>
@@ -347,7 +347,7 @@ $rs_settings = mysql_query("select * from users where user_id='$_SESSION[user_id
 				<option value="3">3</option>
 
 				<option value="4">4</option>
-				
+
 				<option value="5">5</option>
 
 				<option value="6">6</option>
@@ -355,7 +355,7 @@ $rs_settings = mysql_query("select * from users where user_id='$_SESSION[user_id
 				<option value="7">7</option>
 
 				<option value="8">8</option>
-				
+
 				<option value="9">9</option>
 
 				<option value="10">10</option>
@@ -363,15 +363,15 @@ $rs_settings = mysql_query("select * from users where user_id='$_SESSION[user_id
 				<option value="11">11</option>
 
 				<option value="12">12</option>
-				
-				
+
+
 
 			</select>
       </div>
-      
+
       <div class="col-xs-6 selectContainer">
         <label for="houseNumBathrooms">Bathrooms</label>
-       
+
 
           	 <select id="houseNumBathrooms" style="background-color:#fff !important" class="form-control add-property-input" tabindex="10" name="houseNumBathrooms"  required="required">
 
@@ -382,7 +382,7 @@ $rs_settings = mysql_query("select * from users where user_id='$_SESSION[user_id
 				<option value="3">3</option>
 
 				<option value="4">4</option>
-				
+
 				<option value="5">5</option>
 
 				<option value="6">6</option>
@@ -390,7 +390,7 @@ $rs_settings = mysql_query("select * from users where user_id='$_SESSION[user_id
 				<option value="7">7</option>
 
 				<option value="8">8</option>
-				
+
 				<option value="9">9</option>
 
 				<option value="10">10</option>
@@ -398,12 +398,12 @@ $rs_settings = mysql_query("select * from users where user_id='$_SESSION[user_id
 				<option value="11">11</option>
 
 				<option value="12">12</option>
-				
-				
+
+
 
 			</select>
       </div>
-      
+
       <div class="col-xs-6 selectContainer">
         <label for="houseGardenSize">Garden Size</label>
 					<select id="houseGardenSize" style="background-color:#fff !important" class="form-control add-property-input" tabindex="11" name="houseGardenSize"  required="required">
@@ -419,8 +419,8 @@ $rs_settings = mysql_query("select * from users where user_id='$_SESSION[user_id
 			</select>
 
         </div>
-		
-      
+
+
       <div class="col-xs-12 selectContainer">
         <label for="houseDesc">Description</label>
         <div class="input-group">
@@ -433,8 +433,8 @@ $rs_settings = mysql_query("select * from users where user_id='$_SESSION[user_id
 
           </div>
       </div>
-      
-     
+
+
       <div class="col-xs-12 selectContainer">
         <label>Images </label>
 		<br/>
@@ -445,7 +445,7 @@ $rs_settings = mysql_query("select * from users where user_id='$_SESSION[user_id
 
 							<input type="file" tabindex="15" name="houseImage3" id="houseImage3" />
 
-							<input type="file" tabindex="16" name="houseImage4" id="houseImage4" />	
+							<input type="file" tabindex="16" name="houseImage4" id="houseImage4" />
 
 							<input type="file" tabindex="17" name="houseImage5" id="houseImage5" />
 		</div>
@@ -464,38 +464,38 @@ $rs_settings = mysql_query("select * from users where user_id='$_SESSION[user_id
 
 
        </div>
-	   
-	   
+
+
       <div class="col-xs-12 selectContainer">
-     
+
        <span class="button-checkbox" style="float:left; margin-right:12px;">
 						<input tabindex="23" type="checkbox" name="termsCond" id="termsCond" value="1"  required="required" />
 		</span>
         <div style="float:left;">
 					I have read and agree to the terms &amp; conditions.
-				</div>			
+				</div>
       </div>
-   
+
       <input  tabindex="24" type="submit" class="button btn  pull-right viewfull" id="submitPropertyForm" name="submitPropertyForm" value="Add Property" />
     </div>
   </form>
-  
- 
+
+
 </div>
-    
+
 </div>
 <div class="col-sm-3">';
-     
+
 include ("sidebar.php") ;
 echo'
 </div>
-</div> 
 </div>
-' ; 
+</div>
+' ;
 
 
 
-}include 'footer.php';?> 
+}include 'footer.php';?>
 
 <script>
   document.title = "Add property to Propertywing its completely free and simple";
@@ -504,7 +504,7 @@ echo'
 	  $('#housePCode').val("");
   }
 function suggest(inputString){
-	
+
 		if(inputString.length == 0) {
 			$('#suggestions').fadeOut();
 		} else {
@@ -524,22 +524,22 @@ function suggest(inputString){
 		setTimeout("$('#suggestions').fadeOut();", 600);
 		$.post("town.php", {queryString: ""+thisValue+""}, function(data){
 				if(data.length >0) {
-					
+
 					$('#houseTown').val(data);
-					
+
 				}
 			});
-			
+
 			$.post("country.php", {queryString: ""+thisValue+""}, function(data){
 				if(data.length >0) {
-					
+
 					$('#houseCountyID').val(data);
-					
+
 				}
 			});
-		
+
 	}
-	
+
 function price(thisvalue)
 {
 	var string = '';
@@ -551,7 +551,7 @@ function price(thisvalue)
 			string += '<option value="'+i+'" >'+i.toLocaleString()+'</option>';
 		}
 		$('#housePrice').html(string);
-		
+
 	}
 	if(thisvalue == 2)
 	{
@@ -561,7 +561,7 @@ function price(thisvalue)
 			string += '<option value="'+i+'" >'+i.toLocaleString()+'</option>';
 		}
 		$('#housePrice').html(string);
-		
+
 	}
 }
 window.onload = function() {
@@ -633,7 +633,7 @@ background-repeat:no-repeat;
 #margin {
 	height:350px !important;
 }
-@media only screen and (max-width : 420px) {	
+@media only screen and (max-width : 420px) {
 .suggestionsBox {
 	width:100%;
 }

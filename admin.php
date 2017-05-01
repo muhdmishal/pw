@@ -29,7 +29,7 @@ if($post['doBan'] == 'Ban') {
 if(!empty($_POST['u'])) {
 	foreach ($_POST['u'] as $uid) {
 		$id = filter($uid);
-		mysql_query("update users set banned='1' where user_id='$id' and `user_name` <> 'admin'");
+		mysqli_query($link,"update users set banned='1' where user_id='$id' and `user_name` <> 'admin'");
 	}
  }
  $ret = $_SERVER['PHP_SELF'] . '?'.$_POST['query_str'];;
@@ -43,7 +43,7 @@ if($_POST['doUnban'] == 'Unban') {
 if(!empty($_POST['u'])) {
 	foreach ($_POST['u'] as $uid) {
 		$id = filter($uid);
-		mysql_query("update users set banned='0' where user_id='$id'");
+		mysqli_query($link,"update users set banned='0' where user_id='$id'");
 	}
  }
  $ret = $_SERVER['PHP_SELF'] . '?'.$_POST['query_str'];;
@@ -57,7 +57,7 @@ if($_POST['doDelete'] == 'Delete') {
 if(!empty($_POST['u'])) {
 	foreach ($_POST['u'] as $uid) {
 		$id = filter($uid);
-		mysql_query("delete from users where user_id='$id' and `user_name` <> 'admin'");
+		mysqli_query($link,"delete from users where user_id='$id' and `user_name` <> 'admin'");
 	}
  }
  $ret = $_SERVER['PHP_SELF'] . '?'.$_POST['query_str'];;
@@ -71,9 +71,9 @@ if($_POST['doApprove'] == 'Approve') {
 if(!empty($_POST['u'])) {
 	foreach ($_POST['u'] as $uid) {
 		$id = filter($uid);
-		mysql_query("update users set status='1' where user_id='$id'");
+		mysqli_query($link,"update users set status='1' where user_id='$id'");
 		
-	list($to_email) = mysql_fetch_row(mysql_query("select user_email from users where user_id='$uid'"));	
+	list($to_email) = mysqli_fetch_row(mysqli_query($link,"select user_email from users where user_id='$uid'"));	
  
 $message = 
 "Hello,\n
@@ -103,13 +103,13 @@ THIS IS AN AUTOMATED RESPONSE.
  exit();
 }
 
-$rs_all = mysql_query("select count(*) as total_all from users") or die(mysql_error());
-$rs_active = mysql_query("select count(*) as total_active from users where status='1'") or die(mysql_error());
-$rs_total_pending = mysql_query("select count(*) as tot from users where status='0'");						   
+$rs_all = mysqli_query($link,"select count(*) as total_all from users") or die(mysqli_error());
+$rs_active = mysqli_query($link,"select count(*) as total_active from users where status='1'") or die(mysqli_error());
+$rs_total_pending = mysqli_query($link,"select count(*) as tot from users where status='0'");						   
 
-list($total_pending) = mysql_fetch_row($rs_total_pending);
-list($all) = mysql_fetch_row($rs_all);
-list($active) = mysql_fetch_row($rs_active);
+list($total_pending) = mysqli_fetch_row($rs_total_pending);
+list($all) = mysqli_fetch_row($rs_all);
+list($active) = mysqli_fetch_row($rs_active);
 
 
 ?>
@@ -198,14 +198,14 @@ if (checkAdmin()) {
 	  }
 
 	  
-	  $rs_total = mysql_query($sql) or die(mysql_error());
-	  $total = mysql_num_rows($rs_total);
+	  $rs_total = mysqli_query($sql) or die(mysqli_error());
+	  $total = mysqli_num_rows($rs_total);
 	  
 	  if (!isset($_GET['page']) )
 		{ $start=0; } else
 		{ $start = ($_GET['page'] - 1) * $page_limit; }
 	  
-	  $rs_results = mysql_query($sql . " limit $start,$page_limit") or die(mysql_error());
+	  $rs_results = mysqli_query($sql . " limit $start,$page_limit") or die(mysqli_error());
 	  $total_pages = ceil($total/$page_limit);
 	  
 	  ?>
@@ -253,7 +253,7 @@ if (checkAdmin()) {
             <td>&nbsp;</td>
             <td>&nbsp;</td>
           </tr>
-          <?php while ($rrows = mysql_fetch_array($rs_results)) {?>
+          <?php while ($rrows = mysqli_fetch_array($rs_results)) {?>
           <tr> 
             <td><input name="u[]" type="checkbox" value="<?php echo $rrows['id']; ?>" id="u[]"></td>
             <td><?php echo $rrows['created_date']; ?></td>
@@ -310,8 +310,8 @@ if (checkAdmin()) {
 	  <?php
 	  if($_POST['doSubmit'] == 'Create')
 {
-$rs_dup = mysql_query("select count(*) as total from users where user_name='$post[user_name]' OR user_email='$post[user_email]'") or die(mysql_error());
-list($dups) = mysql_fetch_row($rs_dup);
+$rs_dup = mysqli_query($link,"select count(*) as total from users where user_name='$post[user_name]' OR user_email='$post[user_email]'") or die(mysqli_error());
+list($dups) = mysqli_fetch_row($rs_dup);
 
 if($dups > 0) {
 	die("The user name or email already exists in the system");
@@ -329,9 +329,9 @@ if(!empty($_POST['pwd'])) {
  }
 $admin = $_POST['user_level'] ;
 
-mysql_query("INSERT INTO users (`user_name`,`user_email`,`password`,`status`,`created_date`,`admin`)
+mysqli_query($link,"INSERT INTO users (`user_name`,`user_email`,`password`,`status`,`created_date`,`admin`)
 			 VALUES ('$post[user_name]','$post[user_email]','$hash','1',now(),$admin)
-			 ") or die(mysql_error()); 
+			 ") or die(mysqli_error()); 
 
 
 

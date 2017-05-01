@@ -1,10 +1,10 @@
 <?php
     $key=$_GET['key'];
     $array = array();
-    $con=mysql_connect("localhost","root","");
-    $db=mysql_select_db("demos",$con);
-    $query=mysql_query("select * from cfg_demos where title LIKE '%{$key}%'");
-    while($row=mysql_fetch_assoc($query))
+    $con=mysqli_connect("localhost","root","");
+    $db=mysqli_select_db("demos",$con);
+    $query=mysqli_query($link,"select * from cfg_demos where title LIKE '%{$key}%'");
+    while($row=mysqli_fetch_assoc($query))
     {
       $array[] = $row['title'];
     }

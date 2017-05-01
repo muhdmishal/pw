@@ -13,15 +13,15 @@ if($_POST['doUpdate'] == 'Update')
 {
 
 
-$rs_pwd = mysql_query("select password from users where user_id='$_SESSION[user_id]'");
-list($old) = mysql_fetch_row($rs_pwd);
+$rs_pwd = mysqli_query($link,"select password from users where user_id='$_SESSION[user_id]'");
+list($old) = mysqli_fetch_row($rs_pwd);
 $old_salt = substr($old,0,9);
 
 //check for old password in md5 format
 	if($old === PwdHash($_POST['pwd_old'],$old_salt))
 	{
 	$newsha1 = PwdHash($_POST['pwd_new']);
-	mysql_query("update users set password='$newsha1' where user_id='$_SESSION[user_id]'");
+	mysqli_query($link,"update users set password='$newsha1' where user_id='$_SESSION[user_id]'");
 	$msg[] = "Your new password is updated";
 	//header("Location: mysettings.php?msg=Your new password is updated");
 	} else
@@ -40,19 +40,19 @@ foreach($_POST as $key => $value) {
 }
 
 
-mysql_query("UPDATE users SET
+mysqli_query($link,"UPDATE users SET
 			`full_name` = '$data[name]',
 			
 			`user_phone` = '$data[tel]'
 			
 			 WHERE user_id='$_SESSION[user_id]'
-			") or die(mysql_error());
+			") or die(mysqli_error());
 
 //header("Location: mysettings.php?msg=Profile Sucessfully saved");
 $msg[] = "Profile Sucessfully saved";
  }
  
-$rs_settings = mysql_query("select * from users where user_id='$_SESSION[user_id]'"); 
+$rs_settings = mysqli_query($link,"select * from users where user_id='$_SESSION[user_id]'"); 
 ?>
   <div class=" bg-image-fixed">
     <div class="container">    
@@ -78,7 +78,7 @@ $rs_settings = mysql_query("select * from users where user_id='$_SESSION[user_id
             </span>
     </div>
   
-<?php while ($row_settings = mysql_fetch_array($rs_settings)) {?>
+<?php while ($row_settings = mysqli_fetch_array($rs_settings)) {?>
   <form role="form" action="mysettings.php" method="post" name="myform" id="myform">
     <div class="col-xs-12 form-back">
       
