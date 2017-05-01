@@ -321,7 +321,7 @@ function checkAdmin() {
 
 
 $sql = 'SELECT * FROM `users` WHERE `user_id` = '.$_SESSION['user_id'].' AND `admin` = 1';
-
+$link = mysqli_connect(DB_HOST,DB_USER,DB_PASS,DB_NAME);
 $rs_duplicate = mysqli_query($link,$sql);
 if(mysqli_num_rows($rs_duplicate) > 0)
 {
