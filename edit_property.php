@@ -254,7 +254,7 @@ $propertyStatus = array(
 			}
 	   }
 
-	    redirect('http://propertywing.co.uk/new/showprop.php?idprop='.$propID);
+	    redirect('showprop.php?idprop='.$propID);
 
 
 	   }
@@ -269,7 +269,7 @@ $propertyStatus = array(
 
 			mysqli_query($link,$sql);
 		    //echo $sql;
-			redirect('http://propertywing.co.uk/new/myaccount.php');
+			redirect('myaccount.php');
 	   }
 	   else  {
 

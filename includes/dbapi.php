@@ -56,7 +56,7 @@
 		// Define Output HTML Formating
 $html = '';
 $html .= '<li class="result">';
-$html .= '<a href="http://propertywing.co.uk/new/showprop.php?idprop=idx">';
+$html .= '<a href="showprop.php?idprop=idx">';
 $html .= '<h3>town</h3>';
 $html .= '<h3>country</h3>';
 $html .= '<h4>postcode</h4>';

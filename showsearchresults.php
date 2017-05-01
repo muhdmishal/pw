@@ -225,10 +225,10 @@ echo "<div class='col-sm-12 form-back searchresult'>
          <h3>".$propStreet." ".$propAdd2." , ".$propTown." , ".$propCountry." , ".$propPostCode."</h3>
 					<div class='hidden-xs'>
 					<p><strong>Description</strong></p>
-                  <p class='para'>".$propDescR."....<a href='http://propertywing.co.uk/new/showprop.php?idprop=".$propID."' class='atag1'>read more</a></p>
-                 <p class='para2'><a href='http://propertywing.co.uk/new/showprop.php?idprop=".$propID."' class='atag1'>Contact Seller</a> - <a href='http://propertywing.co.uk/new/showprop.php?idprop=".$propID."' class='atag1'>View Property</a></p>
+                  <p class='para'>".$propDescR."....<a href='showprop.php?idprop=".$propID."' class='atag1'>read more</a></p>
+                 <p class='para2'><a href='showprop.php?idprop=".$propID."' class='atag1'>Contact Seller</a> - <a href='showprop.php?idprop=".$propID."' class='atag1'>View Property</a></p>
               </div>
-			  <a href='http://propertywing.co.uk/new/showprop.php?idprop=".$propID."' class='btn  viewfull button pull-right'>View Full Detials</a>
+			  <a href='showprop.php?idprop=".$propID."' class='btn  viewfull button pull-right'>View Full Detials</a>
 			  </div>
 			  <div class='clear'></div>
        </div>"
@@ -239,13 +239,13 @@ echo "<div class='col-sm-12 form-back searchresult'>
   <div class="listing-right" style="overflow:hidden;">
     <div class="mini-description">
       <div class="view-button">
-        <p><a href="http://propertywing.co.uk/new/showprop.php?idprop='.$propID.'">View detials</a></p>
+        <p><a href="showprop.php?idprop='.$propID.'">View detials</a></p>
       </div>
       <h2 style="color:#40659c; margin-bottom:0px;width:100%">&pound;'.$propPrice.'</h2>
       <h3 style="color:#3244CD; margin-bottom:-10px;font-size: 20px;">'.$propBeds.' Bedrooms '.$propType.'</h3>
       <h3 style="color:#40659c; font-size: 20px;"><strong>'.$propStreet.' '.$propAdd2.' , '.$propTown.' , '.$propCountry.' , '.$propPostCode.'</strong></h3>
-      <p>'.$propDescR.'....<a href="http://propertywing.co.uk/new/showprop.php?idprop='.$propID.'">read more</a></p>
-      <p style="width:100%"><a href="#">Contact Seller</a> - <a href="http://propertywing.co.uk/new/showprop.php?idprop='.$propID.'">View Property</a></p>
+      <p>'.$propDescR.'....<a href="showprop.php?idprop='.$propID.'">read more</a></p>
+      <p style="width:100%"><a href="#">Contact Seller</a> - <a href="showprop.php?idprop='.$propID.'">View Property</a></p>
     </div>
   </div>
   <img src="'.$img1.'" />';

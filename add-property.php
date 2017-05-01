@@ -222,7 +222,7 @@ $rs_settings = mysqli_query($link,"select * from users where user_id='$_SESSION[
 
 
 
-	     redirect('http://propertywing.co.uk/new/showprop.php?idprop='.$property_id);
+	     redirect('showprop.php?idprop='.$property_id);
 
 	   } else  {
 	   echo '
