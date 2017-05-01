@@ -1,0 +1,147 @@
+.forms {
+  background-color: #f1f1f1;
+  border: 1px solid #cae4ff;
+  float: left;
+  font: 12px arial,verdana;
+  max-width: 750px;
+  padding: 3px;
+}
+.save {
+    float: left;
+    width: 100%;
+}
+.change-pass {
+  float: left;
+  width: 100%;
+}
+.myaccount {
+  background-color: #e4f8fa;
+  border: 1px solid #cae4ff;
+  font: 12px arial,verdana;
+  height: auto;
+  padding: 3px 7px;
+  width: 266px;
+}
+a {
+color: #03c;
+}
+
+.main {
+font: normal 12px arial,verdana;
+padding: 2px;
+margin: 2px;
+
+ }
+ 
+ .titlehdr {
+ font: normal 22px arial, verdana;
+ color: #E4E4E4;
+ /*border-bottom: 1px solid #E4E4E4;*/
+ padding-top:20px;
+ 
+ }
+ 
+  .titlehdr h1 {
+ font: normal 22px arial, verdana;
+ color: #E4E4E4;
+ border-bottom: 1px solid #E4E4E4;
+ padding-top:20px;
+ 
+ }
+ 
+.titlehdr a {
+ font: normal 22px arial, verdana;
+ color: #c00;
+ 
+ padding-top:20px;
+ text-decoration:none;
+ 
+ }
+ 
+ 
+.msg {
+padding: 5px;
+width: 600px;
+margin: 2px;
+color: #c00;
+border: 1px solid #c00;
+background-color: #FEF1ED;
+font: bold 13px  verdana;
+} 
+ 
+.error {
+font: normal 11px arial, verdana;
+color: #c00;
+border: 1px solid #c00;
+padding: 2px;
+margin: 5px;
+float: left;
+background-color: #FEF1ED;
+}
+ 
+ .example {
+font: normal 10px arial;
+color: red;
+}
+.approved {
+font: normal 10px arial;
+color: green;
+}
+
+.loginform {
+  background-color: #f1f1f1;
+  border: 1px solid #cae4ff;
+  border-radius: 6px;
+  float: left;
+  font: 12px arial,verdana;
+  padding: 26px;
+  width: 100%;
+}
+
+.loginform #txtbox {
+  border: medium none;
+  border-radius: 4px;
+  color: #f00;
+  font: bold 16px arial;
+  padding: 4px;
+}
+.submit {
+  background: none repeat scroll 0 0 #72b70f;
+  border: medium none;
+  border-radius: 5px;
+  color: #fff;
+  padding: 5px 49px 3px;
+}
+.submit1 {
+  background: none repeat scroll 0 0 #72b70f;
+  border: medium none;
+  border-radius: 5px;
+  color: #fff;
+  padding: 8px 77px 9px;
+}
+.submit:hover{
+ background: none repeat scroll 0 0 #40659c;
+ transition: all 0.22s ease-out 0s;
+}
+.main-header {
+  margin: 0 auto;
+  width: 100%;
+}
+#logo {
+  float: left;
+  margin-top: -48px;
+}
+.silder {
+  background-image: url("images/full-banner.png");
+  float: left;
+  height: 399px;
+  margin-top: 0px;
+  width: 100%;
+}
+@media only screen and (min-device-width : 641px) and (max-device-width :767px) {
+.loginform {
+  float: left;
+  width: 100%;
+}
+}
+

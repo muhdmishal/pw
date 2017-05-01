@@ -1,0 +1,222 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head><meta charset="UTF-8">
+<title><?php echo $page_title; ?></title>
+<link rel="stylesheet" href="includes/style.css">
+<link rel="stylesheet" href="css/bootstrap.css">
+ <link rel="stylesheet" href="css/templatemo_style.css">
+ <link rel="stylesheet" href="css/testimonails-slider.css">
+<script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
+<link rel="stylesheet" href="includes/image-slider.css">
+<link href="styles.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="css/thumbslide.css" />
+<link href='http://fonts.googleapis.com/css?family=Dosis|Open+Sans' rel='stylesheet' type='text/css' />
+<!-- CSS3 Animation -->
+<link rel="stylesheet" href="includes/animate-custom.css" type="text/css" />
+<!-- Tabion CSS Pack -->
+<link rel="stylesheet" href="includes/tabion-css.css" type="text/css" />
+<link rel="icon" type="image/png"  href="images/favicon.png" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="description" content=""/> 
+<meta name="keywords" content="" />
+<meta name="language" content="english" /> 
+<META http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script type="text/javascript" src="javascript/jquery.min.js"></script>
+<script type="text/javascript" src="javascript/thumbslide.js">
+
+// Thumbnail Slider- by JavaScript Kit (www.javascriptkit.com)
+// Visit JavaScript Kit at http://www.javascriptkit.com/ for full source code
+</script>
+<!--image slider-->
+<script>
+//Initialization code:
+$(document).ready(function(){ // on document load
+		
+		$("#thumbsliderdiv").imageSlider({ //initialize slider
+			'thumbs': ["property-images/kitchen-lf.JPG","property-images/bedroom-lf.JPG","property-images/bathroom-lf.JPG","property-images/lounge-lf.JPG","property-images/rear-garden-lf.JPG"], // file names of images within slider. Default path should be changed inside thumbslide.js (near bottom)
+			'auto_scroll':true,
+			'auto_scroll_speed':4500,
+			'stop_after': 2, //stop after x cycles? Set to 0 to disable.
+			'canvas_width':530,
+			'canvas_height':333 // <-- No comma after last option
+			})
+	});
+
+</script>
+<!--End of Image Slider-->
+<link href="css/tabcontent.css" rel="stylesheet" type="text/css" />
+<script src="javascript/tabcontent.js" type="text/javascript"></script></script>
+
+ <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+$(document).ready(function() {
+    $('.toggle-nav').click(function(e) {
+        $(this).toggleClass('active');
+        $('.menu ul').toggleClass('active');
+ 
+        e.preventDefault();
+    });
+});
+</script>
+
+</head>
+<body>
+<div id="header">
+<div id="headermiddle">
+
+
+
+
+<div id="headermiddlepics">
+<a href="https://www.facebook.com/pages/Property-Wing/707165226009503?fref=nf" alt="facebook page" title="facebook" style="border-style;none;"><img src="images/facebook-logo.png" style="padding-right:20px;"/></a>
+<img src="images/twitter-logo.png" style="padding-right:20px;"/>
+<img src="images/google-logo.png" style="padding-right:20px;"/>
+</div>
+
+<div id="headlinks">
+
+<p style="color:white;"><a href="index.php" style="text-decoration:none;">Home</a> - <a href="" style="text-decoration:none;">Sign In</a> - <a href="" style="text-decoration:none;">Add your property</a></p>
+
+
+
+</div>
+
+
+
+
+</div>
+</div>
+<a href="https://www.facebook.com/dialog/oauth?client_id=448934518590838&redirect_uri=http://propertywing.co.uk/login2/facebook_auth.php&scope=publish_stream,email" title="Sign In with Facebook"class="fav-icon"><img src="images/facebook-login.png" style="width:200px;"></a> <br />
+
+
+
+</div>
+
+<div class="main-header">
+
+	<div class="heading">
+	<div id="background" >
+	<body id="body">
+	<div id="main">
+	<div id="logo"><a href="index.php"><img src="images/propertywing2.png"/></a></div>
+	<div id="headlinks-lower"></div>
+	<div style="float:right; background-color:white; margin-top:-115px; margin-right:30px;">
+	</div>
+
+
+
+<div id="headlinks-lower">
+
+
+
+</div>
+
+
+
+<div style="float:right; background-color:white; margin-top:-135px; margin-right:30px;">
+
+</div>
+
+<?php 
+/*********************** MYACCOUNT MENU ****************************
+This code shows my account menu only to logged in users. 
+Copy this code till END and place it in a new html or php where
+you want to show myaccount options. This is only visible to logged in users
+*******************************************************************/
+if (isset($_SESSION['user_id'])) {?>
+<body>
+
+
+    
+	
+  
+<?php }
+if (checkAdmin()) {
+/*******************************END**************************/
+?>
+      <p> <a href="admin.php">Admin CP </a></p>
+	  <?php } ?>
+      </td>
+    <td width="732" valign="top">
+      <h3 class="titlehdr">Welcome <?php echo $_SESSION['user_name'];?></h3>
+		<div style="margin-top:50px;">
+		
+  <ul class="account-list">
+	<li><a href="messages.php">Inbox -</a></li>
+	<li><a href="mysettings.php">For sale boards -</a></li>
+	<li><a href="add-property.php">Add a property -</a></li>
+	<li><a href="mysettings.php">Your local Solicitor -</a></li>
+	<li><a href="mysettings.php">Mortgages -</a></li>
+	<li><a href="mysettings.php">Sold prices -</a></li>
+	<li><a href="mysettings.php">Account Settings -</a></li>
+	<li><a href="logout.php">Logout </a></li>
+  </ul>
+  
+  
+ </div>
+ 
+    </div> </div>
+   
+  <div style="height:205px; background-image: url('images/full-banner.png');">
+		<div id="searchmiddle">
+		<div id="formheader">
+			<form class="search-wrapper cf">
+			<h1 style="font-family:verdana; color:#fff; font-size:19pt; font-weight:300;">Search Properties</h1>
+					<input type="text" placeholder="Enter Town..." required="">
+					<button type="submit" onClick="myredirect()">Search</button>
+					
+					<script>
+
+		function myredirect() {
+
+   				var priceMin = document.getElementById("minPrice").value ;
+
+				var priceTo = document.getElementById("maxPrice").value ;
+
+				var type = document.getElementById("houseTypeID").value ;
+
+				var postcode = document.getElementById("housePCode").value ;
+
+				var bedMin = document.getElementById("minBedrooms").value ;
+
+				var bedTo = document.getElementById("maxBedrooms").value ;
+
+				
+
+				var root = 'http://propertywing.co.uk/login2/showsearchresults.php?';
+
+				var urlt = '';
+
+				urlt = urlt.concat(root , 'priceMin=' , priceMin , '&priceTo=', priceTo , '&type=',type  , '&postcode=',postcode , '&bedMin=' , bedMin , '&bedTo=' , bedTo );
+
+				
+
+								
+
+				window.location.replace(urlt);
+
+						
+
+				
+
+			}
+
+</script>
+					
+			</form>
+			</div>
+		</div>
+  </div>
+  
+	  <?php	
+      if (isset($_GET['msg'])) {
+	  echo "<div class=\"error\">$_GET[msg]</div>";
+	  }
+	  	  
+	  ?>
+	  
+
+	  </div>
+<div id="main" style="margin-top:210px; clear:left;">
+<div id="background" style="margin-top:210px; clear:left;">

@@ -1,0 +1,335 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#body{
+	background-color:white ;
+	margin-top:10px;
+
+}
+
+#header {
+	height:30px;
+	margin-left:-10px;
+	margin-right:-8px;
+	background-color: #40659c;
+	margin-top:-10px;
+	box-shadow: 0px 1px 1px #B3B3B3;
+	opacity:0.7;
+	filter:alpha(opacity=70);
+}
+
+#headermiddle {
+	margin-left:auto;
+	margin-right:auto;
+	width:980px;
+	position:centre fixed;
+	margin-top:-10px;
+	background-color: #40659c;
+	height:30px;
+	box-shadow: 0px 1px 0px #B3B3B3;
+}
+
+#headermiddlepics {
+	padding-top:5px;
+	padding-bottom:10px;
+	padding-left:20px;
+	padding-right:0px;
+	float:right;
+}
+
+#headermiddle p {
+	float:right;
+	color:white;
+	font-family:verdana;
+	font-size:14pt;
+	padding-top:20px;
+	padding-right:100px;
+}
+ 
+#headlinks{
+	float:left;
+	margin-top:-25px;
+	margin-right:10px;
+	color:white;
+}
+
+#headlinks p{
+	font-family:verdana;
+	color:white;
+	font-size:10pt;
+}
+
+
+#headlinks a{
+	text-decoration:none;
+	color:white;
+}
+
+#headlinks a:hover{
+	text-decoration:none;
+	color:grey;
+}
+
+#headlinks-lower{
+	float:right;
+	margin-top:-30px;
+	color:white;
+	margin-right:70px;
+	
+}
+
+#headlinks-lower p{
+	font-family:verdana;
+	color:#40659c;
+	font-size:medium;
+}
+
+
+#headlinks-lower a{
+	text-decoration:none;
+	color:#40659c;
+	
+}
+
+#headlinks-lower a:hover{
+	text-decoration:none;
+	color:grey;
+}
+
+
+
+#background{
+    margin-left: auto;
+    margin-right:auto;
+    width:980px;
+    background:white;
+	position:centre fixed;
+	padding-top:1px;
+	margin-top:5px;
+  }
+  
+#main{
+	margin-left:auto;
+	margin-right:auto;
+	width:980px;
+	position:centre fixed;
+	margin-top:5px;
+	background-color:white;
+}
+  
+#logo img{
+	width:300px;
+	float:left;
+	margin-top:-5px;
+}
+  
+  @font-face { font-family: glametrixlight; src: url('../fonts/glametrixlight.otf'); } 
+
+#nav p{
+	float:right;
+	font-family:glametrixlight;
+	font-size:32pt;
+	margin-top:-10px;
+	color:#40659c;
+}
+ 
+#movers img{
+	width:980px;
+	margin-top:0px;
+}
+
+#searchbox{
+	width:700px;
+	background-color:#40659c;
+	height:90px;
+	opacity:0.7;
+	filter:alpha(opacity=70);
+	margin-top:-170px;
+	margin-left:140px;
+
+}
+
+#searchmiddle{
+	width:600px;
+	background-color:white;
+	height:50px;
+	font-family:glametrixlight;
+	font-size:30pt;
+	margin-top:-40px;
+	margin-left:40px;
+
+}
+
+#gap {
+	Height:20px;
+
+}
+
+
+#searchmiddle p{
+	padding-left:10px;
+	padding-top:5px;
+
+}
+
+#property-heading {
+	clear:left;
+	
+
+}
+
+#property-heading h1{
+	font-family:verdana;
+	font-size:18pt;
+	font-weight:300;
+	width:600px;
+
+}
+#property-heading h2{
+	float:right;
+	font-family:verdana;
+	font-size:18pt;
+	font-weight:300;
+	
+
+}
+#property-heading p{
+	font-family:verdana;
+	margin-top:-10px;
+	
+
+}
+
+#listing{
+	width:630px;
+
+}
+
+#right-column{
+	width:300px;
+	float:right;
+
+}
+
+#box1{
+	background-color:#F0F0F0;
+	width:300px;
+	height:25px;
+
+}
+
+
+
+#box1 p{
+	color:#40659c;
+	font-family:verdana;
+	padding-top:3px;
+	padding-left:10px;
+	font-size:10pt;
+}
+
+
+#sahre-icons{
+	background-color:#F0F0F0;
+	width:300px;
+	height:25px;
+	margin-bottom:20px;
+
+}
+
+
+
+#share-icons p{
+	color:#40659c;
+	font-family:verdana;
+	padding-top:3px;
+	padding-left:210px;
+	font-size:10pt;
+}
+
+
+#share-icons img{
+	background-color:#F0F0F0;
+	width:45px;
+	height:45px;
+	float:left;
+	margin-bottom:13px;
+	margin-right:2px;
+
+}
+
+#box2{
+clear:left;
+	background-color:#F0F0F0;
+	width:300px;
+	height:25px;
+	margin-top:-12px;
+
+}
+#box2 p{
+	color:#40659c;
+	font-family:verdana;
+	padding-top:3px;
+	padding-left:10px;
+	font-size:10pt;
+}
+
+#box3{
+	background-color:#F0F0F0;
+	width:300px;
+	height:25px;
+	margin-top:-12px;
+
+}
+#box3 p{
+	color:#40659c;
+	font-family:verdana;
+	padding-top:3px;
+	padding-left:10px;
+	font-size:10pt;
+}
+
+#box4{
+	background-color:#F0F0F0;
+	width:300px;
+	height:25px;
+	margin-top:-12px;
+
+}
+#box4 p{
+	color:#40659c;
+	font-family:verdana;
+	padding-top:3px;
+	padding-left:10px;
+	font-size:10pt;
+}
+
+#box5{
+	background-color:#F0F0F0;
+	width:300px;
+	height:25px;
+	margin-top:-12px;
+
+}
+#box5 p{
+	color:#40659c;
+	font-family:verdana;
+	padding-top:3px;
+	padding-left:10px;
+	font-size:10pt;
+}
+
+#map-box{
+	background-color:#F0F0F0;
+	width:300px;
+	height:25px;
+	margin-top:11px;
+
+}
+#map-box p{
+	color:#40659c;
+	font-family:verdana;
+	padding-top:3px;
+	padding-left:10px;
+	font-size:10pt;
+}

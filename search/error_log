@@ -1,0 +1,2 @@
+[16-Feb-2015 23:41:08 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/drinkdri/public_html/propertywing.co.uk/login2/search/search.php on line 37
+[16-Feb-2015 23:41:57 UTC] PHP Fatal error:  Call to a member function real_escape_string() on a non-object in /home/drinkdri/public_html/propertywing.co.uk/login2/search/dbapi.php on line 65

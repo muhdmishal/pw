@@ -1,0 +1,4 @@
+[26-Dec-2014 21:18:30 Europe/London] PHP Warning:  mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /home/drinkdri/public_html/propertywing.co.uk/login2/fb/config/dbconfig.php on line 7
+[26-Dec-2014 21:20:08 Europe/London] PHP Warning:  mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /home/drinkdri/public_html/propertywing.co.uk/login2/fb/config/dbconfig.php on line 7
+[26-Dec-2014 21:22:33 Europe/London] PHP Warning:  mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /home/drinkdri/public_html/propertywing.co.uk/login2/fb/config/dbconfig.php on line 7
+[26-Dec-2014 21:39:04 Europe/London] PHP Warning:  mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /home/drinkdri/public_html/propertywing.co.uk/login2/fb/config/dbconfig.php on line 7

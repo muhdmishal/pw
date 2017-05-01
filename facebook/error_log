@@ -1,0 +1,4 @@
+[27-Dec-2014 11:03:36 Europe/London] PHP Fatal error:  Uncaught OAuthException: (#803) Cannot query users by their username (naitik)
+  thrown in /home/drinkdri/public_html/propertywing.co.uk/login2/facebook/facebook.php on line 543
+[27-Dec-2014 11:04:30 Europe/London] PHP Fatal error:  Uncaught OAuthException: An active access token must be used to query information about the current user.
+  thrown in /home/drinkdri/public_html/propertywing.co.uk/login2/facebook/facebook.php on line 543

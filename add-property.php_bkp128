@@ -1,0 +1,243 @@
+<?php
+		include 'dbc.php';
+		page_protect();
+		include 'includes/myaccount-header.html';
+ 
+		$rs_settings = mysql_query("select * from users where id='$_SESSION[user_id]'"); 
+
+		$ids = mysql_fetch_row($rs_settings );
+
+	 //  require_once './dbapi.php' ;
+	//   include ('prop.php') ; 
+	//   include ('DBAPI.php');
+	   
+	      
+	 ?>
+
+
+
+<div>
+<form class="grey" action="showprop.php" method="post" enctype="multipart/form-data">
+
+	<h1>Add your property<span>Complete this form to add your property to The Property Wing.</span></h1>
+		
+			 
+			<p><label><span>Your Name :</span></label>
+			<input id="name" type="text" name="name" id="houseStreet" placeholder="Your Full Name" />
+			</p>
+			<label for="housePrice"><span>Price:</span></label>
+			<input type="text" tabindex="2" class="txtBox" id="housePrice" name="housePrice" value="" />
+			
+			
+			
+			<label for="houseTypeID"><span>Type:</span></label>
+				<select id="houseTypeID" class="basic-grey" tabindex="3" name="houseTypeID" >
+					<option value="1">Detached House</option>
+					<option value="2">Semi-Detached</option>
+					<option value="3">Mid Terraced</option>
+					<option value="4">End Terraced</option>
+					<option value="5">Flat</option>
+					<option value="9">Studio Flat</option>
+					<option value="6">Cottage</option>
+					<option value="7">Bungalow</option>
+					<option value="10">Other</option>
+				</select>
+						
+			
+			<label for="houseStreet"><span>Street Name</span></label>
+				<input type="text" tabindex="5"  placeholder=" Without door number" id="houseStreet" name="houseStreet" value="" />
+			
+
+			<label for="houseAdd2"><span>Address line 2:</span></label>
+				<input type="text" tabindex="6"  id="houseAdd2" name="houseAdd2" value="" />
+			
+
+			<label for="houseTown"><span>Town</span></label>
+				<input type="text" tabindex="7" id="houseTown" name="houseTown" value="" />
+			
+
+			<label for="houseCountyID"><span>County</span></label>
+				<select id="houseCountyID" tabindex="9" name="houseCountyID" >
+				
+					<optgroup label="England">
+        <option>Bedfordshire</option>
+        <option>Berkshire</option>
+        <option>Bristol</option>
+        <option>Buckinghamshire</option>
+        <option>Cambridgeshire</option>
+        <option>Cheshire</option>
+        <option>City of London</option>
+        <option>Cornwall</option>
+        <option>Cumbria</option>
+        <option>Derbyshire</option>
+        <option>Devon</option>
+        <option>Dorset</option>
+        <option>Durham</option>
+        <option>East Riding of Yorkshire</option>
+        <option>East Sussex</option>
+        <option>Essex</option>
+        <option>Gloucestershire</option>
+        <option>Greater London</option>
+        <option>Greater Manchester</option>
+        <option>Hampshire</option>
+        <option>Herefordshire</option>
+        <option>Hertfordshire</option>
+        <option>Isle of Wight</option>
+        <option>Kent</option>
+        <option>Lancashire</option>
+        <option>Leicestershire</option>
+        <option>Lincolnshire</option>
+        <option>Merseyside</option>
+        <option>Norfolk</option>
+        <option>North Yorkshire</option>
+        <option>Northamptonshire</option>
+        <option>Northumberland</option>
+        <option>Nottinghamshire</option>
+        <option>Oxfordshire</option>
+        <option>Rutland</option>
+        <option>Shropshire</option>
+        <option>Somerset</option>
+        <option>South Yorkshire</option>
+        <option>Staffordshire</option>
+        <option>Suffolk</option>
+        <option>Surrey</option>
+        <option>Tyne and Wear</option>
+        <option>Warwickshire</option>
+        <option>West Midlands</option>
+        <option>West Sussex</option>
+        <option>West Yorkshire</option>
+        <option>Wiltshire</option>
+        <option>Worcestershire</option>
+    </optgroup>
+    <optgroup label="Wales">
+        <option>Anglesey</option>
+        <option>Brecknockshire</option>
+        <option>Caernarfonshire</option>
+        <option>Carmarthenshire</option>
+        <option>Cardiganshire</option>
+        <option>Denbighshire</option>
+        <option>Flintshire</option>
+        <option>Glamorgan</option>
+        <option>Merioneth</option>
+        <option>Monmouthshire</option>
+        <option>Montgomeryshire</option>
+        <option>Pembrokeshire</option>
+        <option>Radnorshire</option>
+    </optgroup>
+    <optgroup label="Scotland">
+        <option>Aberdeenshire</option>
+        <option>Angus</option>
+        <option>Argyllshire</option>
+        <option>Ayrshire</option>
+        <option>Banffshire</option>
+        <option>Berwickshire</option>
+        <option>Buteshire</option>
+        <option>Cromartyshire</option>
+        <option>Caithness</option>
+        <option>Clackmannanshire</option>
+        <option>Dumfriesshire</option>
+        <option>Dunbartonshire</option>
+        <option>East Lothian</option>
+        <option>Fife</option>
+        <option>Inverness-shire</option>
+        <option>Kincardineshire</option>
+        <option>Kinross</option>
+        <option>Kirkcudbrightshire</option>
+        <option>Lanarkshire</option>
+        <option>Midlothian</option>
+        <option>Morayshire</option>
+        <option>Nairnshire</option>
+        <option>Orkney</option>
+        <option>Peeblesshire</option>
+        <option>Perthshire</option>
+        <option>Renfrewshire</option>
+        <option>Ross-shire</option>
+        <option>Roxburghshire</option>
+        <option>Selkirkshire</option>
+        <option>Shetland</option>
+        <option>Stirlingshire</option>
+        <option>Sutherland</option>
+        <option>West Lothian</option>
+        <option>Wigtownshire</option>
+    </optgroup>
+    <optgroup label="Northern Ireland">
+        <option>Antrim</option>
+        <option>Armagh</option>
+        <option>Down</option>
+        <option>Fermanagh</option>
+        <option>Londonderry</option>
+        <option>Tyrone</option>
+    </optgroup>
+	</select>
+	
+
+	
+		<label for="housePCode"><span>Post Code</span></label>
+			<input type="text" tabindex="10" class="txtBox" id="housePCode" name="housePCode" value="" />
+				
+		
+
+		<label for="houseNumBedrooms"><span>Bedrooms:</span></label>
+			<input type="text" tabindex="11" class="txtBox" id="houseNumBedrooms" name="houseNumBedrooms" value="" />
+						
+		
+		<label for="houseNumBathrooms"><span>Bathrooms:</span></label>
+			<input type="text" tabindex="12" class="txtBox" id="houseNumBathrooms" name="houseNumBathrooms" value="" />
+						
+		
+			
+
+		<label for="houseGardenSize"><span>Garden Size</span></label>
+			<select id="houseGardenSize" class="basic-grey" tabindex="17" name="houseGardenSize" >
+				<option value="Large">Large</option>
+				<option value="Medium">Medium</option>
+				<option value="Small">Small</option>
+				<option value="None">None</option>
+			</select>
+		
+		<label for="houseDesc"><span>Description:</span></label>
+			<textarea tabindex="18" id="houseDesc" name="houseDesc"  rows="22" cols="80" class="basic-grey" >Full Description:
+[Key Features - list key points of your property]
+			
+[Enter location details i.e. how close to town, train stations and schools]
+
+[Enter details of reception areas including room dimensions]
+
+[Kitchen details, including dimensions and and fixtures and fittings]
+
+[Enter details of bedrooms including dimensions]
+
+[Enter bathroom dimensions]
+
+	</textarea>
+				
+					<h3><span>Images (1st image - outside of property)</span></h3>
+						
+							<input type="file" name="houseImage1" id="houseImage1" />
+							<input type="file" name="houseImage2" id="houseImage2" />
+							<input type="file" name="houseImage3" id="houseImage3" />
+							<input type="file" name="houseImage4" id="houseImage4" />	
+							<input type="file" name="houseImage5" id="houseImage5" />
+							<input type="file" name="houseImage6" id="houseImage6" />
+							<input type="file" name="houseImage7" id="houseImage7" />
+							<input type="file" name="houseImage8" id="houseImage8" />
+							<input type="file" name="houseImage9" id="houseImage9" />
+							<input type="file" name="houseImage10" id="houseImage10" />
+				
+
+	
+	<h3>Terms &amp; Conditions</h3>
+			
+		<label for="termsCond" style="width:auto;">
+		<input type="checkbox" name="termsCond" id="termsCond" value="1" />
+				I have read and agree to the terms &amp; conditions</label>
+			
+</br>
+				<input type="submit" class="button" id="submitPropertyForm" name="submitPropertyForm" value="Add Property" />
+	</form>	
+</div> ;
+
+
+<?php
+include ('includes/footer.html') ;
+?>

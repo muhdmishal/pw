@@ -1,0 +1,41 @@
+l | Result Bexley
+lo | Result London
+b | Result Bucovina
+bu | Result Bucovina
+b | Result Bucovina
+p | Result Pembury
+p | Result Pembury
+l | Result Bexley
+lo | Result London
+lo | Result London
+lo | Result London
+lo | Result London
+lo | Result London
+lo | Result London
+lo | Result London
+lo | Result London
+lo | Result London
+SELECT * from `property` WHERE `town` LIKE '%London%' OR `country` LIKE '%London%' OR `postcode` LIKE '%London%' OR `street` LIKE '%London%'
+SELECT * from `property` WHERE `town` LIKE '%London%' OR `country` LIKE '%London%' OR `postcode` LIKE '%London%' OR `street` LIKE '%London%'
+SELECT * from `property` WHERE `town` LIKE '%London%' OR `country` LIKE '%London%' OR `postcode` LIKE '%London%' OR `street` LIKE '%London%'
+SELECT * from `property` WHERE `town` LIKE '%London%' OR `country` LIKE '%London%' OR `postcode` LIKE '%London%' OR `street` LIKE '%London%'
+SELECT * from `property` WHERE `town` LIKE '%London%' OR `country` LIKE '%London%' OR `postcode` LIKE '%London%' OR `street` LIKE '%London%'
+SELECT * from `property` WHERE `town` LIKE '%London%' OR `country` LIKE '%London%' OR `postcode` LIKE '%London%' OR `street` LIKE '%London%'
+SELECT * from `property` WHERE `town` LIKE '%bucovina%' OR `country` LIKE '%bucovina%' OR `postcode` LIKE '%bucovina%' OR `street` LIKE '%bucovina%'
+SELECT * from `property` WHERE `town` LIKE '%bucovina%' OR `country` LIKE '%bucovina%' OR `postcode` LIKE '%bucovina%' OR `street` LIKE '%bucovina%'
+SELECT * from `property` WHERE `town` LIKE '%bucovina%' OR `country` LIKE '%bucovina%' OR `postcode` LIKE '%bucovina%' OR `street` LIKE '%bucovina%'
+SELECT * from `property` WHERE `town` LIKE '%bucovina%' OR `country` LIKE '%bucovina%' OR `postcode` LIKE '%bucovina%' OR `street` LIKE '%bucovina%'
+SELECT * from `property` WHERE `town` LIKE '%london%' OR `country` LIKE '%london%' OR `postcode` LIKE '%london%' OR `street` LIKE '%london%'
+SELECT * from `property` WHERE `town` LIKE '%london%' OR `country` LIKE '%london%' OR `postcode` LIKE '%london%' OR `street` LIKE '%london%'
+SELECT * from `property` WHERE `town` LIKE '%London%' OR `country` LIKE '%London%' OR `postcode` LIKE '%London%' OR `street` LIKE '%London%'
+SELECT * from `property` WHERE `town` LIKE '%London%' OR `country` LIKE '%London%' OR `postcode` LIKE '%London%' OR `street` LIKE '%London%'
+SELECT * from `property` WHERE `town` LIKE '%London%' OR `country` LIKE '%London%' OR `postcode` LIKE '%London%' OR `street` LIKE '%London%'
+SELECT * from `property` WHERE `town` LIKE '%London%' OR `country` LIKE '%London%' OR `postcode` LIKE '%London%' OR `street` LIKE '%London%'
+SELECT * from `property` WHERE `town` LIKE '%London%' OR `country` LIKE '%London%' OR `postcode` LIKE '%London%' OR `street` LIKE '%London%'
+SELECT * from `property` WHERE `town` LIKE '%London%' OR `country` LIKE '%London%' OR `postcode` LIKE '%London%' OR `street` LIKE '%London%'
+SELECT * from `property` WHERE `town` LIKE '%Lonson%' OR `country` LIKE '%Lonson%' OR `postcode` LIKE '%Lonson%' OR `street` LIKE '%Lonson%'
+SELECT * from `property` WHERE `town` LIKE '%Lonson%' OR `country` LIKE '%Lonson%' OR `postcode` LIKE '%Lonson%' OR `street` LIKE '%Lonson%'
+SELECT * from `property` WHERE `town` LIKE '%London%' OR `country` LIKE '%London%' OR `postcode` LIKE '%London%' OR `street` LIKE '%London%'
+SELECT * from `property` WHERE `town` LIKE '%London%' OR `country` LIKE '%London%' OR `postcode` LIKE '%London%' OR `street` LIKE '%London%'
+SELECT * from `property` WHERE `town` LIKE '%paris%' OR `country` LIKE '%paris%' OR `postcode` LIKE '%paris%' OR `street` LIKE '%paris%'
+SELECT * from `property` WHERE `town` LIKE '%paris%' OR `country` LIKE '%paris%' OR `postcode` LIKE '%paris%' OR `street` LIKE '%paris%'
