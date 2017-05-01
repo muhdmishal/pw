@@ -1,7 +1,7 @@
-<?php			
-		
-				
-		require_once ('./dbc.php');		
+<?php
+
+
+		require_once ('./dbc.php');
 		//page_protect();
 		$userID = $_SESSION[user_id] ;
 		if($userID > 0)
@@ -10,12 +10,12 @@
 }
 else{
 	include 'includes/headerindex.php';
-}       
+}
  //          include 'includes/sidebar.html';
- 
- 
- 		
- 
+
+
+
+
  		function redirect($url)
 		{
 			if (!headers_sent())
@@ -30,46 +30,46 @@ else{
 				echo '</script>';
 				echo '<noscript>';
 				echo '<meta http-equiv="refresh" content="0;url='.$url.'" />';
-				echo '</noscript>'; 
+				echo '</noscript>';
 				exit;
 			}
 		}
-		
-		
-				$rs_settings = mysqli_query($link,"select * from users where `user_id`='$_SESSION[user_id]'"); 
+
+
+				$rs_settings = mysqli_query($link,"select * from users where `user_id`='$_SESSION[user_id]'");
 
 		$ids = mysqli_fetch_row($rs_settings );
 
 	   	require_once './dbapi.php' ;
-	
+
 		require_once './property.php';
-	   
+
 	   $dbc = new DBAPI();
-	   
- 
+
+
  	$searchfor = '';
 		if (isset($_GET['whattosearch'] ))
 			$searchfor =  $_GET['whattosearch'];
- 
- 		
-		
-		
-		$locations = array();
- 
- 		if ($searchfor != ''){
-			
-			$locations = $_GET['whattosearch'] ; 
-			$locationsfull = $_GET['whattosearch'] ; 
-		}
-		
-		
- 
 
-	
-	
-	
-		
-		
+
+
+
+		$locations = array();
+
+ 		if ($searchfor != ''){
+
+			$locations = $_GET['whattosearch'] ;
+			$locationsfull = $_GET['whattosearch'] ;
+		}
+
+
+
+
+
+
+
+
+
 ?>
 
 
@@ -87,20 +87,18 @@ else{
   		<label class="btn btn-primary">
     		<input type="radio" onchange="price(this.value)"  name="status" id="option2" value="2" autocomplete="off"> Property To Let
   		</label>
- 
-    	
+
+
   	</div>
-  	
-  
+
+
 
 	</div>
       <div class="col-xs-12 selectContainer">
       <div id="suggest">
         <label for="InputName">Location : <?php echo $searchfor ?> </label>
-        
-        <input type="text" style="background-color:#FFFFFF !important;" class="double form-control input-border" id="locationIdentifier" name="locationIdentifier"  onkeyup="suggest(this.value);" onblur="fill();" value="<?php echo $locationsfull ?>" />
-         <div class="suggestionsBox" id="suggestions" style="display: none;"> <img src="images/arrow1.png" style="position: relative; top: -12px; left: 30px;" alt="upArrow" />
-        <div class="suggestionList" id="suggestionsList"> &nbsp; </div></div>
+
+        <input type="text" style="background-color:#FFFFFF !important;" class="double form-control input-border" id="locationIdentifier" name="locationIdentifier" value="<?php echo $locationsfull ?>" />
         </div>
       </div>
       <div class="col-xs-6 selectContainer">
@@ -136,16 +134,16 @@ else{
       <div class="col-xs-6 selectContainer">
         <label for="minPrice">Price &pound;</label>
         <select style="background-color:#FFFFFF !important;" id="minPrice" name="minPrice" class="double form-control input-border">
-          
+
         </select>
       </div>
       <div class="col-xs-6 selectContainer">
         <label for="maxPrice">To</label>
         <select style="background-color:#FFFFFF !important;" id="maxPrice" name="maxPrice" class="double form-control input-border">
-          
+
         </select>
       </div>
-      
+
       <div class="col-xs-6 selectContainer">
         <label for="minBedrooms">Beds</label>
         <select style="background-color:#FFFFFF !important;" id="minBedrooms" name="minBedrooms" class="double form-control input-border">
@@ -169,16 +167,16 @@ else{
           <option value="4">4</option>
           <option value="5">5</option>
         </select>
-         
+
       </div>
-      
+
    <br/>
-     
+
       </div>
        <div class="btn-area" style="margin-top:10px; ">
         <input style="font-size:18px; padding:10px 150px;" type="submit" class="btn  btn-primary1" id="submitPropertyFormS" name="submitPropertyFormS" value="Search" />
       </div>
-      
+
     </form>
     <br/>
     <span class="sell-box-search">The new way to sell your home</span>
@@ -186,48 +184,48 @@ else{
 </div>
 <div class="container">
 		<span class="title">HOW WE ADVERTISE YOUR HOME</span>
-        
+
         <section class="row">
-        	
+
             <div class="col-sm-12">
     	<h2 class="text-center">In this day and age the best place to advertise your home is using the internet. Social media is so powerful at connecting people, we are using it to help you sell your home. </h2>
         <h2 class="text-center">We are not an estate agent, we connect you with potential buyers of your home for a private sale.  If you have a sole agency agreement with an agent you can still advertise your property on our website.</h2>
         <h2 class="text-center">ou will have your own inbox and with our “message owner” feature, you will receive requests directly from potential buyers.</h2>
     </div>
-            
+
         </section>
 	<br/>
     	<img  class="col-sm-3 col-sm-offset-3" src="images/logo-google.png" >
-    
-    
-    	
+
+
+
     	<img src="images/logo-twitter.png" class="col-sm-1" >
         <img src="images/logo-facebook.png" class="col-sm-1">
-        
-        
-     
-     
-     
-     
-        
-        
-        	
+
+
+
+
+
+
+
+
+
             <div class="col-sm-12">
     	<h2 class="text-center">Once you have added your property , we will add your property to our facebook page where we will boost your post, The first boost is on us and should get your property seen by a few thousand people in your area.  After the initial boost you have the option to re-boost your facebook listing for as little as £3.00 which will go out to thousands of people in and around your local area.</h2>
         <h2 class="text-center">We will set up an advert on Google so when people search the internet for properties for sale in your area, they will be able to find your property, this is again, all completely free of charge.</h2>
-       
+
     </div>
-            
-       
+
+
 </div>
 <?php include 'footer.php';  ?>
 <script>
   document.title = "Search for property in your area";
 function suggest(inputString){
-		
+
 		if(inputString.length == 0) {
 			$('#suggestions').fadeOut();
-			
+
 		} else {
 		$('#locationIdentifier').addClass('load');
 			$.post("autosuggest.php", {queryString: ""+inputString+""}, function(data){
@@ -335,7 +333,7 @@ background-repeat:no-repeat;
 #margin {
 	height:350px !important;
 }
-@media only screen and (max-width : 420px) {	
+@media only screen and (max-width : 420px) {
 .suggestionsBox {
 	width:100%;
 }
