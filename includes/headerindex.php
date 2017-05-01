@@ -304,8 +304,7 @@ background-repeat:no-repeat;
               alert("No post code for the selected address. Please try another");
             }
             else {
-              alert("post code:" + searchPostalCode);
-              input.val(searchPostalCode);
+              input.value = searchPostalCode;
             }
           }
         });
