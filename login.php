@@ -14,7 +14,7 @@ For further usage, please contact me.
 ***********************************************************/
 include 'dbc.php';
 
-require_once './user.php' ;
+require_once 'user.php' ;
 
 $err = array();
 
