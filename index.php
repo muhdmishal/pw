@@ -1,4 +1,3 @@
-
 <?php
 $userID = $_SESSION[user_id] ;
 		if($userID > 0)
@@ -9,7 +8,7 @@ else{
 	include 'includes/headerindex.php';
 } ?>
 <div class="container">
-		
+
 
         <section class="row">
 
