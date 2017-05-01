@@ -7,11 +7,11 @@
 
 
 /******************* ACTIVATION BY FORM**************************/
+if (isset($_POST['doReset']))
 if ($_POST['doReset']=='Reset')
 {
 
   echo "working 1";
-  die();
 $err = array();
 $msg = array();
 
