@@ -249,9 +249,7 @@ background-repeat:no-repeat;
 
         <form  class="navbar-form nopadding" role="search" methos="GET" action="continuesearch.php">
                 <div id="suggest">
-                    <input type="text" class="form-control b-search " onkeyup="suggest(this.value);" onblur="fill();" placeholder="Type postcode or town and Select from the below suggestions to Search" id="whattosearch" autocomplete="off" name="whattosearch" required>
-                    <div class="suggestionsBox" id="suggestions" style="display: none;"> <img src="images/arrow1.png" style="position: relative; top: -12px; left: 30px;" alt="upArrow" />
-        <div class="suggestionList" id="suggestionsList"> &nbsp; </div></div>
+                    <input type="text" class="form-control b-search " placeholder="Type postcode or town and Select from the below suggestions to Search" id="whattosearch" autocomplete="off" name="whattosearch" required>
         </div>
                         <button style="font-family:Arial, Helvetica, sans-serif;" class="btn search-btn" type="submit">Search</button>
 
@@ -265,8 +263,48 @@ background-repeat:no-repeat;
     <img src="images/getstarted.png" class="img-responsive">
 </div>
 
-
+<input id="id_address" type="text" value="1980 Mission Street, San Francisco, CA, United States" />
+<div id="postal_code"></div>
+<div id="map_canvas"></div>
     </div>
+
+    <script>
+
+    var geocoder;
+var map;
+
+function initialize() {
+var map = new google.maps.Map(
+  document.getElementById("map_canvas"), {
+    center: new google.maps.LatLng(37.4419, -122.1419),
+    zoom: 13,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  });
+var input = document.getElementById('id_address');
+var options = {
+  types: ['address'],
+  componentRestrictions: {
+    country: 'uk'
+  }
+};
+autocomplete = new google.maps.places.Autocomplete(input, options);
+google.maps.event.addListener(autocomplete, 'place_changed', function() {
+  var place = autocomplete.getPlace();
+  for (var i = 0; i < place.address_components.length; i++) {
+    for (var j = 0; j < place.address_components[i].types.length; j++) {
+      if (place.address_components[i].types[j] == "postal_code") {
+        document.getElementById('postal_code').innerHTML = place.address_components[i].long_name;
+
+      }
+    }
+  }
+})
+}
+google.maps.event.addDomListener(window, "load", initialize);
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4Y0jkDSFjgd83IYieJQSYOc1GOwy-ayI&libraries=places&callback=initMap"
+        async defer></script>
 
      <script src="js/vendor/jquery-1.11.0.min.js"></script>
         <script src="js/plugins.js"></script>
