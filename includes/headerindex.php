@@ -15,9 +15,9 @@
 
 <link rel="icon" type="image/png"  href="images/favicon.png" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="description" content=""/> 
+<meta name="description" content=""/>
 <meta name="keywords" content="" />
-<meta name="language" content="english" /> 
+<meta name="language" content="english" />
 <META http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <script type="text/javascript" src="javascript/jquery.min.js"></script>
@@ -31,7 +31,7 @@
 <script>
 //Initialization code:
 $(document).ready(function(){ // on document load
-		
+
 		$("#thumbsliderdiv").imageSlider({ //initialize slider
 			'thumbs': ["property-images/kitchen-lf.JPG","property-images/bedroom-lf.JPG","property-images/bathroom-lf.JPG","property-images/lounge-lf.JPG","property-images/rear-garden-lf.JPG"], // file names of images within slider. Default path should be changed inside thumbslide.js (near bottom)
 			'auto_scroll':true,
@@ -53,7 +53,7 @@ $(document).ready(function() {
     $('.toggle-nav').click(function(e) {
         $(this).toggleClass('active');
         $('.menu ul').toggleClass('active');
- 
+
         e.preventDefault();
     });
 });
@@ -73,7 +73,7 @@ $(document).ready(function() {
 <!-- Suggestion   -->
 <script>
 function suggest(inputString){
-	
+
 		if(inputString.length == 0) {
 			$('#suggestions').fadeOut();
 		} else {
@@ -157,7 +157,7 @@ background-repeat:no-repeat;
 #margin {
 	height:350px !important;
 }
-@media only screen and (max-width : 420px) {	
+@media only screen and (max-width : 420px) {
 .suggestionsBox {
 	width:100%;
 }
@@ -173,8 +173,8 @@ background-repeat:no-repeat;
 <body>
 <div class="col-xs-12 top-bg">
 	<div class="container">
-        
-        <div style="float:left" >	
+
+        <div style="float:left" >
                     <ul class="list-inline">
                             <li class="fb">
                                 <a href="https://www.facebook.com/pages/Property-Wing/707165226009503?ref=hl" class="btn-social btn-outline social-clor"><i class="fa fa-fw fa-facebook"></i></a>
@@ -190,15 +190,15 @@ background-repeat:no-repeat;
                             </li>-->
                         </ul>
                  </div>
-        
-        
-        
+
+
+
         <div style="float:right">
-                                
-                              
-            
-            
-             
+
+
+
+
+
                  <a href="login.php" class="top-icon colr"><span class="lang-icon"><img src="images/user-ico.png" alt="User" /></span>Log in/Register</a>
                             </div>
      </div>
@@ -207,10 +207,10 @@ background-repeat:no-repeat;
 
 <div class="container">
 <a class="logo" href="index.php"><img src="images/logo.png" alt="logo"/></a>
-			
+
      <nav class="navbar navbar-default menu">
             <div class="container-fluid">
-              
+
               <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                   <span class="sr-only">Toggle navigation</span>
@@ -218,35 +218,35 @@ background-repeat:no-repeat;
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </button>
-                
+
               </div>
               <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                    <li class="active"><a href="index.php">Home</a></li>
                   <li><a href="add-property.php">Add a property</a></li>
                   <li><a href="myaccount.php">My Account</a></li>
-                  
+
                   <li><a href="mysettings.php">Services</a></li>
                   <li><a href="sale-board.php">For sale boards</a></li>
                   <li><a href="continuesearch.php">Search</a></li>
-                 
+
                 </ul>
               </div><!--/.nav-collapse -->
             </div><!--/.container-fluid -->
           </nav>
 </div>
 
- <?php if(($_SERVER['REQUEST_URI'] == '/index.php') || ($_SERVER['REQUEST_URI'] == '/myaccount.php') || ($_SERVER['REQUEST_URI'] == '') || ($_SERVER['REQUEST_URI'] == '/'))  : ?>
+ <?php if(($_SERVER['REQUEST_URI'] == '/index.php') || ($_SERVER['REQUEST_URI'] == '/latest/index.php') || ($_SERVER['REQUEST_URI'] == '/myaccount.php') || ($_SERVER['REQUEST_URI'] == '') || ($_SERVER['REQUEST_URI'] == '/'))  : ?>
 
 
 <div class=" position-relative" style="overflow:visible !important; background-image:url(images/slider.png); background-position:center; background-repeat:no-repeat; background-size:cover; overflow:auto">
-     
-     
-   
+
+
+
     <div id="margin"></div>
-<div class="sell-box">The new way to sell your home</div>    
+<div class="sell-box">The new way to sell your home</div>
     <div style="overflow:visible !important" class="s-box">Start Searching for your new Home<p>Search By town / Postcode</p>
-    	
+
         <form  class="navbar-form nopadding" role="search" methos="GET" action="continuesearch.php">
                 <div id="suggest">
                     <input type="text" class="form-control b-search " onkeyup="suggest(this.value);" onblur="fill();" placeholder="Type postcode or town and Select from the below suggestions to Search" id="whattosearch" autocomplete="off" name="whattosearch" required>
@@ -254,13 +254,13 @@ background-repeat:no-repeat;
         <div class="suggestionList" id="suggestionsList"> &nbsp; </div></div>
         </div>
                         <button style="font-family:Arial, Helvetica, sans-serif;" class="btn search-btn" type="submit">Search</button>
-                  
-               
+
+
             </form>
         <div class="col-sm-7 pull-right margin-top-5"><p style="font-family:Arial, Helvetica, sans-serif;"><a href="add-property.php" >Add Your Property</a> - Its -FREE!</p></div>
         <div style="clear:both;"></div>
     </div>
-    
+
     <div class=" round-box img-circle text-center  hidden-xs">
     <img src="images/getstarted.png" class="img-responsive">
 </div>
@@ -271,13 +271,13 @@ background-repeat:no-repeat;
      <script src="js/vendor/jquery-1.11.0.min.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
-	  
-		  <?php	
+
+		  <?php
 		  if (isset($_GET['msg'])) {
 		  echo "<div class=\"error\">$_GET[msg]</div>";
 		  }
-			  
+
 		  ?>
-		  
+
 
 <?php endif; ?>
