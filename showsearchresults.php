@@ -290,7 +290,7 @@ echo '
       <div id="suggest">
         <label for="InputName">Location : <?php echo $searchfor ?> </label>
 
-        <input type="text" style="background-color:#FFFFFF !important;" class="double form-control input-border" id="locationIdentifier" name="locationIdentifier"  value="<?php echo $locationsfull ?>" />
+        <input type="text" style="background-color:#FFFFFF !important;" class="double form-control input-border" id="locationIdentifier" name="locationIdentifier"  value="<?php echo $searchfor ?>" />
         </div>
       </div>
           <div class="col-sm-6 selectContainer">
