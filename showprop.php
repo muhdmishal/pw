@@ -789,7 +789,7 @@ $imgStat = '';
 		z-index:9999 !important;
       }
     </style>
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&language=en"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDup-23CPNjYbS7m2rHU9h7iqkn5KDqbiM&v=3.exp&sensor=false&language=en"></script>
     <script>
 
 		function initialize() {
@@ -841,7 +841,7 @@ var bryantPark = new google.maps.LatLng('<?php echo $lat ?>', '<?php echo $lng ?
 function loadScript() {
       var script = document.createElement("script");
       script.type = "text/javascript";
-      script.src = "https://maps.googleapis.com/maps/api/js?sensor=false&callback=initialize";
+      script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDup-23CPNjYbS7m2rHU9h7iqkn5KDqbiM&sensor=false&callback=initialize";
       document.body.appendChild(script);
     }
 

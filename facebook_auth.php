@@ -31,7 +31,8 @@ $token_url = "https://graph.facebook.com/oauth/access_token?"
 	$response = @file_get_contents($token_url);
 	$params = null;
 	parse_str($response, $params);
-echo "token" . $params['access_token'];
+echo "token";
+print_r($response);
 die();
 	$graph_url = "https://graph.facebook.com/me?access_token=".$params['access_token'];
 
