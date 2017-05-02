@@ -60,11 +60,12 @@ else{
 	   $searchfor = '';
 		if (isset($_GET['locationIdentifier'] ))
 		{
-
 			$searchfor = $_GET['locationIdentifier'];
       $searchfor = str_replace(" ","",$searchfor);
 			$locations = $dbc->getPostcode($searchfor) ;
 			$locationIdentifier = $locations[0];
+      echo "test:" . $locationIdentifier;
+      die();
 		}
  		else
     {
