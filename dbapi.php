@@ -895,7 +895,7 @@ THIS IS AN AUTOMATED RESPONSE.
 			}
 		}
 echo "test:";
-print_r($array);
+print_r($sql);
 die();
 		return $array;
 
