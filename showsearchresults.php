@@ -65,6 +65,7 @@ else{
 			$locations = $dbc->getPostcode($searchfor) ;
 			// commented by me . $locationIdentifier = $locations[0];
       $locationIdentifier = $searchfor;
+      $postcode = $result = substr($searchfor, 0, 2);
 		}
  		else
     {
