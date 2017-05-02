@@ -12,14 +12,14 @@ $my_url = "http://www.propertywing.co.uk/latest/facebook_auth.php";
 $dbc = new DBAPI();
 
 
-// if(empty($code)) {
-// 	$_SESSION['state'] = md5(uniqid(rand(), TRUE)); //CSRF protection
-// 	$dialog_url = "https://www.facebook.com/dialog/oauth?client_id="
-// 	. $app_id . "&redirect_uri=" . urlencode($my_url) . "&state="
-// 	. $_SESSION['state'];
-//
-// 	echo("<script> top.location.href='" . $dialog_url . "'</script>");
-// }
+if(empty($code)) {
+	$_SESSION['state'] = md5(uniqid(rand(), TRUE)); //CSRF protection
+	$dialog_url = "https://www.facebook.com/dialog/oauth?client_id="
+	. $app_id . "&redirect_uri=" . urlencode($my_url) . "&state="
+	. $_SESSION['state'];
+
+	echo("<script> top.location.href='" . $dialog_url . "'</script>");
+}
 
 $token_url = "https://graph.facebook.com/oauth/access_token?"
 	. "client_id=" . $app_id . "&redirect_uri=" . urlencode($my_url)

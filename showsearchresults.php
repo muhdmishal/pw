@@ -128,12 +128,12 @@ else{
 			}
 			else
 			{
-				$milesRange = 0.1;
+				$milesRange = 0;
 			}
 		}
 		else
 		{
-			$milesRange = 40;
+			$milesRange = 0;
 		}
 
 
