@@ -55,12 +55,12 @@ $obj = json_decode($result);
 	if ($dbuser ) {
 
 	   // this sets variables in the session
-		$_SESSION['user_id']= $dbuser['id'];
+		$_SESSION['user_id']= $dbuser['user_id'];
 		$_SESSION['user_name'] = $dbuser['full_name'];
-		$_SESSION['user_level'] = $dbuser['user_level'];
+		$_SESSION['user_level'] = $dbuser['admin'];
 		$_SESSION['HTTP_USER_AGENT'] = md5($_SERVER['HTTP_USER_AGENT']);
 
-		$idr = $dbuser['id'];
+		$idr = $dbuser['user_id'];
 		//update the timestamp and key for cookie
 		$stamp = time();
 		$ckey = GenKey();
