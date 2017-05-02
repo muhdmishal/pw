@@ -894,9 +894,6 @@ THIS IS AN AUTOMATED RESPONSE.
 				$array[] = $row['postcode'];
 			}
 		}
-echo "test:";
-print_r($sql);
-die();
 		return $array;
 
 	}
