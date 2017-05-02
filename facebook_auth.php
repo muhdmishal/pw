@@ -36,13 +36,9 @@ curl_close($ch);
 $obj = json_decode($result);
 echo $obj->access_token;
 
-  echo "sdf";
-  echo "<pre>";
-  print_r($obj);
-  die();
-	$params = null;
-	parse_str($response, $params);
-	$graph_url = "https://graph.facebook.com/me?access_token=".$params['access_token'];
+	// $params = null;
+	// parse_str($response, $params);
+	$graph_url = "https://graph.facebook.com/me?access_token=".$obj->access_token;
 
 	$user = json_decode(file_get_contents($graph_url));
 
