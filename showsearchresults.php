@@ -147,7 +147,7 @@ else{
 		}
 		//search for distance
 		$propsInRange = array();
-    echo "test1";
+    echo "test1" . $locationIdentifier . "loc";
 		if($locationIdentifier != '')
 		foreach ($allprops as $row ){
 echo "test2";
