@@ -24,8 +24,13 @@ if(empty($code)) {
 $token_url = "https://graph.facebook.com/oauth/access_token?"
 	. "client_id=" . $app_id . "&redirect_uri=" . urlencode($my_url)
 	. "&client_secret=" . $app_secret . "&code=" . $code . "&scope=publish_stream,email";
-
+  echo $token_url;
+  die();
 	$response = file_get_contents($token_url);
+  echo "sdf";
+  echo "<pre>";
+  print_r($response);
+  die();
 	$params = null;
 	parse_str($response, $params);
 	$graph_url = "https://graph.facebook.com/me?access_token=".$params['access_token'];
