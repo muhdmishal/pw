@@ -78,7 +78,7 @@ $rs_settings = mysqli_query($link,"select * from users where user_id='$_SESSION[
 
 		$type = $_POST['houseTypeID'];
 
-		$postCode = $_POST['housePCode'];
+		$postCode = str_replace(" ","",$_POST['housePCode']);
 
 		$street = $_POST['houseStreet'];
 
@@ -532,6 +532,7 @@ echo'
 
         if (searchPostalCode == "") {
           alert("No post code for the selected address. Please try another");
+          input.value = "";
         }
         else {
           input.value = searchPostalCode;
