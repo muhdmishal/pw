@@ -117,7 +117,7 @@ else{
 		if ($postcode != '')
 			$sqlSearch .= " AND `postcode` = '$postcode' " ;
 
-      $sqlSearch .= " DESC" ;
+      $sqlSearch .= " ORDER BY `property_id` DESC " ;
 
 		$results = $dbc->searchProperties($sqlSearch) ;
 
