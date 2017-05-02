@@ -34,8 +34,6 @@ $result = curl_exec($ch);
 curl_close($ch);
 
 $obj = json_decode($result);
-echo $obj->access_token;
-
 	// $params = null;
 	// parse_str($response, $params);
 	$graph_url = "https://graph.facebook.com/me?access_token=".$obj->access_token;
