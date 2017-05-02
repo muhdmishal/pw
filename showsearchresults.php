@@ -67,13 +67,11 @@ else{
 			$locationIdentifier = $locations[0];
 		}
  		else
-			$locationIdentifier = '';
+    {
+      $locationIdentifier = '';
 
-
-
-
-
-		$locations = array();
+		  $locations = array();
+    }
 
  		if ($searchfor != ''){
 
