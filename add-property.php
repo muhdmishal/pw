@@ -95,7 +95,7 @@ $rs_settings = mysqli_query($link,"select * from users where user_id='$_SESSION[
 		$gardenSize = $_POST['houseGardenSize'];
 
 		$description = $_POST['houseDesc'];
-		$status = $_POST['status'];
+		$status = $_POST['propertyStatus'];
 
 
 
