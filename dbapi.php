@@ -1031,6 +1031,7 @@ function isPropertyInRange($fixed  , $myadd  , $distanceRange ){
 	$f = fopen('dist.txt' , 'a');
 	fwrite($f , $distance .PHP_EOL);
 	fclose($f);
+  echo "distance:" . $distance;
 	if ($distance <= $distanceRange )
 		return true ;
 
