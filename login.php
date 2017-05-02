@@ -171,7 +171,7 @@ include 'includes/headerindex.php';
                 </p>
                 <br />
 				<p>
-					 <a href="https://www.facebook.com/dialog/oauth?client_id=831669323513345&redirect_uri=http://www.propertywing.co.uk/new/facebook_auth.php&scope=publish_stream,email" title="Sign In with Facebook"><img src="images/facebook-login.png" style="width:200px;"></a> <br />
+					 <a href="https://www.facebook.com/dialog/oauth?client_id=831669323513345&redirect_uri=http://www.propertywing.co.uk/latest/facebook_auth.php&scope=publish_stream,email" title="Sign In with Facebook"><img src="images/facebook-login.png" style="width:200px;"></a> <br />
 				</p>
                 <br />
                 <p> <a style="color:#333333" href="forgot.php">Forgot Password</a> <font color="#FF6600">
