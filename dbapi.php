@@ -1018,8 +1018,6 @@ function getLatLong($address) {
 	$geoloc = curl_exec($ch);
 
 	$json = json_decode($geoloc);
-
-  echo "google responce". $json->results[0]->geometry->location->lat ."test". $json->results[0]->geometry->location->lng; die();
 	return array($json->results[0]->geometry->location->lat, $json->results[0]->geometry->location->lng);
 
 }
