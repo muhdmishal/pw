@@ -302,7 +302,7 @@ function updatePropertyFromDatabase($prop){
 		}
 
 		function loadProperty($propId){
-			$sql = "SELECT * FROM `property` WHERE `property_id`='$propId' AND `status` != 5" ;
+			$sql = "SELECT * FROM `property` WHERE `property_id`='$propId' AND `status` != 5 DESC" ;
 
 		//	echo '<br>'.$sql.'<br>' ;
 
