@@ -116,7 +116,7 @@ else{
 			$sqlSearch .= " AND `type`='".$type."'";
 
 		if ($postcode != '')
-			$sqlSearch .= " AND `postcode` = LIKE '%{$postcode}%' " ;
+			$sqlSearch .= " AND `postcode` LIKE '%{$postcode}%' " ;
 
       $sqlSearch .= " ORDER BY `property_id` DESC " ;
 
