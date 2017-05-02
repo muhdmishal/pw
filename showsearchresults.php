@@ -119,9 +119,6 @@ else{
 
 		$results = $dbc->searchProperties($sqlSearch) ;
 
-echo "<pre>";
-print_r($results);
-die();
 		if(isset($_GET['radius']))
 		{
 			if($_GET['radius'] != 0.0)
@@ -145,7 +142,10 @@ die();
 			echo "No results ! " ;
 		else
 		{
+      echo "<pre>";
 		 	while ($row = $results->fetch_assoc())
+      print_r($row);
+      die();
 		 	$allprops[] = $row ;
 		}
 		//search for distance
