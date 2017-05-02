@@ -142,16 +142,16 @@ else{
 			echo "No results ! " ;
 		else
 		{
-      echo "<pre>";
 		 	while ($row = $results->fetch_assoc())
-      print_r($row);
-      die();
 		 	$allprops[] = $row ;
 		}
 		//search for distance
 		$propsInRange = array();
 		if($locationIdentifier != '')
 		foreach ($allprops as $row ){
+      echo "locationIdentifier";
+      print_r($row);
+      die();
 
 			if ($dbc->isPropertyInRange($locationIdentifier ,$row['postcode'] , $milesRange))
 				$propsInRange[] = $row ;
