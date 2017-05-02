@@ -149,9 +149,6 @@ else{
 		$propsInRange = array();
 		if($locationIdentifier != '')
 		foreach ($allprops as $row ){
-      echo "locationIdentifier";
-      print_r($row);
-      die();
 
 			if ($dbc->isPropertyInRange($locationIdentifier ,$row['postcode'] , $milesRange))
 				$propsInRange[] = $row ;
