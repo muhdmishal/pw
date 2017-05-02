@@ -2,8 +2,8 @@
 session_start();
 
 
-require_once './dbapi.php' ;
-require_once './dbc.php' ;
+require_once 'dbapi.php' ;
+require_once 'dbc.php' ;
 
 $code = $_GET['code'];
 
@@ -91,6 +91,4 @@ $token_url = "https://graph.facebook.com/oauth/access_token?"
 
 		header("Location: myaccount.php");
 	}
-
-
  ?>
