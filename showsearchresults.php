@@ -63,7 +63,8 @@ else{
 			$searchfor = $_GET['locationIdentifier'];
       $searchfor = str_replace(" ","",$searchfor);
 			$locations = $dbc->getPostcode($searchfor) ;
-			$locationIdentifier = $locations[0];
+			// commented by me . $locationIdentifier = $locations[0];
+      $locationIdentifier = $searchfor;
 		}
  		else
     {
@@ -147,10 +148,8 @@ else{
 		}
 		//search for distance
 		$propsInRange = array();
-    echo "test1" . $locationIdentifier . "loc";
 		if($locationIdentifier != '')
 		foreach ($allprops as $row ){
-echo "test2";
 			if ($dbc->isPropertyInRange($locationIdentifier ,$row['postcode'] , $milesRange))
 				$propsInRange[] = $row ;
 
