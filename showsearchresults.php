@@ -64,8 +64,6 @@ else{
       $searchfor = str_replace(" ","",$searchfor);
 			$locations = $dbc->getPostcode($searchfor) ;
 			$locationIdentifier = $locations[0];
-      echo "test:" . $locationIdentifier;
-      die();
 		}
  		else
     {
@@ -115,8 +113,8 @@ else{
 		if ($type != '')
 			$sqlSearch .= " AND `type`='".$type."'";
 
-		if ($postcode != '')
-			$sqlSearch .= " AND `postcode` = '$postcode' " ;
+		if ($locationIdentifier != '')
+			$sqlSearch .= " AND `postcode` = '$locationIdentifier' " ;
 
 
 		$results = $dbc->searchProperties($sqlSearch) ;
