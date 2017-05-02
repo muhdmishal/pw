@@ -45,11 +45,13 @@ $obj = json_decode($result);
 	$email = $user->email;
 	$fbidd = $user->id;
 	$uName = $user->name ;
-echo "Email" . $email;
-die();
+
 	$dbuser = $dbc->getUserByEmail($email , $fbidd) ;
 
+  echo "Email1 " . $email;
 
+  print_r($dbuser);
+  die();
 	if ($dbuser ) {
 
 	   // this sets variables in the session
