@@ -113,8 +113,8 @@ else{
 		if ($type != '')
 			$sqlSearch .= " AND `type`='".$type."'";
 
-		if ($locationIdentifier != '')
-			$sqlSearch .= " AND `postcode` = '$locationIdentifier' " ;
+		if ($searchfor != '')
+			$sqlSearch .= " AND `postcode` = '$searchfor' " ;
 
 
 		$results = $dbc->searchProperties($sqlSearch) ;
