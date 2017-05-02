@@ -683,7 +683,7 @@ $imgStat = '';
       <div id="suggest">
         <label for="InputName">Location : <?php echo $searchfor ?> </label>
 
-        <input type="text" style="background-color:#FFFFFF !important;" class="double form-control input-border" id="locationIdentifier" name="locationIdentifier"  onkeyup="suggest(this.value);" onblur="fill();" value="<?php echo $locationsfull ?>" />
+        <input type="text" style="background-color:#FFFFFF !important;" class="double form-control input-border" id="locationIdentifier" name="locationIdentifier" value="<?php echo $locationsfull ?>" />
          <div class="suggestionsBox" id="suggestions" style="display: none;"> <img src="images/arrow1.png" style="position: relative; top: -12px; left: 30px;" alt="upArrow" />
         <div class="suggestionList" id="suggestionsList"> &nbsp; </div></div>
         </div>
@@ -769,6 +769,53 @@ $imgStat = '';
   </div>
 
 </div>
+<script>
+  // This example requires the Places library. Include the libraries=places
+  // parameter when you first load the API. For example:
+  // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+  function initMap() {
+    var input = document.getElementById('locationIdentifier');
+
+    var autocomplete = new google.maps.places.Autocomplete(input);
+
+    autocomplete.addListener('place_changed', function() {
+      var place = autocomplete.getPlace();
+      if (!place.geometry) {
+        // User entered the name of a Place that was not suggested and
+        // pressed the Enter key, or the Place Details request failed.
+        window.alert("No details available for input: '" + place.name + "'");
+        return;
+      }
+      var address = '';
+      if (place.address_components) {
+        address = [
+          (place.address_components[0] && place.address_components[0].short_name || ''),
+          (place.address_components[1] && place.address_components[1].short_name || ''),
+          (place.address_components[2] && place.address_components[2].short_name || '')
+        ].join(' ');
+
+        var address_zip = place.address_components;
+        var searchPostalCode = "";
+        $.each(address_zip, function(){
+            if(this.types[0]=="postal_code"){
+                searchPostalCode=this.short_name;
+            }
+        });
+
+        if (searchPostalCode == "") {
+          alert("No post code for the selected address. Please try another");
+        }
+        else {
+          input.value = searchPostalCode;
+        }
+      }
+    });
+
+  }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgVTxbNiWLoE9N8qQuogD-VIBvcRVWm2s&libraries=places&callback=initMap"
+    async defer></script>
 <style>
       html, body, #map-canvas {
         height: 400px;
