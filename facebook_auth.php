@@ -46,6 +46,7 @@ $obj = json_decode($result);
 	$fbidd = $user->id;
 	$uName = $user->name ;
 echo "Email" . $email;
+die();
 	$dbuser = $dbc->getUserByEmail($email , $fbidd) ;
 
 
