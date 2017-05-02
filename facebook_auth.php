@@ -25,7 +25,7 @@ $token_url = "https://graph.facebook.com/oauth/access_token?"
 	. "client_id=" . $app_id . "&redirect_uri=" . urlencode($my_url)
 	. "&client_secret=" . $app_secret . "&code=" . $code . "&scope=publish_stream,email";
 
-	$response = @file_get_contents($token_url);
+	$response = file_get_contents($token_url);
 	$params = null;
 	parse_str($response, $params);
 	$graph_url = "https://graph.facebook.com/me?access_token=".$params['access_token'];
