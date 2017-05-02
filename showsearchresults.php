@@ -127,12 +127,12 @@ else{
 			}
 			else
 			{
-				$milesRange = 999999;
+				$milesRange = 40;
 			}
 		}
 		else
 		{
-			$milesRange = 999999;
+			$milesRange = 40;
 		}
 
 
@@ -147,9 +147,10 @@ else{
 		}
 		//search for distance
 		$propsInRange = array();
+    echo "test1";
 		if($locationIdentifier != '')
 		foreach ($allprops as $row ){
-
+echo "test2";
 			if ($dbc->isPropertyInRange($locationIdentifier ,$row['postcode'] , $milesRange))
 				$propsInRange[] = $row ;
 
