@@ -113,13 +113,15 @@ else{
 		if ($type != '')
 			$sqlSearch .= " AND `type`='".$type."'";
 
-		if ($searchfor != '')
-			$sqlSearch .= " AND `postcode` = '$searchfor' " ;
+		if ($postcode != '')
+			$sqlSearch .= " AND `postcode` = '$postcode' " ;
 
 
 		$results = $dbc->searchProperties($sqlSearch) ;
 
-
+echo "<pre>";
+print_r($results);
+die();
 		if(isset($_GET['radius']))
 		{
 			if($_GET['radius'] != 0.0)
