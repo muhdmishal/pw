@@ -64,7 +64,8 @@ else{
 			$searchfor = $_GET['locationIdentifier'];
 			$locations = $dbc->getPostcode($searchfor) ;
 			$locationIdentifier = $locations[0];
-      echo "lc:". $locationIdentifier;
+      echo "searchfor:". $searchfor;
+      echo "lc:" . $locationIdentifier;
       die();
 		}
  		else
