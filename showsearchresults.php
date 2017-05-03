@@ -289,17 +289,17 @@ echo '
           <div class="col-sm-6 selectContainer">
             <label for="radius">Search Radius</label>
             <select id="radius" name="radius" class="double form-control input-border">
-              <option value="0.0" selected="selected">This area only</option>
-              <option value="0.25">Within &frac14; mile</option>
-              <option value="0.5">Within &frac12; mile</option>
-              <option value="1.0">Within 1 mile</option>
-              <option value="3.0">Within 3 miles</option>
-              <option value="5.0">Within 5 miles</option>
-              <option value="10.0">Within 10 miles</option>
-              <option value="15.0">Within 15 miles</option>
-              <option value="20.0">Within 20 miles</option>
-              <option value="30.0">Within 30 miles</option>
-              <option value="40.0">Within 40 miles</option>
+              <option value="0.0" <?php if ($milesRange == 0) echo 'selected' ; ?> >This area only</option>
+              <option value="0.25" <?php if ($milesRange == 0.25) echo 'selected' ; ?>>Within &frac14; mile</option>
+              <option value="0.5" <?php if ($milesRange == 0.5) echo 'selected' ; ?>>Within &frac12; mile</option>
+              <option value="1.0" <?php if ($milesRange == 1) echo 'selected' ; ?>>Within 1 mile</option>
+              <option value="3.0" <?php if ($milesRange == 3) echo 'selected' ; ?>>Within 3 miles</option>
+              <option value="5.0" <?php if ($milesRange == 5) echo 'selected' ; ?>>Within 5 miles</option>
+              <option value="10.0" <?php if ($milesRange == 10) echo 'selected' ; ?>>Within 10 miles</option>
+              <option value="15.0" <?php if ($milesRange == 15) echo 'selected' ; ?>>Within 15 miles</option>
+              <option value="20.0" <?php if ($milesRange == 20) echo 'selected' ; ?>>Within 20 miles</option>
+              <option value="30.0" <?php if ($milesRange == 30) echo 'selected' ; ?>>Within 30 miles</option>
+              <option value="40.0" <?php if ($milesRange == 40) echo 'selected' ; ?>>Within 40 miles</option>
             </select>
           </div>
           <div class="col-sm-6 selectContainer">
