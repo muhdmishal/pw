@@ -132,38 +132,20 @@ else{
     if($dbc->postcodeExist($searchfor)) {
       $searchforarray = $dbc->getPostcodeLatLng($searchfor);
       $postcodes = $dbc->getNearPostcodes($searchforarray, $milesRange) ;
-
-      echo "<pre>";
-      print_r($postcodes);
     }
 			$sqlSearch .= " AND `postcode` IN ('".implode("','",$postcodes)."') " ;
 
       $sqlSearch .= " ORDER BY `property_id` DESC " ;
 
-echo $sqlSearch;
 		$results = $dbc->searchProperties($sqlSearch) ;
 
 
-
 		//get all properties
-		 $allprops = array();
-		 if ($results == 0 )
-			echo "No results ! " ;
-		else
-		{
-		 	while ($row = $results->fetch_assoc())
-		 	$allprops[] = $row ;
-		}
-		//search for distance
-		$propsInRange = array();
-		if($locationIdentifier != '')
-		foreach ($allprops as $row ){
-			if ($dbc->isPropertyInRange($locationIdentifier ,$row['postcode'] , $milesRange))
-				$propsInRange[] = $row ;
+		$allprops = array();
+	 	while ($row = $results->fetch_assoc())
+	 	$allprops[] = $row ;
 
-		}
-		else
-			$propsInRange = $allprops;
+		$propsInRange = $allprops;
 
 		if (sizeof($propsInRange) == 0 )
 			echo "No results !";
