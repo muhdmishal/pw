@@ -305,15 +305,15 @@ echo '
           <div class="col-sm-6 selectContainer">
             <label for="houseTypeID">Type</label>
             <select id="houseTypeID" class="basic-grey form-control input-border" tabindex="3" name="houseTypeID" >
-              <option value="1">Detached House</option>
-              <option value="2">Semi-Detached</option>
-              <option value="3">Mid Terraced</option>
-              <option value="4">End Terraced</option>
-              <option value="5">Flat</option>
-              <option value="9">Studio Flat</option>
-              <option value="6">Cottage</option>
-              <option value="7">Bungalow</option>
-              <option value="10">Other</option>
+              <option value="1" <?php if ($type == 1) echo 'selected' ; ?>>Detached House</option>
+              <option value="2" <?php if ($type == 2) echo 'selected' ; ?>>Semi-Detached</option>
+              <option value="3" <?php if ($type == 3) echo 'selected' ; ?>>Mid Terraced</option>
+              <option value="4" <?php if ($type == 4) echo 'selected' ; ?>>End Terraced</option>
+              <option value="5" <?php if ($type == 5) echo 'selected' ; ?>>Flat</option>
+              <option value="9" <?php if ($type == 9) echo 'selected' ; ?>>Studio Flat</option>
+              <option value="6" <?php if ($type == 6) echo 'selected' ; ?>>Cottage</option>
+              <option value="7" <?php if ($type == 7) echo 'selected' ; ?>>Bungalow</option>
+              <option value="10" <?php if ($type == 10) echo 'selected' ; ?>>Other</option>
             </select>
           </div>
           <div class="col-sm-6 selectContainer">
