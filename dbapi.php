@@ -898,17 +898,34 @@ THIS IS AN AUTOMATED RESPONSE.
 
 	}
 
-  function getNearPostcodes($key){
-		$sql = "SELECT * FROM  `postcode`";
-
+  function getPostcodeLatLng($key){
+		$sql = "SELECT * FROM  `postcode` WHERE `postcode` = '$key'";
+    $array = [];
 		if ( ! ($res = $this->db->query($sql))){
 				echo "Errors in query ! ";
 				return false ;
 		}
-
 		while($row = $res->fetch_assoc())
 		{
-			$distance = $this->Haversine($row, $finish);
+			return array($row['lat'], $row['lng']);
+		}
+
+	}
+
+  function getNearPostcodes($keyarray, $milesRange){
+		$sql = "SELECT * FROM  `postcode`";
+    $array = [];
+		if ( ! ($res = $this->db->query($sql))){
+				echo "Errors in query ! ";
+				return false ;
+		}
+		while($row = $res->fetch_assoc())
+		{
+      $finish = [$row['lat'] , $row['lng']];
+			$distance = $this->Haversine($keyarray, $finish);
+      if ($distance <= $milesRange) {
+        $array[] =  $row['postcode'];
+      }
 		}
 		return $array;
 

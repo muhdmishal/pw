@@ -130,9 +130,12 @@ else{
 			$milesRange = 0;
 		}
     if($dbc->postcodeExist($searchfor)) {
-      echo "working";
+      $searchforarray = $dbc->getPostcodeLatLng($searchfor);
+      $postcodes = $dbc->getNearPostcodes($searchforarray, $milesRange) ;
+
+      echo "<pre>";
+      print_r($postcodes);
       die();
-      $postcodes = $dbc->getNearPostcodes($searchfor, $milesRange) ;
     }
 
 
