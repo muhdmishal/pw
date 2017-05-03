@@ -898,6 +898,35 @@ THIS IS AN AUTOMATED RESPONSE.
 
 	}
 
+  function getNearPostcodes($key){
+		$sql = "SELECT * FROM  `postcode`";
+
+		if ( ! ($res = $this->db->query($sql))){
+				echo "Errors in query ! ";
+				return false ;
+		}
+
+		while($row = $res->fetch_assoc())
+		{
+			$distance = $this->Haversine($row, $finish);
+		}
+		return $array;
+
+	}
+
+  function postcodeExist($key){
+		$sql = "SELECT * FROM  `postcode` WHERE `postcode` = '$key'";
+
+		if ( ! ($res = $this->db->query($sql))){
+				echo "Errors in query ! ";
+				return false ;
+		}
+    if ($res->num_rows > 0) {
+      return true;
+    }
+		return false;
+	}
+
 
 		function getLocationsFull($key){
 		$sql = "SELECT * from `property` WHERE `town` LIKE '%{$key}%' OR `country` LIKE '%{$key}%' OR `postcode` LIKE '%{$key}%' OR `address2` LIKE '%{$key}%' OR `street` LIKE '%{$key}%'";
@@ -1018,11 +1047,6 @@ function getLatLong($address) {
 	$geoloc = curl_exec($ch);
 
 	$json = json_decode($geoloc);
-
-  echo "url" . $url;
-  echo "lat" . $json->results[0]->geometry->location->lat;
-  echo "lng" . $json->results[0]->geometry->location->lng;
-echo "<br />";
 	return array($json->results[0]->geometry->location->lat, $json->results[0]->geometry->location->lng);
 
 }

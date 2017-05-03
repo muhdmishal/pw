@@ -65,7 +65,6 @@ else{
 			$locations = $dbc->getPostcode($searchfor) ;
 			// commented by me . $locationIdentifier = $locations[0];
       $locationIdentifier = $searchfor;
-      //$postcode = $result = substr($searchfor, 0, 2);
 		}
  		else
     {
@@ -115,14 +114,7 @@ else{
 		if ($type != '')
 			$sqlSearch .= " AND `type`='".$type."'";
 
-		if ($postcode != '')
-			$sqlSearch .= " AND `postcode` LIKE '%{$postcode}%' " ;
-
-      $sqlSearch .= " ORDER BY `property_id` DESC " ;
-
-		$results = $dbc->searchProperties($sqlSearch) ;
-
-		if(isset($_GET['radius']))
+    if(isset($_GET['radius']))
 		{
 			if($_GET['radius'] != 0.0)
 			{
@@ -137,6 +129,20 @@ else{
 		{
 			$milesRange = 0;
 		}
+    if($dbc->postcodeExist($searchfor)) {
+      echo "working";
+      die();
+      $postcodes = $dbc->getNearPostcodes($searchfor, $milesRange) ;
+    }
+
+
+		if ($postcode != '')
+			$sqlSearch .= " AND `postcode` LIKE '%{$postcode}%' " ;
+
+      $sqlSearch .= " ORDER BY `property_id` DESC " ;
+
+		$results = $dbc->searchProperties($sqlSearch) ;
+
 
 
 		//get all properties
