@@ -78,13 +78,13 @@ else{
 			$locations = $dbc->getPostcode($searchfor) ;
 		}
 
-	   if ( isset($_GET['priceMin']) && !empty($_GET['priceMin']))
-	   		$priceMin = $_GET['priceMin'];
+	   if ( isset($_GET['minPrice']) && !empty($_GET['minPrice']))
+	   		$priceMin = $_GET['minPrice'];
 		else
 			$priceMin =  0 ;
 
-	   if (isset($_GET['priceTo']) && !empty($_GET['priceTo']))
-	   		$priceTo = $_GET['priceTo'];
+	   if (isset($_GET['maxPrice']) && !empty($_GET['maxPrice']))
+	   		$priceTo = $_GET['maxPrice'];
 		else
 			$priceTo =  999999999999  ;
 
@@ -319,62 +319,62 @@ echo '
           <div class="col-sm-6 selectContainer">
             <label for="minPrice">Price &pound;</label>
             <select id="minPrice" name="minPrice" class="double form-control input-border">
-              <option value="" selected="selected">No min</option>
-              <option value="50000">50,000</option>
-              <option value="60000">60,000</option>
-              <option value="70000">70,000</option>
-              <option value="80000">80,000</option>
-              <option value="90000">90,000</option>
-              <option value="100000">100,000</option>
-              <option value="110000">110,000</option>
-              <option value="120000">120,000</option>
-              <option value="125000">125,000</option>
-              <option value="130000">130,000</option>
-              <option value="140000">140,000</option>
-              <option value="150000">150,000</option>
-              <option value="160000">160,000</option>
-              <option value="170000">170,000</option>
-              <option value="175000">175,000</option>
-              <option value="180000">180,000</option>
-              <option value="190000">190,000</option>
-              <option value="200000">200,000</option>
-              <option value="210000">210,000</option>
-              <option value="220000">220,000</option>
-              <option value="230000">230,000</option>
-              <option value="240000">240,000</option>
-              <option value="250000">250,000</option>
-              <option value="260000">260,000</option>
-              <option value="270000">270,000</option>
-              <option value="280000">280,000</option>
-              <option value="290000">290,000</option>
-              <option value="300000">300,000</option>
-              <option value="325000">325,000</option>
-              <option value="350000">350,000</option>
-              <option value="375000">375,000</option>
-              <option value="400000">400,000</option>
-              <option value="425000">425,000</option>
-              <option value="450000">450,000</option>
-              <option value="475000">475,000</option>
-              <option value="500000">500,000</option>
-              <option value="550000">550,000</option>
-              <option value="600000">600,000</option>
-              <option value="650000">650,000</option>
-              <option value="700000">700,000</option>
-              <option value="800000">800,000</option>
-              <option value="900000">900,000</option>
-              <option value="1000000">1,000,000</option>
-              <option value="1250000">1,250,000</option>
-              <option value="1500000">1,500,000</option>
-              <option value="1750000">1,750,000</option>
-              <option value="2000000">2,000,000</option>
-              <option value="2500000">2,500,000</option>
-              <option value="3000000">3,000,000</option>
-              <option value="4000000">4,000,000</option>
-              <option value="5000000">5,000,000</option>
-              <option value="7500000">7,500,000</option>
-              <option value="10000000">10,000,000</option>
-              <option value="15000000">15,000,000</option>
-              <option value="20000000">20,000,000</option>
+              <option value="">No min</option>
+              <option value="50000" <?php if ($priceMin == 50000) echo 'selected' ; ?>>50,000</option>
+              <option value="60000" <?php if ($priceMin == 60000) echo 'selected' ; ?>>60,000</option>
+              <option value="70000" <?php if ($priceMin == 70000) echo 'selected' ; ?>>70,000</option>
+              <option value="80000" <?php if ($priceMin == 80000) echo 'selected' ; ?>>80,000</option>
+              <option value="90000" <?php if ($priceMin == 90000) echo 'selected' ; ?>>90,000</option>
+              <option value="100000" <?php if ($priceMin == 100000) echo 'selected' ; ?>>100,000</option>
+              <option value="110000" <?php if ($priceMin == 110000) echo 'selected' ; ?>>110,000</option>
+              <option value="120000" <?php if ($priceMin == 120000) echo 'selected' ; ?>>120,000</option>
+              <option value="125000" <?php if ($priceMin == 125000) echo 'selected' ; ?>>125,000</option>
+              <option value="130000" <?php if ($priceMin == 130000) echo 'selected' ; ?>>130,000</option>
+              <option value="140000" <?php if ($priceMin == 140000) echo 'selected' ; ?>>140,000</option>
+              <option value="150000" <?php if ($priceMin == 150000) echo 'selected' ; ?>>150,000</option>
+              <option value="160000" <?php if ($priceMin == 160000) echo 'selected' ; ?>>160,000</option>
+              <option value="170000" <?php if ($priceMin == 170000) echo 'selected' ; ?>>170,000</option>
+              <option value="175000" <?php if ($priceMin == 175000) echo 'selected' ; ?>>175,000</option>
+              <option value="180000" <?php if ($priceMin == 180000) echo 'selected' ; ?>>180,000</option>
+              <option value="190000" <?php if ($priceMin == 190000) echo 'selected' ; ?>>190,000</option>
+              <option value="200000" <?php if ($priceMin == 200000) echo 'selected' ; ?>>200,000</option>
+              <option value="210000" <?php if ($priceMin == 210000) echo 'selected' ; ?>>210,000</option>
+              <option value="220000" <?php if ($priceMin == 220000) echo 'selected' ; ?>>220,000</option>
+              <option value="230000" <?php if ($priceMin == 230000) echo 'selected' ; ?>>230,000</option>
+              <option value="240000" <?php if ($priceMin == 240000) echo 'selected' ; ?>>240,000</option>
+              <option value="250000" <?php if ($priceMin == 250000) echo 'selected' ; ?>>250,000</option>
+              <option value="260000" <?php if ($priceMin == 260000) echo 'selected' ; ?>>260,000</option>
+              <option value="270000" <?php if ($priceMin == 270000) echo 'selected' ; ?>>270,000</option>
+              <option value="280000" <?php if ($priceMin == 280000) echo 'selected' ; ?>>280,000</option>
+              <option value="290000" <?php if ($priceMin == 290000) echo 'selected' ; ?>>290,000</option>
+              <option value="300000" <?php if ($priceMin == 300000) echo 'selected' ; ?>>300,000</option>
+              <option value="325000" <?php if ($priceMin == 325000) echo 'selected' ; ?>>325,000</option>
+              <option value="350000" <?php if ($priceMin == 350000) echo 'selected' ; ?>>350,000</option>
+              <option value="375000" <?php if ($priceMin == 375000) echo 'selected' ; ?>>375,000</option>
+              <option value="400000" <?php if ($priceMin == 400000) echo 'selected' ; ?>>400,000</option>
+              <option value="425000" <?php if ($priceMin == 425000) echo 'selected' ; ?>>425,000</option>
+              <option value="450000" <?php if ($priceMin == 450000) echo 'selected' ; ?>>450,000</option>
+              <option value="475000" <?php if ($priceMin == 475000) echo 'selected' ; ?>>475,000</option>
+              <option value="500000" <?php if ($priceMin == 500000) echo 'selected' ; ?>>500,000</option>
+              <option value="550000" <?php if ($priceMin == 550000) echo 'selected' ; ?>>550,000</option>
+              <option value="600000" <?php if ($priceMin == 600000) echo 'selected' ; ?>>600,000</option>
+              <option value="650000" <?php if ($priceMin == 650000) echo 'selected' ; ?>>650,000</option>
+              <option value="700000" <?php if ($priceMin == 700000) echo 'selected' ; ?>>700,000</option>
+              <option value="800000" <?php if ($priceMin == 800000) echo 'selected' ; ?>>800,000</option>
+              <option value="900000" <?php if ($priceMin == 900000) echo 'selected' ; ?>>900,000</option>
+              <option value="1000000" <?php if ($priceMin == 1000000) echo 'selected' ; ?>>1,000,000</option>
+              <option value="1250000" <?php if ($priceMin == 1250000) echo 'selected' ; ?>>1,250,000</option>
+              <option value="1500000" <?php if ($priceMin == 1500000) echo 'selected' ; ?>>1,500,000</option>
+              <option value="1750000" <?php if ($priceMin == 1750000) echo 'selected' ; ?>>1,750,000</option>
+              <option value="2000000" <?php if ($priceMin == 2000000) echo 'selected' ; ?>>2,000,000</option>
+              <option value="2500000" <?php if ($priceMin == 2500000) echo 'selected' ; ?>>2,500,000</option>
+              <option value="3000000" <?php if ($priceMin == 3000000) echo 'selected' ; ?>>3,000,000</option>
+              <option value="4000000" <?php if ($priceMin == 4000000) echo 'selected' ; ?>>4,000,000</option>
+              <option value="5000000" <?php if ($priceMin == 5000000) echo 'selected' ; ?>>5,000,000</option>
+              <option value="7500000" <?php if ($priceMin == 7500000) echo 'selected' ; ?>>7,500,000</option>
+              <option value="10000000" <?php if ($priceMin == 10000000) echo 'selected' ; ?>>10,000,000</option>
+              <option value="15000000" <?php if ($priceMin == 15000000) echo 'selected' ; ?>>15,000,000</option>
+              <option value="20000000" <?php if ($priceMin == 20000000) echo 'selected' ; ?>>20,000,000</option>
               <option value="">No min</option>
             </select>
           </div>
@@ -382,61 +382,61 @@ echo '
             <label for="maxPrice">To</label>
             <select id="maxPrice" name="maxPrice" class="double form-control input-border">
               <option value="" selected="selected">No max</option>
-              <option value="50000">50,000</option>
-              <option value="60000">60,000</option>
-              <option value="70000">70,000</option>
-              <option value="80000">80,000</option>
-              <option value="90000">90,000</option>
-              <option value="100000">100,000</option>
-              <option value="110000">110,000</option>
-              <option value="120000">120,000</option>
-              <option value="125000">125,000</option>
-              <option value="130000">130,000</option>
-              <option value="140000">140,000</option>
-              <option value="150000">150,000</option>
-              <option value="160000">160,000</option>
-              <option value="170000">170,000</option>
-              <option value="175000">175,000</option>
-              <option value="180000">180,000</option>
-              <option value="190000">190,000</option>
-              <option value="200000">200,000</option>
-              <option value="210000">210,000</option>
-              <option value="220000">220,000</option>
-              <option value="230000">230,000</option>
-              <option value="240000">240,000</option>
-              <option value="250000">250,000</option>
-              <option value="260000">260,000</option>
-              <option value="270000">270,000</option>
-              <option value="280000">280,000</option>
-              <option value="290000">290,000</option>
-              <option value="300000">300,000</option>
-              <option value="325000">325,000</option>
-              <option value="350000">350,000</option>
-              <option value="375000">375,000</option>
-              <option value="400000">400,000</option>
-              <option value="425000">425,000</option>
-              <option value="450000">450,000</option>
-              <option value="475000">475,000</option>
-              <option value="500000">500,000</option>
-              <option value="550000">550,000</option>
-              <option value="600000">600,000</option>
-              <option value="650000">650,000</option>
-              <option value="700000">700,000</option>
-              <option value="800000">800,000</option>
-              <option value="900000">900,000</option>
-              <option value="1000000">1,000,000</option>
-              <option value="1250000">1,250,000</option>
-              <option value="1500000">1,500,000</option>
-              <option value="1750000">1,750,000</option>
-              <option value="2000000">2,000,000</option>
-              <option value="2500000">2,500,000</option>
-              <option value="3000000">3,000,000</option>
-              <option value="4000000">4,000,000</option>
-              <option value="5000000">5,000,000</option>
-              <option value="7500000">7,500,000</option>
-              <option value="10000000">10,000,000</option>
-              <option value="15000000">15,000,000</option>
-              <option value="20000000">20,000,000</option>
+              <option value="50000" <?php if ($priceTo == 50000) echo 'selected' ; ?>>50,000</option>
+              <option value="60000" <?php if ($priceTo == 60000) echo 'selected' ; ?>>60,000</option>
+              <option value="70000" <?php if ($priceTo == 70000) echo 'selected' ; ?>>70,000</option>
+              <option value="80000" <?php if ($priceTo == 80000) echo 'selected' ; ?>>80,000</option>
+              <option value="90000" <?php if ($priceTo == 90000) echo 'selected' ; ?>>90,000</option>
+              <option value="100000" <?php if ($priceTo == 100000) echo 'selected' ; ?>>100,000</option>
+              <option value="110000" <?php if ($priceTo == 110000) echo 'selected' ; ?>>110,000</option>
+              <option value="120000" <?php if ($priceTo == 120000) echo 'selected' ; ?>>120,000</option>
+              <option value="125000" <?php if ($priceTo == 125000) echo 'selected' ; ?>>125,000</option>
+              <option value="130000" <?php if ($priceTo == 130000) echo 'selected' ; ?>>130,000</option>
+              <option value="140000" <?php if ($priceTo == 140000) echo 'selected' ; ?>>140,000</option>
+              <option value="150000" <?php if ($priceTo == 150000) echo 'selected' ; ?>>150,000</option>
+              <option value="160000" <?php if ($priceTo == 160000) echo 'selected' ; ?>>160,000</option>
+              <option value="170000" <?php if ($priceTo == 170000) echo 'selected' ; ?>>170,000</option>
+              <option value="175000" <?php if ($priceTo == 175000) echo 'selected' ; ?>>175,000</option>
+              <option value="180000" <?php if ($priceTo == 180000) echo 'selected' ; ?>>180,000</option>
+              <option value="190000" <?php if ($priceTo == 190000) echo 'selected' ; ?>>190,000</option>
+              <option value="200000" <?php if ($priceTo == 200000) echo 'selected' ; ?>>200,000</option>
+              <option value="210000" <?php if ($priceTo == 210000) echo 'selected' ; ?>>210,000</option>
+              <option value="220000" <?php if ($priceTo == 220000) echo 'selected' ; ?>>220,000</option>
+              <option value="230000" <?php if ($priceTo == 230000) echo 'selected' ; ?>>230,000</option>
+              <option value="240000" <?php if ($priceTo == 240000) echo 'selected' ; ?>>240,000</option>
+              <option value="250000" <?php if ($priceTo == 250000) echo 'selected' ; ?>>250,000</option>
+              <option value="260000" <?php if ($priceTo == 260000) echo 'selected' ; ?>>260,000</option>
+              <option value="270000" <?php if ($priceTo == 270000) echo 'selected' ; ?>>270,000</option>
+              <option value="280000" <?php if ($priceTo == 280000) echo 'selected' ; ?>>280,000</option>
+              <option value="290000" <?php if ($priceTo == 290000) echo 'selected' ; ?>>290,000</option>
+              <option value="300000" <?php if ($priceTo == 300000) echo 'selected' ; ?>>300,000</option>
+              <option value="325000" <?php if ($priceTo == 325000) echo 'selected' ; ?>>325,000</option>
+              <option value="350000" <?php if ($priceTo == 350000) echo 'selected' ; ?>>350,000</option>
+              <option value="375000" <?php if ($priceTo == 375000) echo 'selected' ; ?>>375,000</option>
+              <option value="400000" <?php if ($priceTo == 400000) echo 'selected' ; ?>>400,000</option>
+              <option value="425000" <?php if ($priceTo == 425000) echo 'selected' ; ?>>425,000</option>
+              <option value="450000" <?php if ($priceTo == 450000) echo 'selected' ; ?>>450,000</option>
+              <option value="475000" <?php if ($priceTo == 475000) echo 'selected' ; ?>>475,000</option>
+              <option value="500000" <?php if ($priceTo == 500000) echo 'selected' ; ?>>500,000</option>
+              <option value="550000" <?php if ($priceTo == 550000) echo 'selected' ; ?>>550,000</option>
+              <option value="600000" <?php if ($priceTo == 600000) echo 'selected' ; ?>>600,000</option>
+              <option value="650000" <?php if ($priceTo == 650000) echo 'selected' ; ?>>650,000</option>
+              <option value="700000" <?php if ($priceTo == 700000) echo 'selected' ; ?>>700,000</option>
+              <option value="800000" <?php if ($priceTo == 800000) echo 'selected' ; ?>>800,000</option>
+              <option value="900000" <?php if ($priceTo == 900000) echo 'selected' ; ?>>900,000</option>
+              <option value="1000000" <?php if ($priceTo == 1000000) echo 'selected' ; ?>>1,000,000</option>
+              <option value="1250000" <?php if ($priceTo == 1250000) echo 'selected' ; ?>>1,250,000</option>
+              <option value="1500000" <?php if ($priceTo == 1500000) echo 'selected' ; ?>>1,500,000</option>
+              <option value="1750000" <?php if ($priceTo == 1750000) echo 'selected' ; ?>>1,750,000</option>
+              <option value="2000000" <?php if ($priceTo == 2000000) echo 'selected' ; ?>>2,000,000</option>
+              <option value="2500000" <?php if ($priceTo == 2500000) echo 'selected' ; ?>>2,500,000</option>
+              <option value="3000000" <?php if ($priceTo == 3000000) echo 'selected' ; ?>>3,000,000</option>
+              <option value="4000000" <?php if ($priceTo == 4000000) echo 'selected' ; ?>>4,000,000</option>
+              <option value="5000000" <?php if ($priceTo == 5000000) echo 'selected' ; ?>>5,000,000</option>
+              <option value="7500000" <?php if ($priceTo == 7500000) echo 'selected' ; ?>>7,500,000</option>
+              <option value="10000000" <?php if ($priceTo == 10000000) echo 'selected' ; ?>>10,000,000</option>
+              <option value="15000000" <?php if ($priceTo == 15000000) echo 'selected' ; ?>>15,000,000</option>
+              <option value="20000000" <?php if ($priceTo == 20000000) echo 'selected' ; ?>>20,000,000</option>
               <option value="">No max</option>
             </select>
           </div>
