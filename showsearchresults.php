@@ -142,8 +142,13 @@ else{
 
 		//get all properties
 		$allprops = array();
-	 	while ($row = $results->fetch_assoc())
-	 	$allprops[] = $row ;
+		if ($results == 0 )
+			echo "No results ! " ;
+		else
+		{
+		 	while ($row = $results->fetch_assoc())
+		 	$allprops[] = $row ;
+		}
 
 		$propsInRange = $allprops;
 
