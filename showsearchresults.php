@@ -87,8 +87,6 @@ else{
 	   		$priceTo = $_GET['maxPrice'];
 		else
 			$priceTo =  999999999999  ;
-echo $priceMin ."<br />";
-echo $priceTo ."<br />";
 
 	   if (isset($_GET['houseTypeID']) && !empty($_GET['houseTypeID']))
 	   		$type = $_GET['houseTypeID'];
@@ -553,21 +551,56 @@ function price(thisvalue)
 	if(thisvalue == 1)
 	{
 		string =  '<option value="" selected="selected">Select Price</option>';
+    priceMin = <?php echo $priceMin ?>
 		for(var i = 20000; i <= 1000000 ; i = i+5000)
 		{
-			string += '<option value="'+i+'" >'+i.toLocaleString()+'</option>';
+      if (priceMin == i) {
+        string += '<option value="'+i+'" checked >'+i.toLocaleString()+'</option>';
+      }
+      else {
+        string += '<option value="'+i+'" >'+i.toLocaleString()+'</option>';
+      }
 		}
 		$('#minPrice').html(string);
+
+    string =  '<option value="" selected="selected">Select Price</option>';
+    priceTo = <?php echo $priceTo ?>
+		for(var i = 20000; i <= 1000000 ; i = i+5000)
+		{
+      if (priceTo == i) {
+        string += '<option value="'+i+'" checked >'+i.toLocaleString()+'</option>';
+      }
+      else {
+        string += '<option value="'+i+'" >'+i.toLocaleString()+'</option>';
+      }
+		}
 		$('#maxPrice').html(string);
 	}
 	if(thisvalue == 2)
 	{
 		string =  '<option value="" selected="selected">Select Price</option>';
+    priceTo = <?php echo $priceTo ?>
 		for(var i = 100; i <= 2500 ; i = i+50)
 		{
-			string += '<option value="'+i+'" >'+i.toLocaleString()+'</option>';
+      if (priceTo == i) {
+        string += '<option value="'+i+'" checked >'+i.toLocaleString()+'</option>';
+      }
+      else {
+        string += '<option value="'+i+'" >'+i.toLocaleString()+'</option>';
+      }
 		}
 		$('#minPrice').html(string);
+    string =  '<option value="" selected="selected">Select Price</option>';
+    priceMin = <?php echo $priceMin ?>
+		for(var i = 100; i <= 2500 ; i = i+50)
+		{
+      if (priceMin == i) {
+        string += '<option value="'+i+'" checked >'+i.toLocaleString()+'</option>';
+      }
+      else {
+        string += '<option value="'+i+'" >'+i.toLocaleString()+'</option>';
+      }
+		}
 		$('#maxPrice').html(string);
 	}
 }
