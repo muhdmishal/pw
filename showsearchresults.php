@@ -445,24 +445,24 @@ echo '
             <label for="minBedrooms">Beds</label>
             <select id="minBedrooms" name="minBedrooms" class="double form-control input-border">
               <option value="">No min</option>
-              <option value="0" <?php if ($bedMin == 0) echo 'selected' ; ?>>Studio</option>
-              <option value="1" <?php if ($bedMin == 1) echo 'selected' ; ?>>1</option>
-              <option value="2" <?php if ($bedMin == 2) echo 'selected' ; ?>>2</option>
-              <option value="3" <?php if ($bedMin == 3) echo 'selected' ; ?>>3</option>
-              <option value="4" <?php if ($bedMin == 4) echo 'selected' ; ?>>4</option>
-              <option value="5" <?php if ($bedMin == 5) echo 'selected' ; ?>>5</option>
+              <option value="0" >Studio</option>
+              <option value="1">1</option>
+              <option value="2" >2</option>
+              <option value="3" >3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
             </select>
           </div>
           <div class="col-sm-6 selectContainer">
             <label for="maxBedrooms">to</label>
             <select id="maxBedrooms" name="maxBedrooms" class="double form-control input-border">
               <option value="">No max</option>
-              <option value="0" <?php if ($bedTo == 0) echo 'selected' ; ?>>Studio</option>
-              <option value="1" <?php if ($bedTo == 1) echo 'selected' ; ?>>1</option>
-              <option value="2" <?php if ($bedTo == 2) echo 'selected' ; ?>>2</option>
-              <option value="3" <?php if ($bedTo == 3) echo 'selected' ; ?>>3</option>
-              <option value="4" <?php if ($bedTo == 4) echo 'selected' ; ?>>4</option>
-              <option value="5" <?php if ($bedTo == 5) echo 'selected' ; ?>>5</option>
+              <option value="0">Studio</option>
+              <option value="1" >1</option>
+              <option value="2" >2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
             </select>
           </div>
           <div class="btn-area">
