@@ -135,7 +135,7 @@ else{
     }
 			$sqlSearch .= " AND `postcode` IN ('".implode("','",$postcodes)."') " ;
 
-      $sqlSearch .= " ORDER BY `property_id` DESC " ;
+      $sqlSearch .= " ORDER BY `property_id` DESC LIMIT 0 , 20" ;
 
 		$results = $dbc->searchProperties($sqlSearch) ;
 
