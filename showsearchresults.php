@@ -135,7 +135,6 @@ else{
 
       echo "<pre>";
       print_r($postcodes);
-      die();
     }
 
 
