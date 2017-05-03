@@ -1020,9 +1020,8 @@ function getLatLong($address) {
 	$json = json_decode($geoloc);
 
   echo "lat" . $json->results[0]->geometry->location->lat;
-  echo "lat" . $json->results[0]->geometry->location->lng;
-
-  die();
+  echo "lng" . $json->results[0]->geometry->location->lng;
+echo "<br />";
 	return array($json->results[0]->geometry->location->lat, $json->results[0]->geometry->location->lng);
 
 }
