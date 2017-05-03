@@ -136,8 +136,7 @@ else{
       echo "<pre>";
       print_r($postcodes);
     }
-      $in = implode(',',$postcodes);
-			$sqlSearch .= " AND `postcode` IN ('$in') " ;
+			$sqlSearch .= " AND `postcode` IN ('".implode("','",$postcodes)."') " ;
 
       $sqlSearch .= " ORDER BY `property_id` DESC " ;
 
