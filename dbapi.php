@@ -941,7 +941,14 @@ THIS IS AN AUTOMATED RESPONSE.
     if ($res->num_rows > 0) {
       return true;
     }
-		return false;
+    $start = $this->getLatLong($key);
+    $lat = $start['0'];
+    $lng = $start['1'];
+    $sql = "INSERT INTO `postcode`(`id`, `postcode`, `lat`, `lng`) VALUES ('$key','$lat','$lng')";
+    if ( ! ($res = $this->db->query($sql))){
+				return true ;
+		}
+    return false;
 	}
 
 

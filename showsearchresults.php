@@ -136,13 +136,12 @@ else{
       echo "<pre>";
       print_r($postcodes);
     }
-
-
-		if ($postcode != '')
-			$sqlSearch .= " AND `postcode` LIKE '%{$postcode}%' " ;
+      $in = join(',', array_fill(0, count($postcodes), '?'));
+			$sqlSearch .= " AND `postcode` IN ('$in') " ;
 
       $sqlSearch .= " ORDER BY `property_id` DESC " ;
 
+echo $sqlSearch;
 		$results = $dbc->searchProperties($sqlSearch) ;
 
 
