@@ -87,6 +87,8 @@ else{
 	   		$priceTo = $_GET['maxPrice'];
 		else
 			$priceTo =  999999999999  ;
+echo $priceMin "<br />";
+echo $priceTo "<br />";
 
 	   if (isset($_GET['houseTypeID']) && !empty($_GET['houseTypeID']))
 	   		$type = $_GET['houseTypeID'];
