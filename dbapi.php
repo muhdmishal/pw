@@ -944,13 +944,12 @@ THIS IS AN AUTOMATED RESPONSE.
     $start = $this->getLatLong($key);
     $lat = $start['0'];
     $lng = $start['1'];
-    $sql = "INSERT INTO `postcode`(`id`, `postcode`, `lat`, `lng`) VALUES ('$key','$lat','$lng')";
+    $sql = "INSERT INTO `postcode`(`postcode`, `lat`, `lng`) VALUES ('$key','$lat','$lng')";
 
-    echo $sql;
     if ( ! ($res = $this->db->query($sql))){
-				return true ;
+				return false ;
 		}
-    return false;
+    return true;
 	}
 
 
