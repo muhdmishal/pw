@@ -157,6 +157,9 @@ background-repeat:no-repeat;
 #margin {
 	height:350px !important;
 }
+.top-bg {
+  display: none;
+}
 @media only screen and (max-width : 420px) {
 .suggestionsBox {
 	width:100%;
