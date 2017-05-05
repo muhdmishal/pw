@@ -209,9 +209,10 @@ background-repeat:no-repeat;
 
 
 <div class="container">
+<a href="add-property.php">Add a property</a>
 <a class="logo" href="index.php"><img src="images/logo.png" alt="logo"/></a>
-
-     <nav class="navbar navbar-default menu">
+<a href="add-property.php">Add a property</a>
+     <!-- <nav class="navbar navbar-default menu">
             <div class="container-fluid">
 
               <div class="navbar-header">
@@ -234,9 +235,9 @@ background-repeat:no-repeat;
                   <li><a href="continuesearch.php">Search</a></li>
 
                 </ul>
-              </div><!--/.nav-collapse -->
-            </div><!--/.container-fluid -->
-          </nav>
+              </div>
+            </div>
+          </nav> -->
 </div>
 
  <?php if(($_SERVER['REQUEST_URI'] == '/index.php') || ($_SERVER['REQUEST_URI'] == '/latest/index.php') || ($_SERVER['REQUEST_URI'] == '/latest/') || ($_SERVER['REQUEST_URI'] == '/myaccount.php') || ($_SERVER['REQUEST_URI'] == '') || ($_SERVER['REQUEST_URI'] == '/'))  : ?>
