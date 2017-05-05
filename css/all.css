@@ -6,7 +6,7 @@
     src:  url('../font/What-time-is-it.ttf.woff') format('woff'),
     url('../font/What-time-is-it.ttf.svg#What-time-is-it') format('svg'),
     url('../font/What-time-is-it.ttf.eot'),
-    url('../font/What-time-is-it.eot?#iefix') format('embedded-opentype'); 
+    url('../font/What-time-is-it.eot?#iefix') format('embedded-opentype');
     font-weight: normal;
     font-style: normal;
 }
@@ -14,7 +14,7 @@
   color: #fff !important;
    background-color: #286090 !important;
   border-color: #204d74 !important;
-  
+
 }
 .btn-primary1:hover,
 .btn-primary1:focus,
@@ -50,7 +50,7 @@ body{
 }
 .position-relative{
 	position:relative !important;
-	
+
 }
 .nopadding{
 	padding:0px !important;
@@ -61,8 +61,8 @@ body{
 
 .round-box{
 	position:absolute !important;
-	
-	
+
+
 	width:20%;
 	  top: 25px;
 	  left:52% !important;
@@ -95,7 +95,7 @@ body{
 	float:left;
 	margin-top:20px;
 	margin-bottom:10px;
-	
+
 
 }
 .forsaleimage{
@@ -166,15 +166,15 @@ hr{
 }
 .round-box{
 	position:absolute !important;
-	
-	
+
+
 	width:20%;
 	  top: 25px;
 	  left:auto !important;
 	  right:5% !important;
 }
 }
-@media only screen and (max-width : 420px) {	
+@media only screen and (max-width : 420px) {
 .viewfull{
 	width:100% !important;
 	padding:0px !important;
@@ -182,7 +182,7 @@ hr{
 	margin-right:!important;
 	margin-top:10px !important;
 	margin-bottom:10px !important;
-	
+
 }
 
 .sell-box {
@@ -198,7 +198,7 @@ hr{
 	margin-left:-25px !important;
 }
 .slider div img{
-		height:200px !important;  
+		height:200px !important;
 }
 .bg-set {
 	background-image:url(../images/brickbg.jpg) !important;
@@ -238,7 +238,7 @@ hr{
 	font-size:20px;
 	display:block;
 	float:left;
-	
+
 
 }
 }
@@ -252,13 +252,13 @@ hr{
 	margin:10px 0px !important;
 	clear:both;
 	box-shadow: 1px 1px 5px #000000;
-	overflow:auto !important; 
+	overflow:auto !important;
 }
 .form-back h2{
 	font-size:24px !important;
 	padding-left:0px !important;
 	margin:5px;
-	
+
 }
 .form-back h3{
 	font-size:18px !important;
@@ -269,7 +269,7 @@ hr{
 	text-align:right !important;
 	margin:0 !important;
 	padding:0 !important;
-	
+
 }
 .small-images-right {
 	width:48%;
@@ -309,10 +309,10 @@ hr{
 -webkit-box-shadow: 2px -3px 20px -3px rgba(0,0,0,0.75);
   -moz-box-shadow: 2px -3px 20px -3px rgba(0,0,0,0.75);
   box-shadow: 2px -3px 20px -3px rgba(0,0,0,0.75);
-     margin: 15% auto !important; 
+     margin: 15% auto !important;
   width: 100%;
   text-align: center;
-} 
+}
 .p-box h1{
 	color:#82b21b;
 }
@@ -324,11 +324,11 @@ hr{
 	margin-bottom:10px;
 	}
 .block-text h3{
-		 
+
 	margin-bottom:10px;
 	font-size: 20px;
 	float:right;
-	
+
 }
 .email-table a{
 	color: #337ab7;
@@ -344,9 +344,9 @@ font-weight: 300;
 
 .block-text h4{
 	clear:both;
-	color:#82B21B; 
+	color:#82B21B;
 	font-size: 20px;
-	}		
+	}
 .para{
 	font-family: verdana;
   color: #000;
@@ -354,7 +354,7 @@ font-weight: 300;
 	}
 .para2{
 	width:100%;
-	}		
+	}
 .atag{
 	text-decoration:none;
 	  color: #ffffff;
@@ -362,7 +362,7 @@ font-weight: 300;
 .atag1{
 	text-decoration:none;
 	  color: #82b24c;
-	}		
+	}
 .viewfull {
 	/*padding:10px 50px !important;*/
 	background-color:#82b24c !important;
@@ -384,14 +384,13 @@ margin-bottom: 10px;
 }
 
 .logo{
-	float:left;
 	margin-top:10px;
 	margin-bottom:5px;
 }
 .colr{
 	color:#ffffff !important;
 	font-size:12px;
-	
+
 	margin:0px !important;
 }
 p{
@@ -404,7 +403,7 @@ p{
 }
 .menu{
 	float:right !important;
-	
+
 	font-size:16px;
 	color:#303030;
 }
@@ -414,7 +413,7 @@ p{
 .s-box1 {
 
     font-family:"What-time-is-it" ;
-	
+
   z-index: 2;
   font-size: 18px;
 
@@ -462,7 +461,7 @@ width:100% !important;
 .search-btn{
 	float:left;
 	border:none !important;
-	
+
 	color:#000000;
 	font-size:14px !important;
 	font-weight:bold !important;
@@ -471,13 +470,13 @@ width:100% !important;
 	padding:5px 25px !important;
 	margin-left:0px !important;
 	margin-top:10px !important;
-	
+
 }
 .b-search{
 	background:#e9e9e9 !important;
 	border:none !important;
 	width:100% !important;
-	
+
 }
 .row{
 	padding:0px !important;
@@ -508,7 +507,7 @@ width:100% !important;
     position:relative;
     overflow:hidden;
 }
- 
+
 .p-article{
 	display:block;
 	text-align:justify;
@@ -626,7 +625,7 @@ font-size: 26px;
 	border:#CCC solid 2px !important;
 	border-radius:5px !important;
 	background-color:transparent !important;
-	
+
 }
 .ft-bg{
 	background:url(../images/ft-bg.png) no-repeat;
@@ -648,8 +647,8 @@ font-size: 26px;
 }
 .footer-icon{
 	float:left !important;
-	
-	
+
+
 	width:100%;
 }
 
@@ -1174,7 +1173,7 @@ background-color: #ddd;
 	margin-bottom:10px;
 	}
 .col-lg-8 .searchresult .block-text{
-	
+
 	margin:0 !important;
 	padding:0 !important;
 	float:none ;

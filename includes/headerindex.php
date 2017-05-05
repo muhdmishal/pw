@@ -160,6 +160,11 @@ background-repeat:no-repeat;
 .top-bg {
   display: none;
 }
+.link {
+  color: #419058;
+  text-transform: uppercase;
+  font-size: 24px;
+}
 @media only screen and (max-width : 420px) {
 .suggestionsBox {
 	width:100%;
@@ -209,9 +214,9 @@ background-repeat:no-repeat;
 
 
 <div class="container">
-<a href="add-property.php">Add a property</a>
+<a href="add-property.php" class="link">Add a property</a>
 <a class="logo" href="index.php"><img src="images/logo.png" alt="logo"/></a>
-<a href="add-property.php">Add a property</a>
+<a href="add-property.php" class="sign-in">Log in/Register</a>
      <!-- <nav class="navbar navbar-default menu">
             <div class="container-fluid">
 
