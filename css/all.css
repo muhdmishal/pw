@@ -2,7 +2,7 @@
 /* CSS Document */
 
 @font-face {
-  font-family: 'What-time-is-it';
+  font-family: 'Bebas Neue';
     src: url("path/BebasNeue.otf") format("opentype");
     font-weight: normal;
     font-style: normal;
@@ -44,7 +44,7 @@ body{
 	margin:0px;
 	padding:0px;
 	background:#ffffff !important;
-	font-family:"What-time-is-it";
+	font-family:"Bebas Neue";
 }
 .position-relative{
 	position:relative !important;
@@ -333,7 +333,7 @@ hr{
 }
 .block-text h2 {
 
-font-family: verdana;
+font-family: "Bebas Neue";
 float: left;
 
 font-weight: 300;
@@ -346,7 +346,7 @@ font-weight: 300;
 	font-size: 20px;
 	}
 .para{
-	font-family: verdana;
+	font-family: "Bebas Neue";
   color: #000;
   margin-bottom: 15px;
 	}
@@ -410,7 +410,7 @@ p{
 }
 .s-box1 {
 
-    font-family:"What-time-is-it" ;
+    font-family:"Bebas Neue" ;
 
   z-index: 2;
   font-size: 18px;
@@ -434,7 +434,7 @@ width:100% !important;
 }
 .s-box {
   display: block;
-    font-family:"What-time-is-it" ;
+    font-family:"Bebas Neue" ;
   position: absolute;
   z-index: 2;
   font-size: 24px;
@@ -483,7 +483,7 @@ width:100% !important;
 .title{
 	display:block;
 	text-align:center !important;
-	font-family:"Century Gothic";
+	font-family:"Bebas Neue";
 	font-size:30px;
 	font-weight:bold;
 	line-height:1.5;
@@ -494,7 +494,7 @@ width:100% !important;
 .subtitle{
 	display:block;
 	text-align:left;
-	font-family:"Century Gothic";
+	font-family:"Bebas Neue";
 	font-size:18px;
 	font-weight:bold;
 	line-height:1.5;
@@ -509,7 +509,7 @@ width:100% !important;
 .p-article{
 	display:block;
 	text-align:justify;
-	font-family:"Century Gothic";
+	font-family:"Bebas Neue";
 	font-size:14px;
 	font-weight:normal;
 	line-height:1.5;
@@ -519,7 +519,7 @@ width:100% !important;
 .weltxt{
 	display:block;
 	text-align:center;
-	font-family:"Century Gothic";
+	font-family:"Bebas Neue";
 	font-size:14px;
 	font-weight:normal;
 	line-height:1.5;
@@ -527,7 +527,7 @@ width:100% !important;
 	padding:0px 0px;
 }
 .featheading a{
-	font-family:"Century Gothic";
+	font-family:"Bebas Neue";
 	color:#ffffff;
 	font-size:24px;
 	font-weight:bold;
@@ -587,7 +587,7 @@ width:100% !important;
 }
 .form-btn{
 	background:#eeeeee !important;
-	font-family:"Century Gothic";
+	font-family:"Bebas Neue";
 	font-size:24px !important;
 	color:#2558b7 !important;
 	font-weight:bold !important;
@@ -615,7 +615,7 @@ font-size: 26px;
 }
 .control-label{
 	font-size:18px;
-	font-family:"Century Gothic";
+	font-family:"Bebas Neue";
 	color:#FFF;
 	font-weight:bold;
 }
@@ -634,7 +634,7 @@ font-size: 26px;
 }
 .foot-head{
 	display:block;
-	font-family:"Century Gothic";
+	font-family:"Bebas Neue";
 	font-size:22px;
 	color:#f7f7f7;
 	text-align:left;
@@ -659,7 +659,7 @@ font-size: 26px;
 }
 .foot-text{
 	display:block;
-	font-family:"Century Gothic";
+	font-family:"Bebas Neue";
 	font-size:12px;
 	color:#bbbbbb;
 	text-align:justify;
@@ -667,7 +667,7 @@ font-size: 26px;
 }
 .footicon-text{
 	display:block;
-	font-family:"Century Gothic";
+	font-family:"Bebas Neue";
 	font-size:12px;
 	color:#727272;
 	text-align:justify;
@@ -685,7 +685,7 @@ font-size: 26px;
 	text-align:center;
 	font-size:14px;
 	padding:5px 10px;
-	font-family:"Century Gothic";
+	font-family:"Bebas Neue";
 	color:#FFF;
 	background:#3e3e3e;
 	border:#535353;
@@ -709,7 +709,7 @@ font-size: 26px;
 .quick li a{
 	float:left;
 	font-size:12px;
-	font-family:"Century Gothic";
+	font-family:"Bebas Neue";
 	color:#bbbbbb;
 	padding:4px 0px;
 }
@@ -967,14 +967,14 @@ margin-bottom:25px;
 }
 #property-heading h2 {
 float: right;
-font-family: verdana;
+font-family: "Bebas Neue";
 font-size: 10pt;
 font-weight: 300;
 padding-right: 10px;
 color: #ffffff;
 }
 #property-heading h1 {
-font-family: verdana;
+font-family: "Bebas Neue";
 font-size: 13pt;
 font-weight: 300;
 width: 190px;
@@ -983,13 +983,13 @@ margin-top: 5px;
 color: #ffffff;
 }
 #property-heading p {
-font-family: verdana;
+font-family: "Bebas Neue";
 margin-top: -15px;
 padding-left: 10px;
 color: #ffffff;
 }
 */.accountheading a {
-  font-family: "Century Gothic";
+  font-family: "Bebas Neue";
   color: #ffffff;
   font-size: 18px;
   font-weight: bold;
@@ -1106,7 +1106,7 @@ color: #ffffff;
 }
 .visible-phone h2 {
   color: #82B21B;
-  font-family: verdana;
+  font-family: "Bebas Neue";
   width: 80px;
   font-weight: 300;
   font-size: 14px;
@@ -1151,7 +1151,7 @@ right: 15px;
 .search-btn {
 float: left;
 border: none !important;
-font-family: "Century Gothic";
+font-family: "Bebas Neue";
 color: #2558b7;
 font-size: 18px !important;
 font-weight: bold !important;

@@ -40,7 +40,7 @@
 #headermiddle p {
 	float:right;
 	color:white;
-	font-family:verdana;
+	font-family:"Bebas Neue";
 	font-size:14pt;
 	padding-top:20px;
 	padding-right:100px;
@@ -54,7 +54,7 @@
 }
 
 #headlinks p{
-	font-family:verdana;
+	font-family:"Bebas Neue";
 	color:white;
 	font-size:10pt;
 }
@@ -79,7 +79,7 @@
 }
 
 #headlinks-lower p{
-	font-family:verdana;
+	font-family:"Bebas Neue";
 	color:#40659c;
 	font-size:medium;
 }
@@ -179,7 +179,7 @@
 }
 
 #property-heading h1{
-	font-family:verdana;
+	font-family:"Bebas Neue";
 	font-size:18pt;
 	font-weight:300;
 	width:600px;
@@ -187,14 +187,14 @@
 }
 #property-heading h2{
 	float:right;
-	font-family:verdana;
+	font-family:"Bebas Neue";
 	font-size:18pt;
 	font-weight:300;
 	
 
 }
 #property-heading p{
-	font-family:verdana;
+	font-family:"Bebas Neue";
 	margin-top:-10px;
 	
 
@@ -222,7 +222,7 @@
 
 #box1 p{
 	color:#40659c;
-	font-family:verdana;
+	font-family:"Bebas Neue";
 	padding-top:3px;
 	padding-left:10px;
 	font-size:10pt;
@@ -241,7 +241,7 @@
 
 #share-icons p{
 	color:#40659c;
-	font-family:verdana;
+	font-family:"Bebas Neue";
 	padding-top:3px;
 	padding-left:210px;
 	font-size:10pt;
@@ -268,7 +268,7 @@ clear:left;
 }
 #box2 p{
 	color:#40659c;
-	font-family:verdana;
+	font-family:"Bebas Neue";
 	padding-top:3px;
 	padding-left:10px;
 	font-size:10pt;
@@ -283,7 +283,7 @@ clear:left;
 }
 #box3 p{
 	color:#40659c;
-	font-family:verdana;
+	font-family:"Bebas Neue";
 	padding-top:3px;
 	padding-left:10px;
 	font-size:10pt;
@@ -298,7 +298,7 @@ clear:left;
 }
 #box4 p{
 	color:#40659c;
-	font-family:verdana;
+	font-family:"Bebas Neue";
 	padding-top:3px;
 	padding-left:10px;
 	font-size:10pt;
@@ -313,7 +313,7 @@ clear:left;
 }
 #box5 p{
 	color:#40659c;
-	font-family:verdana;
+	font-family:"Bebas Neue";
 	padding-top:3px;
 	padding-left:10px;
 	font-size:10pt;
@@ -328,7 +328,7 @@ clear:left;
 }
 #map-box p{
 	color:#40659c;
-	font-family:verdana;
+	font-family:"Bebas Neue";
 	padding-top:3px;
 	padding-left:10px;
 	font-size:10pt;

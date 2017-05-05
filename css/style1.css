@@ -41,7 +41,7 @@
 #headermiddle p {
 	float:right;
 	color:white;
-	font-family:verdana;
+	font-family:"Bebas Neue";
 	font-size:14pt;
 	padding-top:20px;
 }
@@ -54,7 +54,7 @@
 }
 
 #headlinks p{
-	font-family:verdana;
+	font-family:"Bebas Neue";
 	color:white;
 	font-size:10pt;
 }
@@ -79,7 +79,7 @@
 }
 
 #headlinks-lower p{
-	font-family:verdana;
+	font-family:"Bebas Neue";
 	color:#40659c;
 	font-size:11pt;
 }
@@ -117,13 +117,13 @@
 }
 
 #main p{
-	font-family:verdana;
+	font-family:"Bebas Neue";
 	color:grey;
 
 
 }
   #main h4{
-	font-family:verdana;
+	font-family:"Bebas Neue";
 	color:black;
 	font-weight:300;
 	padding-left:10px;
@@ -135,7 +135,7 @@
 
 #main h3
 {
-font-family:verdana;
+font-family:"Bebas Neue";
 color:grey;
 font-weight:300;
 
@@ -156,7 +156,7 @@ font-weight:300;
   
 #nav p{
 	float:right;
-	font-family:Verdana;
+	font-family:"Bebas Neue";
 	font-size:18pt;
 	margin-bottom:-5px;
 	color:#40659c;
@@ -178,7 +178,7 @@ font-weight:300;
 
 
 #movers h1{
-	font-family:verdana;
+	font-family:"Bebas Neue";
 	color:#40659c;
 	font-weight:500;
 	
@@ -186,7 +186,7 @@ font-weight:300;
 
 
 #movers h2{
-	font-family:verdana;
+	font-family:"Bebas Neue";
 	color:#40659c;
 	float:right;
 	margin-top:-20px;
@@ -220,7 +220,7 @@ opacity:0.9;
 filter:alpha(opacity=90);
 }
 #search h1{
-	font-family:verdana;
+	font-family:"Bebas Neue";
 	color:#ffffff;
 	font-weight:200;
 	padding-left:10px;
@@ -241,7 +241,7 @@ filter:alpha(opacity=90);
 }
 
 #property-heading h1{
-	font-family:verdana;
+	font-family:"Bebas Neue";
 	font-size:18pt;
 	font-weight:300;
 	width:600px;
@@ -252,7 +252,7 @@ filter:alpha(opacity=90);
 }
 #property-heading h2{
 	float:right;
-	font-family:verdana;
+	font-family:"Bebas Neue";
 	font-size:18pt;
 	font-weight:300;
 	padding-right:10px;
@@ -260,7 +260,7 @@ filter:alpha(opacity=90);
 
 }
 #property-heading p{
-	font-family:verdana;
+	font-family:"Bebas Neue";
 	margin-top:-15px;
 	padding-left:10px;
 	color:#ffffff;
@@ -297,7 +297,7 @@ filter:alpha(opacity=90);
 
 #box1 p{
 	color:#ffffff;
-	font-family:verdana;
+	font-family:"Bebas Neue";
 	padding-top:3px;
 	padding-left:10px;
 	font-size:10pt;
@@ -324,7 +324,7 @@ filter:alpha(opacity=90);
 
 #share-icons p{
 	color:#40659c;
-	font-family:verdana;
+	font-family:"Bebas Neue";
 	padding-top:3px;
 	padding-left:210px;
 	font-size:10pt;
@@ -358,7 +358,7 @@ clear:left;
 
 #box2 p{
 	color:#ffffff;
-	font-family:verdana;
+	font-family:"Bebas Neue";
 	padding-top:3px;
 	padding-left:10px;
 	font-size:10pt;
@@ -381,7 +381,7 @@ clear:left;
 
 #box3 p{
 	color:#ffffff;
-	font-family:verdana;
+	font-family:"Bebas Neue";
 	padding-top:3px;
 	padding-left:10px;
 	font-size:10pt;
@@ -403,7 +403,7 @@ clear:left;
 	}
 #box4 p{
 	color:#ffffff;
-	font-family:verdana;
+	font-family:"Bebas Neue";
 	padding-top:3px;
 	padding-left:10px;
 	font-size:10pt;
@@ -425,7 +425,7 @@ clear:left;
 	}
 #box5 p{
 	color:#ffffff;
-	font-family:verdana;
+	font-family:"Bebas Neue";
 	padding-top:3px;
 	padding-left:10px;
 	font-size:10pt;
@@ -448,7 +448,7 @@ clear:left;
 	}
 #box6 p{
 	color:#ffffff;
-	font-family:verdana;
+	font-family:"Bebas Neue";
 	padding-top:3px;
 	padding-left:10px;
 	font-size:10pt;
@@ -470,7 +470,7 @@ clear:left;
 	}
 #box7 p{
 	color:#ffffff;
-	font-family:verdana;
+	font-family:"Bebas Neue";
 	padding-top:20px;
 	padding-left:70px;
 	font-size:10pt;
@@ -485,7 +485,7 @@ clear:left;
 }
 #map-box p{
 	color:#40659c;
-	font-family:verdana;
+	font-family:"Bebas Neue";
 	padding-top:3px;
 	padding-left:10px;
 	font-size:10pt;
@@ -506,7 +506,7 @@ clear:left;
 #boxleft p{
 	padding-left:10px;
 	padding-right:10px;
-	font-family:verdana;
+	font-family:"Bebas Neue";
 	color:grey;
 	font-size:10pt;
 	
@@ -522,7 +522,7 @@ clear:left;
 
 #banner h2{
 	color:white;
-	font-family:verdana;
+	font-family:"Bebas Neue";
 	font-weight:300;
 	padding-top:5px;
 	padding-left:15px
@@ -604,7 +604,7 @@ clear:left;
 
 .listing h2{
 	color:black;
-	font-family:verdana;
+	font-family:"Bebas Neue";
 	font-weight:300;
 	margin-top:10px;
 	padding-left:15px
@@ -612,7 +612,7 @@ clear:left;
 
 .listing h3{
 	color:black;
-	font-family:verdana;
+	font-family:"Bebas Neue";
 	font-weight:300;
 	padding-left:15px;
 	margin-top:-10px;
@@ -621,7 +621,7 @@ clear:left;
 
 .listing p{
 	color:black;
-	font-family:verdana;
+	font-family:"Bebas Neue";
 	font-weight:300;
 	padding-left:15px;
 	margin-top:-10px;
@@ -638,7 +638,7 @@ clear:left;
 	width:90px; 
 	height:20px; 
 	background-color:black;
-	font-family:verdana;
+	font-family:"Bebas Neue";
 	color:white;
 	font-size:10pt;
 	font-weight:300;
