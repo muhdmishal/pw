@@ -3,16 +3,9 @@
 
 @font-face {
   font-family: 'What-time-is-it';
-    src:  url('../font/What-time-is-it.ttf.woff') format('woff'),
-    url('../font/What-time-is-it.ttf.svg#What-time-is-it') format('svg'),
-    url('../font/What-time-is-it.ttf.eot'),
-    url('../font/What-time-is-it.eot?#iefix') format('embedded-opentype');
+    src: url("path/BebasNeue.otf") format("opentype");
     font-weight: normal;
     font-style: normal;
-}
-@font-face {
-  font-family: 'Bebas Neue';
-  src: url("path/BebasNeue.otf") format("opentype");
 }
 
 .btn-primary1 {
