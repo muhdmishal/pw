@@ -164,6 +164,7 @@ background-repeat:no-repeat;
   color: #419058;
   text-transform: uppercase;
   font-size: 24px;
+  font-family: "Bebas Neue";
 }
 @media only screen and (max-width : 420px) {
 .suggestionsBox {

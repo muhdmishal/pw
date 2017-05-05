@@ -10,6 +10,11 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url("path/BebasNeue.otf") format("opentype");
+}
+
 .btn-primary1 {
   color: #fff !important;
    background-color: #286090 !important;
