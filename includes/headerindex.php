@@ -173,6 +173,9 @@ background-repeat:no-repeat;
 .suggestionsBox {
 	width:100%;
 }
+.link {
+  display: none;
+}
 #margin {
 	height:100px !important;
 }
