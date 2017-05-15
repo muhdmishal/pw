@@ -334,6 +334,16 @@ background-repeat:no-repeat;
     </div>
   </div>
 
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8">
+        <p class="banner-text">As you are selling your home privately, Even if you have a sole agency agreement you can still advertise your home yourself on property wing</p>
+      </div>
+      <div class="col-sm-8">
+        <p class="banner-text">Its FREE</p>
+      </div>
+    </div>
+  </div>
 
     <!-- <div id="margin"></div> -->
 
