@@ -202,7 +202,7 @@ background-repeat:no-repeat;
 .banner-text {
   font-family: "Bebas Neue";
   color: white;
-  font-size: 35px;
+  font-size: 32px;
 }
 .banner-search {
   width: 100%;
@@ -217,6 +217,7 @@ background-repeat:no-repeat;
   color: #419058;
   border-radius: 0;
   padding: 26px;
+  background-color: rgba(255,255,255,.7);
 }
 .banner-search .btn-search {
   background: transparent;
