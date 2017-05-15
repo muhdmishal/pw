@@ -179,6 +179,9 @@ background-repeat:no-repeat;
   padding-bottom: 10px;
   display: flex;
 }
+.logo {
+  margin: 0 auto;
+}
 </style>
 
 
