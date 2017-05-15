@@ -199,6 +199,11 @@ background-repeat:no-repeat;
   padding: 6px 12px;
   margin: 0;
 }
+.banner-text {
+  font-family: "Bebas Neue";
+  color: white;
+  font-size: 35px;
+}
 </style>
 
 
@@ -280,7 +285,7 @@ background-repeat:no-repeat;
     <div class="row">
       <div class="col-sm-6">
         <form  class="navbar-form nopadding" role="search" methos="GET" action="continuesearch.php">
-          <p>
+          <p class="banner-text">
             Find Your Home
           </p>
           <div class="input-group">
@@ -294,7 +299,7 @@ background-repeat:no-repeat;
 
       <div class="col-sm-6">
         <form  class="navbar-form nopadding" role="search" methos="GET" action="continuesearch.php">
-          <p>
+          <p class="banner-text">
             Sell Your Home
           </p>
           <div class="input-group">
