@@ -204,6 +204,18 @@ background-repeat:no-repeat;
   color: white;
   font-size: 35px;
 }
+.banner-search {
+  width: 100%;
+}
+.banner-search input {
+  border: rgba(0, 0, 0, 0.5) solid 2px;
+  font-family: "Bebas Neue";
+}
+.banner-search .btn-search {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+}
 </style>
 
 
@@ -288,7 +300,7 @@ background-repeat:no-repeat;
           <p class="banner-text">
             Find Your Home
           </p>
-          <div class="input-group">
+          <div class="input-group banner-search">
             <input type="text" class="form-control" id="whattosearch" placeholder="Search for..." required>
             <span class="input-group-btn">
               <button class="btn btn-default btn-search" type="submit"><span class="glyphicon glyphicon-search"></span></button>
@@ -302,7 +314,7 @@ background-repeat:no-repeat;
           <p class="banner-text">
             Sell Your Home
           </p>
-          <div class="input-group">
+          <div class="input-group  banner-search">
             <input type="text" class="form-control" id="whattosearch" placeholder="Search for..." required>
             <span class="input-group-btn">
               <button class="btn btn-default btn-search" type="submit"><span class="glyphicon glyphicon-search"></span></button>
