@@ -16,9 +16,9 @@
 
 <link rel="icon" type="image/png"  href="images/favicon.png" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="description" content=""/> 
+<meta name="description" content=""/>
 <meta name="keywords" content="" />
-<meta name="language" content="english" /> 
+<meta name="language" content="english" />
 <META http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <script type="text/javascript" src="javascript/jquery.min.js"></script>
@@ -32,7 +32,7 @@
 <script>
 //Initialization code:
 $(document).ready(function(){ // on document load
-		
+
 		$("#thumbsliderdiv").imageSlider({ //initialize slider
 			'thumbs': ["property-images/kitchen-lf.JPG","property-images/bedroom-lf.JPG","property-images/bathroom-lf.JPG","property-images/lounge-lf.JPG","property-images/rear-garden-lf.JPG"], // file names of images within slider. Default path should be changed inside thumbslide.js (near bottom)
 			'auto_scroll':true,
@@ -54,7 +54,7 @@ $(document).ready(function() {
     $('.toggle-nav').click(function(e) {
         $(this).toggleClass('active');
         $('.menu ul').toggleClass('active');
- 
+
         e.preventDefault();
     });
 });
@@ -68,13 +68,19 @@ $(document).ready(function() {
 	 $("#pform").validate();
   });
 </script>
+<style media="screen">
+  .navbar-default {
+    background: none;
+    border: none;
+  }
+</style>
 <!--<link href="styles.css" rel="stylesheet" type="text/css">-->
 </head>
 <body>
 <div class="col-xs-12 top-bg">
 	<div class="container">
-        
-         <div style="float:left ;" >	
+
+         <div style="float:left ;" >
                     <ul class="list-inline">
                             <li class="fb">
                                 <a style="color:#FFFFFF;" href="https://www.facebook.com/pages/Property-Wing/707165226009503?ref=hl" class="btn-social btn-outline social-clor"><i class="fa fa-fw fa-facebook"></i></a>
@@ -90,15 +96,15 @@ $(document).ready(function() {
                             </li>-->
                         </ul>
                  </div>
-        
-        
-        
+
+
+
         <div style="float:right;">
-                                
-                              
-            
-            
-             
+
+
+
+
+
                  <a href="login.php" class="top-icon colr"><span class="lang-icon"><img src="images/user-ico.png" alt="User" /></span>Log in/Register</a>
                             </div>
      </div>
@@ -107,10 +113,10 @@ $(document).ready(function() {
 
 <div class="container">
 <a class="logo" href="index.php"><img src="images/logo.png" alt="logo"/></a>
-			
+
      <nav class="navbar navbar-default  menu">
             <div class="container-fluid">
-              
+
               <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                   <span class="sr-only">Toggle navigation</span>
@@ -118,7 +124,7 @@ $(document).ready(function() {
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </button>
-                
+
               </div>
               <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -129,8 +135,8 @@ $(document).ready(function() {
                   <li><a href="mysettings.php">Services</a></li>
                   <li><a href="sale-board.php">For sale boards</a></li>
                   <li><a href="continuesearch.php">Search</a></li>
-                  
-                 
+
+
                 </ul>
               </div><!--/.nav-collapse -->
             </div><!--/.container-fluid -->
