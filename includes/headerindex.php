@@ -169,12 +169,14 @@ background-repeat:no-repeat;
 .link:hover {
   text-decoration: none;
 }
+@media only screen and (max-width : 600px) {
+  .link {
+    display: none;
+  }
+}
 @media only screen and (max-width : 420px) {
 .suggestionsBox {
 	width:100%;
-}
-.link {
-  display: none;
 }
 #margin {
 	height:100px !important;
