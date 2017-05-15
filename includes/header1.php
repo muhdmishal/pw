@@ -128,7 +128,7 @@ $(document).ready(function() {
               </div>
               <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                  <li class="active"><a href="index.php">Home</a></li>
+                  <li><a href="index.php">Home</a></li>
                   <li><a href="add-property.php">Add a property</a></li>
                   <li><a href="myaccount.php">My Account</a></li>
                   <li><a href="messages.php">Inbox</a></li>
