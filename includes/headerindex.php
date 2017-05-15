@@ -283,17 +283,23 @@ background-repeat:no-repeat;
 
       </form>
 </div>
-<div class="col-sm-6">
-  <form  class="navbar-form nopadding" role="search" methos="GET" action="continuesearch.php">
-          <div id="suggest">
-              <input type="text" class="form-control b-search " placeholder="Type postcode or town and Select from the below suggestions to Search" id="whattosearch" autocomplete="off" name="whattosearch" required>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <form  class="navbar-form nopadding" role="search" methos="GET" action="continuesearch.php">
+              <div id="suggest">
+                  <input type="text" class="form-control b-search " placeholder="Type postcode or town and Select from the below suggestions to Search" id="whattosearch" autocomplete="off" name="whattosearch" required>
 
+      </div>
+                      <button style="font-family:Arial, Helvetica, sans-serif;" class="btn search-btn" type="submit">Search</button>
+
+
+          </form>
+    </div>
   </div>
-                  <button style="font-family:Arial, Helvetica, sans-serif;" class="btn search-btn" type="submit">Search</button>
-
-
-      </form>
 </div>
+
+
     <!-- <div id="margin"></div> -->
 <div class="sell-box">The new way to sell your home</div>
     <div style="overflow:visible !important" class="s-box">Start Searching for your new Home<p>Search By town / Postcode</p>
