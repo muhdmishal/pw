@@ -174,6 +174,11 @@ background-repeat:no-repeat;
 	height:100px !important;
 }
 }
+.new-menu {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+}
 </style>
 
 
@@ -181,7 +186,7 @@ background-repeat:no-repeat;
 </head>
 <body>
 <div class="col-xs-12 top-bg">
-	<div class="container">
+	<div class="container new-menu">
 
         <div style="float:left" >
                     <ul class="list-inline">
