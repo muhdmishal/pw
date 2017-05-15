@@ -245,6 +245,9 @@ background-repeat:no-repeat;
   background: linear-gradient(black, transparent, black); /* Standard syntax */
 	opacity: .6;
   }
+.margin-banner {
+  margin-top: 320px;
+}
 </style>
 
 
@@ -354,7 +357,7 @@ background-repeat:no-repeat;
     </div>
   </div>
 
-  <div class="container">
+  <div class="container margin-banner">
     <div class="row">
       <div class="col-sm-9">
         <p class="banner-text">As you are selling your home privately, Even if you have a sole agency agreement you can still advertise your home yourself on property wing</p>
