@@ -300,8 +300,7 @@ background-repeat:no-repeat;
 
 
     <!-- <div id="margin"></div> -->
-<div class="sell-box">The new way to sell your home</div>
-    <div style="overflow:visible !important" class="s-box">Start Searching for your new Home<p>Search By town / Postcode</p>
+
 
         <!-- <form  class="navbar-form nopadding" role="search" methos="GET" action="continuesearch.php">
                 <div id="suggest">
@@ -312,13 +311,9 @@ background-repeat:no-repeat;
 
 
             </form> -->
-        <div class="col-sm-7 pull-right margin-top-5"><p style="font-family:Arial, Helvetica, sans-serif;"><a href="add-property.php" >Add Your Property</a> - Its -FREE!</p></div>
-        <div style="clear:both;"></div>
-    </div>
 
-    <div class=" round-box img-circle text-center  hidden-xs">
-    <img src="images/getstarted.png" class="img-responsive">
 </div>
+
 
 
     </div>
