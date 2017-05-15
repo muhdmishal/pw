@@ -18,7 +18,7 @@ ul.tabs li
         
 ul.tabs li a
 {
-    font: normal 12px "Bebas Neue";
+    font: normal 12px Verdana;
     text-decoration: none;
     position: relative;
     padding: 7px 16px;
@@ -68,13 +68,13 @@ div.tabcontents {
 
 
 #view1 h1, h2, h3{
-	font-family:"Bebas Neue";
+	font-family:verdana;
 	font-weight:300;
 	font-size: 14px;
 }
 
 #view1 p{
-	font-family:"Bebas Neue";
+	font-family:verdana;
 	font-size:10pt;
 }
 
