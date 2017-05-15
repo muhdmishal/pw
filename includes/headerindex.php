@@ -163,8 +163,11 @@ background-repeat:no-repeat;
 .link {
   color: #419058;
   text-transform: uppercase;
-  font-size: 24px;
+  font-size: 35px;
   font-family: "Bebas Neue";
+}
+.link:hover {
+  text-decoration: none;
 }
 @media only screen and (max-width : 420px) {
 .suggestionsBox {
@@ -181,6 +184,12 @@ background-repeat:no-repeat;
 }
 .logo {
   margin: 0 auto;
+}
+.sign-in {
+  color: $3561b1;
+}
+.sign-in:hover {
+  text-decoration: none;
 }
 </style>
 
