@@ -186,7 +186,8 @@ background-repeat:no-repeat;
   margin: 0 auto;
 }
 .sign-in {
-  color: $3561b1;
+  color: #3561b1;
+  margin-top: 15px;
 }
 .sign-in:hover {
   text-decoration: none;
