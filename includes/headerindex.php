@@ -339,7 +339,7 @@ background-repeat:no-repeat;
             Find Your Home
           </p>
           <div class="input-group banner-search">
-            <input type="text" class="form-control whattosearch" id="whattosearch" placeholder="Search for..." required>
+            <input type="text" class="form-control" id="whattosearch" placeholder="Search for..." required>
             <span class="input-group-btn">
               <button class="btn btn-default btn-search" type="submit"><span class="glyphicon glyphicon-search"></span></button>
             </span>
@@ -353,7 +353,7 @@ background-repeat:no-repeat;
             Sell Your Home
           </p>
           <div class="input-group  banner-search">
-            <input type="text" class="form-control whattosearch" id="whattosearch" placeholder="Search for..." required>
+            <input type="text" class="form-control" id="whattosearch" placeholder="Search for..." required>
             <span class="input-group-btn">
               <button class="btn btn-default btn-search" type="submit"><span class="glyphicon glyphicon-search"></span></button>
             </span>
@@ -398,7 +398,7 @@ background-repeat:no-repeat;
       // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
       function initMap() {
-        var input = document.getElementByClass('whattosearch');
+        var input = document.getElementById('whattosearch');
 
         var autocomplete = new google.maps.places.Autocomplete(input);
 
