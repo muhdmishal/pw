@@ -225,6 +225,23 @@ background-repeat:no-repeat;
   border: none;
   border-radius: 0;
 }
+.banner-image-new {
+  overflow:visible !important;
+  background-image:url(images/top.jpg);
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size:cover;
+}
+.banner-image-new:before {
+  content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
+	opacity: .6;
+  }
 </style>
 
 
@@ -300,7 +317,7 @@ background-repeat:no-repeat;
  <?php if(($_SERVER['REQUEST_URI'] == '/index.php') || ($_SERVER['REQUEST_URI'] == '/latest/index.php') || ($_SERVER['REQUEST_URI'] == '/latest/') || ($_SERVER['REQUEST_URI'] == '/myaccount.php') || ($_SERVER['REQUEST_URI'] == '') || ($_SERVER['REQUEST_URI'] == '/'))  : ?>
 
 
-<div class=" position-relative" style="overflow:visible !important; background-image:url(images/top.jpg); background-position:center; background-repeat:no-repeat; background-size:cover; overflow:auto">
+<div class=" position-relative banner-image-new" >
 
   <div class="container">
     <div class="row">
