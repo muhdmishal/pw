@@ -210,11 +210,16 @@ background-repeat:no-repeat;
 .banner-search input {
   border: rgba(0, 0, 0, 0.5) solid 2px;
   font-family: "Bebas Neue";
+  font-size: 35px;
+  color: #419058;
+  border-radius: 0;
 }
 .banner-search .btn-search {
   background: rgba(0, 0, 0, 0.5);
   color: white;
+  font-size: 35px;
   border: none;
+  border-radius: 0;
 }
 </style>
 
