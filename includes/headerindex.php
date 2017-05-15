@@ -286,7 +286,7 @@ background-repeat:no-repeat;
           <div class="input-group">
             <input type="text" class="form-control" id="whattosearch" placeholder="Search for..." required>
             <span class="input-group-btn">
-              <button class="btn btn-default" type="submit">Go!</button>
+              <button class="btn btn-default btn-search" type="submit"><span class="glyphicon glyphicon-search"></span></button>
             </span>
           </div><!-- /input-group -->
         </form>
@@ -300,7 +300,7 @@ background-repeat:no-repeat;
           <div class="input-group">
             <input type="text" class="form-control" id="whattosearch" placeholder="Search for..." required>
             <span class="input-group-btn">
-              <button class="btn btn-default btn-search" type="submit">Go!</button>
+              <button class="btn btn-default btn-search" type="submit"><span class="glyphicon glyphicon-search"></span></button>
             </span>
           </div><!-- /input-group -->
         </form>
