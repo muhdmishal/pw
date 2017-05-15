@@ -192,6 +192,9 @@ background-repeat:no-repeat;
 .sign-in:hover {
   text-decoration: none;
 }
+.bg-set {
+  padding: 0;
+}
 </style>
 
 
@@ -269,13 +272,33 @@ background-repeat:no-repeat;
 
 <div class=" position-relative" style="overflow:visible !important; background-image:url(images/slider.png); background-position:center; background-repeat:no-repeat; background-size:cover; overflow:auto">
 
+<div class="col-sm-6">
+  <form  class="navbar-form nopadding" role="search" methos="GET" action="continuesearch.php">
+          <div id="suggest">
+              <input type="text" class="form-control b-search " placeholder="Type postcode or town and Select from the below suggestions to Search" id="whattosearch" autocomplete="off" name="whattosearch" required>
+
+  </div>
+                  <button style="font-family:Arial, Helvetica, sans-serif;" class="btn search-btn" type="submit">Search</button>
 
 
-    <div id="margin"></div>
+      </form>
+</div>
+<div class="col-sm-6">
+  <form  class="navbar-form nopadding" role="search" methos="GET" action="continuesearch.php">
+          <div id="suggest">
+              <input type="text" class="form-control b-search " placeholder="Type postcode or town and Select from the below suggestions to Search" id="whattosearch" autocomplete="off" name="whattosearch" required>
+
+  </div>
+                  <button style="font-family:Arial, Helvetica, sans-serif;" class="btn search-btn" type="submit">Search</button>
+
+
+      </form>
+</div>
+    <!-- <div id="margin"></div> -->
 <div class="sell-box">The new way to sell your home</div>
     <div style="overflow:visible !important" class="s-box">Start Searching for your new Home<p>Search By town / Postcode</p>
 
-        <form  class="navbar-form nopadding" role="search" methos="GET" action="continuesearch.php">
+        <!-- <form  class="navbar-form nopadding" role="search" methos="GET" action="continuesearch.php">
                 <div id="suggest">
                     <input type="text" class="form-control b-search " placeholder="Type postcode or town and Select from the below suggestions to Search" id="whattosearch" autocomplete="off" name="whattosearch" required>
 
@@ -283,7 +306,7 @@ background-repeat:no-repeat;
                         <button style="font-family:Arial, Helvetica, sans-serif;" class="btn search-btn" type="submit">Search</button>
 
 
-            </form>
+            </form> -->
         <div class="col-sm-7 pull-right margin-top-5"><p style="font-family:Arial, Helvetica, sans-serif;"><a href="add-property.php" >Add Your Property</a> - Its -FREE!</p></div>
         <div style="clear:both;"></div>
     </div>
