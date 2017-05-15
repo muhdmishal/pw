@@ -208,8 +208,7 @@ background-repeat:no-repeat;
   width: 100%;
 }
 .banner-search input {
-  border: solid 2px;
-  border-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 0px 8px rgba(0,0,0,0.5);
   font-family: "Bebas Neue";
   font-size: 35px;
   color: #419058;
