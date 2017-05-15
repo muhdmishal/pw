@@ -226,11 +226,11 @@ background-repeat:no-repeat;
   border-radius: 0;
 }
 .banner-image-new {
-  overflow:visible !important;
-  background-image:url(images/top.jpg);
-  background-position:center;
-  background-repeat:no-repeat;
-  background-size:cover;
+  overflow: visible !important;
+  background-image: url(images/top.jpg);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .banner-image-new:before {
   content: '';
@@ -246,7 +246,7 @@ background-repeat:no-repeat;
 	opacity: .6;
   }
 .margin-banner {
-  margin-top: 320px;
+  margin-top: 300px;
 }
 </style>
 
