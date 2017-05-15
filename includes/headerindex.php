@@ -195,6 +195,10 @@ background-repeat:no-repeat;
 .bg-set {
   padding: 0;
 }
+.btn-search {
+  padding: 6px 12px;
+  margin: 0;
+}
 </style>
 
 
@@ -276,6 +280,9 @@ background-repeat:no-repeat;
     <div class="row">
       <div class="col-sm-6">
         <form  class="navbar-form nopadding" role="search" methos="GET" action="continuesearch.php">
+          <p>
+            Find Your Home
+          </p>
           <div class="input-group">
             <input type="text" class="form-control" id="whattosearch" placeholder="Search for..." required>
             <span class="input-group-btn">
@@ -287,10 +294,13 @@ background-repeat:no-repeat;
 
       <div class="col-sm-6">
         <form  class="navbar-form nopadding" role="search" methos="GET" action="continuesearch.php">
+          <p>
+            Sell Your Home
+          </p>
           <div class="input-group">
             <input type="text" class="form-control" id="whattosearch" placeholder="Search for..." required>
             <span class="input-group-btn">
-              <button class="btn btn-default" type="submit">Go!</button>
+              <button class="btn btn-default btn-search" type="submit">Go!</button>
             </span>
           </div><!-- /input-group -->
         </form>
