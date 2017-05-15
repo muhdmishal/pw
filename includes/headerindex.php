@@ -186,7 +186,7 @@ background-repeat:no-repeat;
 </head>
 <body>
 <div class="col-xs-12 top-bg">
-	<div class="container new-menu">
+	<div class="container">
 
         <div style="float:left" >
                     <ul class="list-inline">
@@ -219,7 +219,7 @@ background-repeat:no-repeat;
 </div>
 
 
-<div class="container">
+<div class="container new-menu">
 <a href="add-property.php" class="link">Add a property</a>
 <a class="logo" href="index.php"><img src="images/logo.png" alt="logo"/></a>
 <a href="add-property.php" class="sign-in">Log in/Register</a>
