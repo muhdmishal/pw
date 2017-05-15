@@ -364,7 +364,7 @@ background-repeat:no-repeat;
         <p class="banner-text">As you are selling your home privately, Even if you have a sole agency agreement you can still advertise your home yourself on property wing</p>
       </div>
       <div class="col-sm-3">
-        <p class="banner-text">Its FREE</p>
+        <p class="banner-text text-right">Its FREE</p>
       </div>
     </div>
   </div>
