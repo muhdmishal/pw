@@ -239,7 +239,10 @@ background-repeat:no-repeat;
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
+  background: -webkit-linear-gradient(black, transparent, black); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(black, transparent, black); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(black, transparent, black); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(black, transparent, black); /* Standard syntax */
 	opacity: .6;
   }
 </style>
