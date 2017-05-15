@@ -272,32 +272,31 @@ background-repeat:no-repeat;
 
 <div class=" position-relative" style="overflow:visible !important; background-image:url(images/slider.png); background-position:center; background-repeat:no-repeat; background-size:cover; overflow:auto">
 
-<div class="col-sm-6">
-  <form  class="navbar-form nopadding" role="search" methos="GET" action="continuesearch.php">
-          <div id="suggest">
-              <input type="text" class="form-control b-search " placeholder="Type postcode or town and Select from the below suggestions to Search" id="whattosearch" autocomplete="off" name="whattosearch" required>
-
-  </div>
-                  <button style="font-family:Arial, Helvetica, sans-serif;" class="btn search-btn" type="submit">Search</button>
-
-
-      </form>
-</div>
-<div class="container">
-  <div class="row">
-    <div class="col-sm-6">
-      <form  class="navbar-form nopadding" role="search" methos="GET" action="continuesearch.php">
-              <div id="suggest">
-                  <input type="text" class="form-control b-search " placeholder="Type postcode or town and Select from the below suggestions to Search" id="whattosearch" autocomplete="off" name="whattosearch" required>
-
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <form  class="navbar-form nopadding" role="search" methos="GET" action="continuesearch.php">
+          <div class="input-group">
+            <input type="text" class="form-control" id="whattosearch" placeholder="Search for..." required>
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="submit">Go!</button>
+            </span>
+          </div><!-- /input-group -->
+        </form>
       </div>
-                      <button style="font-family:Arial, Helvetica, sans-serif;" class="btn search-btn" type="submit">Search</button>
 
-
-          </form>
+      <div class="col-sm-6">
+        <form  class="navbar-form nopadding" role="search" methos="GET" action="continuesearch.php">
+          <div class="input-group">
+            <input type="text" class="form-control" id="whattosearch" placeholder="Search for..." required>
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="submit">Go!</button>
+            </span>
+          </div><!-- /input-group -->
+        </form>
+      </div>
     </div>
   </div>
-</div>
 
 
     <!-- <div id="margin"></div> -->
