@@ -206,9 +206,12 @@ background-repeat:no-repeat;
 }
 .banner-search {
   width: 100%;
+  background-color: rgba(0,0,0,0.5);
+  padding: 5px;
 }
 .banner-search input {
-  box-shadow: 0px 0px 0px 8px rgba(0,0,0,0.5);
+  box-shadow: none;
+  border: none;
   font-family: "Bebas Neue";
   font-size: 35px;
   color: #419058;
@@ -216,9 +219,9 @@ background-repeat:no-repeat;
   padding: 26px;
 }
 .banner-search .btn-search {
-  background: rgba(0, 0, 0, 0.5);
+  background: transparent;
   color: white;
-  font-size: 35px;
+  font-size: 27px;
   border: none;
   border-radius: 0;
 }
