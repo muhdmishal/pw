@@ -142,3 +142,117 @@ $(document).ready(function() {
             </div><!--/.container-fluid -->
           </nav>
 </div>
+
+ <?php if(($_SERVER['REQUEST_URI'] == '/index.php') || ($_SERVER['REQUEST_URI'] == '/latest/index.php') || ($_SERVER['REQUEST_URI'] == '/latest/') || ($_SERVER['REQUEST_URI'] == '/myaccount.php') || ($_SERVER['REQUEST_URI'] == '') || ($_SERVER['REQUEST_URI'] == '/'))  : ?>
+
+
+<div class=" position-relative banner-image-new" >
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <form  class="navbar-form nopadding" role="search" methos="GET" action="continuesearch.php">
+          <p class="banner-text">
+            Find Your Home
+          </p>
+          <div class="input-group banner-search">
+            <input type="text" class="form-control" name="whattosearch" id="whattosearch" placeholder="Search for..." required>
+            <span class="input-group-btn">
+              <button class="btn btn-default btn-search" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+            </span>
+          </div><!-- /input-group -->
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="container margin-banner">
+    <div class="row">
+      <div class="col-sm-9">
+        <p class="banner-text">As you are selling your home privately, Even if you have a sole agency agreement you can still advertise your home yourself on property wing</p>
+      </div>
+      <div class="col-sm-3">
+        <p class="banner-text text-right">Its FREE</p>
+      </div>
+    </div>
+  </div>
+
+    <!-- <div id="margin"></div> -->
+
+
+        <!-- <form  class="navbar-form nopadding" role="search" methos="GET" action="continuesearch.php">
+                <div id="suggest">
+                    <input type="text" class="form-control b-search " placeholder="Type postcode or town and Select from the below suggestions to Search" id="whattosearch" autocomplete="off" name="whattosearch" required>
+
+        </div>
+                        <button style="font-family:Arial, Helvetica, sans-serif;" class="btn search-btn" type="submit">Search</button>
+
+
+            </form> -->
+
+</div>
+
+
+
+    </div>
+    <script>
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+      function initMap() {
+
+        var input2 = document.getElementById('whattosearch');
+
+        var autocomplete2 = new google.maps.places.Autocomplete(input2);
+
+        autocomplete2.addListener('place_changed', function() {
+          var place2 = autocomplete2.getPlace();
+          if (!place2.geometry) {
+            // User entered the name of a Place that was not suggested and
+            // pressed the Enter key, or the Place Details request failed.
+            window.alert("No details available for input: '" + place2.name + "'");
+            return;
+          }
+          var address2 = '';
+          if (place2.address_components) {
+            address2 = [
+              (place2.address_components[0] && place2.address_components[0].short_name || ''),
+              (place2.address_components[1] && place2.address_components[1].short_name || ''),
+              (place2.address_components[2] && place2.address_components[2].short_name || '')
+            ].join(' ');
+
+            var address_zip2 = place2.address_components;
+            var searchPostalCode2 = "";
+            $.each(address_zip2, function(){
+                if(this.types[0]=="postal_code"){
+                    searchPostalCode2=this.short_name;
+                }
+            });
+
+            if (searchPostalCode2 == "") {
+              alert("No post code for the selected address. Please try another");
+            }
+            else {
+              input2.value = searchPostalCode2;
+            }
+          }
+        });
+
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgVTxbNiWLoE9N8qQuogD-VIBvcRVWm2s&libraries=places&callback=initMap"
+        async defer></script>
+     <script src="js/vendor/jquery-1.11.0.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+		  <?php
+		  if (isset($_GET['msg'])) {
+		  echo "<div class=\"error\">$_GET[msg]</div>";
+		  }
+
+		  ?>
+
+
+<?php endif; ?>
