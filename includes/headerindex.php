@@ -333,27 +333,13 @@ background-repeat:no-repeat;
 
   <div class="container">
     <div class="row">
-      <div class="col-sm-6">
+      <div class="col-sm-6 col-sm-offset-3">
         <form  class="navbar-form nopadding" role="search" methos="GET" action="continuesearch.php">
           <p class="banner-text">
             Find Your Home
           </p>
           <div class="input-group banner-search">
             <input type="text" class="form-control" name="whattosearch" id="whattosearch" placeholder="Search for..." required>
-            <span class="input-group-btn">
-              <button class="btn btn-default btn-search" type="submit"><span class="glyphicon glyphicon-search"></span></button>
-            </span>
-          </div><!-- /input-group -->
-        </form>
-      </div>
-
-      <div class="col-sm-6">
-        <form  class="navbar-form nopadding" role="search" methos="GET" action="continuesearch.php">
-          <p class="banner-text">
-            Sell Your Home
-          </p>
-          <div class="input-group  banner-search">
-            <input type="text" class="form-control" name="whattosearch" id="whattosearch2" placeholder="Search for..." required>
             <span class="input-group-btn">
               <button class="btn btn-default btn-search" type="submit"><span class="glyphicon glyphicon-search"></span></button>
             </span>
@@ -398,44 +384,8 @@ background-repeat:no-repeat;
       // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
       function initMap() {
-        var input = document.getElementById('whattosearch');
 
-        var autocomplete = new google.maps.places.Autocomplete(input);
-
-        autocomplete.addListener('place_changed', function() {
-          var place = autocomplete.getPlace();
-          if (!place.geometry) {
-            // User entered the name of a Place that was not suggested and
-            // pressed the Enter key, or the Place Details request failed.
-            window.alert("No details available for input: '" + place.name + "'");
-            return;
-          }
-          var address = '';
-          if (place.address_components) {
-            address = [
-              (place.address_components[0] && place.address_components[0].short_name || ''),
-              (place.address_components[1] && place.address_components[1].short_name || ''),
-              (place.address_components[2] && place.address_components[2].short_name || '')
-            ].join(' ');
-
-            var address_zip = place.address_components;
-            var searchPostalCode = "";
-            $.each(address_zip, function(){
-                if(this.types[0]=="postal_code"){
-                    searchPostalCode=this.short_name;
-                }
-            });
-
-            if (searchPostalCode == "") {
-              alert("No post code for the selected address. Please try another");
-            }
-            else {
-              input.value = searchPostalCode;
-            }
-          }
-        });
-
-        var input2 = document.getElementById('whattosearch2');
+        var input2 = document.getElementById('whattosearch');
 
         var autocomplete2 = new google.maps.places.Autocomplete(input2);
 

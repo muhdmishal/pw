@@ -1,4 +1,5 @@
 <?php
+session_start();
 $userID = $_SESSION[user_id] ;
 		if($userID > 0)
 {
