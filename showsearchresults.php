@@ -129,15 +129,20 @@ else{
 		{
 			$milesRange = 0;
 		}
+    $results = 0;
     if($dbc->postcodeExist($searchfor)) {
       $searchforarray = $dbc->getPostcodeLatLng($searchfor);
       $postcodes = $dbc->getNearPostcodes($searchforarray, $milesRange) ;
-    }
-			$sqlSearch .= " AND `postcode` IN ('".implode("','",$postcodes)."') " ;
-
+      $sqlSearch .= " AND `postcode` IN ('".implode("','",$postcodes)."') " ;
       $sqlSearch .= " ORDER BY `property_id` DESC LIMIT 0 , 20" ;
 
-		$results = $dbc->searchProperties($sqlSearch) ;
+		  $results = $dbc->searchProperties($sqlSearch) ;
+    }
+    else {
+      echo "Please enter a postcode to search" ;
+    }
+
+
 
 
 		//get all properties
