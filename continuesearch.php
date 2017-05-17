@@ -77,9 +77,9 @@ else{
   <div class="container-fluid  bg-image-fixed">
     <br/>
     <div class="row">
-      <div class="col-sm-6">
+      <div class="col-sm-6 col-sm-offset-3">
         <form role="form" class="grey" method="get" enctype="multipart/form-data" action="showsearchresults.php">
-          <div style="background-color:rgba(46,109,164,0.85) !important;" class="col-sm-8 set-bg-white">
+          <div style="background-color:rgba(46,109,164,0.85) !important;" class="set-bg-white">
           <br/>
           <div class="col-xs-12 selectContainer">
           <div class="btn-group" data-toggle="buttons">
