@@ -74,6 +74,166 @@ $(document).ready(function() {
     border: none;
   }
 </style>
+<style>
+#result {
+	height:20px;
+	font-size:16px;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#333;
+	padding:5px;
+	margin-bottom:10px;
+	background-color:#FFFF99;
+}
+#country{
+	padding:3px;
+	border:1px #CCC solid;
+	font-size:17px;
+}
+.suggestionsBox {
+	position: absolute;
+	left: 0px;
+	top:10px;
+	margin: 26px 0px 0px 0px;
+	width: 200px;
+	padding:0px;
+	background-color: #000;
+	border-top: 3px solid #000;
+	color: #fff;
+}
+.suggestionList {
+	margin: 0px;
+	padding: 0px;
+}
+.suggestionList ul li {
+	list-style:none;
+	margin: 0px;
+	padding: 6px;
+	border-bottom:1px dotted #666;
+	cursor: pointer;
+}
+.suggestionList ul li:hover {
+	background-color: #FC3;
+	color:#000;
+}
+#suggest ul {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+	color:#FFF;
+	padding:0;
+	margin:0;
+}
+
+.load{
+background-image:url(../images/loader.gif);
+background-position:right;
+background-repeat:no-repeat;
+}
+
+#suggest {
+	position:relative;
+}
+
+#margin {
+	height:350px !important;
+}
+.top-bg {
+  display: none;
+}
+.link {
+  color: #419058;
+  text-transform: uppercase;
+  font-size: 35px;
+  font-family: "Bebas Neue";
+}
+.link:hover {
+  text-decoration: none;
+}
+@media only screen and (max-width : 600px) {
+  .link {
+    display: none;
+  }
+}
+@media only screen and (max-width : 420px) {
+.suggestionsBox {
+	width:100%;
+}
+#margin {
+	height:100px !important;
+}
+}
+.new-menu {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+}
+.logo {
+  margin: 0 auto;
+}
+.sign-in {
+  color: #3561b1;
+  margin-top: 15px;
+}
+.sign-in:hover {
+  text-decoration: none;
+}
+.bg-set {
+  padding: 0;
+}
+.btn-search {
+  padding: 6px 12px;
+  margin: 0;
+}
+.banner-text {
+  font-family: "Bebas Neue";
+  color: white;
+  font-size: 32px;
+}
+.banner-search {
+  width: 100%;
+  background-color: rgba(0,0,0,0.5);
+  padding: 5px;
+}
+.banner-search input {
+  box-shadow: none;
+  border: none;
+  font-family: "Bebas Neue";
+  font-size: 35px;
+  color: #419058;
+  border-radius: 0;
+  padding: 26px;
+  background-color: rgba(255,255,255,.7);
+}
+.banner-search .btn-search {
+  background: transparent;
+  color: white;
+  font-size: 27px;
+  border: none;
+  border-radius: 0;
+}
+.banner-image-new {
+  overflow: visible !important;
+  background-image: url(images/top.jpg);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.banner-image-new:before {
+  content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+  background: -webkit-linear-gradient(black, transparent, black); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(black, transparent, black); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(black, transparent, black); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(black, transparent, black); /* Standard syntax */
+	opacity: .6;
+  }
+.margin-banner {
+  margin-top: 300px;
+}
+</style>
 <!--<link href="styles.css" rel="stylesheet" type="text/css">-->
 </head>
 <body>
