@@ -74,110 +74,115 @@ else{
 
 
 <div class="row">
-  <div class="container-fluid bg-set">
+  <div class="container-fluid  bg-image-fixed">
     <br/>
-    <form role="form" class="grey" method="get" enctype="multipart/form-data" action="showsearchresults.php">
-      <div style="background-color:rgba(46,109,164,0.85) !important;" class="col-sm-8 set-bg-white">
-      <br/>
-      <div class="col-xs-12 selectContainer">
-      <div class="btn-group" data-toggle="buttons">
-  		<label class="btn btn-primary active">
-   			 <input type="radio" onchange="price(this.value)" name="status" id="option1" value="1" autocomplete="off" checked> Property For Sale
-  		</label>
-  		<label class="btn btn-primary">
-    		<input type="radio" onchange="price(this.value)"  name="status" id="option2" value="2" autocomplete="off"> Property To Let
-  		</label>
+    <div class="row">
+      <div class="col-sm-6">
+        <form role="form" class="grey" method="get" enctype="multipart/form-data" action="showsearchresults.php">
+          <div style="background-color:rgba(46,109,164,0.85) !important;" class="col-sm-8 set-bg-white">
+          <br/>
+          <div class="col-xs-12 selectContainer">
+          <div class="btn-group" data-toggle="buttons">
+          <label class="btn btn-primary active">
+             <input type="radio" onchange="price(this.value)" name="status" id="option1" value="1" autocomplete="off" checked> Property For Sale
+          </label>
+          <label class="btn btn-primary">
+            <input type="radio" onchange="price(this.value)"  name="status" id="option2" value="2" autocomplete="off"> Property To Let
+          </label>
 
 
-  	</div>
-
-
-
-	</div>
-      <div class="col-xs-12 selectContainer">
-      <div id="suggest">
-        <label for="InputName">Location : <?php echo $searchfor ?> </label>
-
-        <input type="text" style="background-color:#FFFFFF !important;" class="double form-control input-border" id="locationIdentifier" name="locationIdentifier" value="<?php echo $locationsfull ?>" />
         </div>
-      </div>
-      <div class="col-xs-6 selectContainer">
-        <label for="radius">Search Radius</label>
-        <select style="background-color:#FFFFFF !important;" id="radius" name="radius" class="double form-control input-border">
-          <option value="0.0" selected="selected">This area only</option>
-          <option value="0.25">Within &frac14; mile</option>
-          <option value="0.5">Within &frac12; mile</option>
-          <option value="1.0">Within 1 mile</option>
-          <option value="3.0">Within 3 miles</option>
-          <option value="5.0">Within 5 miles</option>
-          <option value="10.0">Within 10 miles</option>
-          <option value="15.0">Within 15 miles</option>
-          <option value="20.0">Within 20 miles</option>
-          <option value="30.0">Within 30 miles</option>
-          <option value="40.0">Within 40 miles</option>
-        </select>
-      </div>
-      <div class="col-xs-6 selectContainer">
-        <label for="houseTypeID">Type</label>
-        <select style="background-color:#FFFFFF !important;" id="houseTypeID" class="basic-grey form-control input-border" tabindex="3" name="houseTypeID" >
-          <option value="1">Detached House</option>
-          <option value="2">Semi-Detached</option>
-          <option value="3">Mid Terraced</option>
-          <option value="4">End Terraced</option>
-          <option value="5">Flat</option>
-          <option value="9">Studio Flat</option>
-          <option value="6">Cottage</option>
-          <option value="7">Bungalow</option>
-          <option value="10">Other</option>
-        </select>
-      </div>
-      <div class="col-xs-6 selectContainer">
-        <label for="minPrice">Price &pound;</label>
-        <select style="background-color:#FFFFFF !important;" id="minPrice" name="minPrice" class="double form-control input-border">
 
-        </select>
-      </div>
-      <div class="col-xs-6 selectContainer">
-        <label for="maxPrice">To</label>
-        <select style="background-color:#FFFFFF !important;" id="maxPrice" name="maxPrice" class="double form-control input-border">
 
-        </select>
-      </div>
 
-      <div class="col-xs-6 selectContainer">
-        <label for="minBedrooms">Beds</label>
-        <select style="background-color:#FFFFFF !important;" id="minBedrooms" name="minBedrooms" class="double form-control input-border">
-          <option value="" selected="selected">No min</option>
-          <option value="0">Studio</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </select>
-      </div>
-      <div class="col-xs-6 selectContainer">
-        <label for="maxBedrooms">to</label>
-        <select style="background-color:#FFFFFF !important;" id="maxBedrooms" name="maxBedrooms" class="double form-control input-border">
-          <option value="" selected="selected">No max</option>
-          <option value="0">Studio</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </select>
+        </div>
+          <div class="col-xs-12 selectContainer">
+          <div id="suggest">
+            <label for="InputName">Location : <?php echo $searchfor ?> </label>
 
-      </div>
+            <input type="text" style="background-color:#FFFFFF !important;" class="double form-control input-border" id="locationIdentifier" name="locationIdentifier" value="<?php echo $locationsfull ?>" />
+            </div>
+          </div>
+          <div class="col-xs-6 selectContainer">
+            <label for="radius">Search Radius</label>
+            <select style="background-color:#FFFFFF !important;" id="radius" name="radius" class="double form-control input-border">
+              <option value="0.0" selected="selected">This area only</option>
+              <option value="0.25">Within &frac14; mile</option>
+              <option value="0.5">Within &frac12; mile</option>
+              <option value="1.0">Within 1 mile</option>
+              <option value="3.0">Within 3 miles</option>
+              <option value="5.0">Within 5 miles</option>
+              <option value="10.0">Within 10 miles</option>
+              <option value="15.0">Within 15 miles</option>
+              <option value="20.0">Within 20 miles</option>
+              <option value="30.0">Within 30 miles</option>
+              <option value="40.0">Within 40 miles</option>
+            </select>
+          </div>
+          <div class="col-xs-6 selectContainer">
+            <label for="houseTypeID">Type</label>
+            <select style="background-color:#FFFFFF !important;" id="houseTypeID" class="basic-grey form-control input-border" tabindex="3" name="houseTypeID" >
+              <option value="1">Detached House</option>
+              <option value="2">Semi-Detached</option>
+              <option value="3">Mid Terraced</option>
+              <option value="4">End Terraced</option>
+              <option value="5">Flat</option>
+              <option value="9">Studio Flat</option>
+              <option value="6">Cottage</option>
+              <option value="7">Bungalow</option>
+              <option value="10">Other</option>
+            </select>
+          </div>
+          <div class="col-xs-6 selectContainer">
+            <label for="minPrice">Price &pound;</label>
+            <select style="background-color:#FFFFFF !important;" id="minPrice" name="minPrice" class="double form-control input-border">
 
-   <br/>
+            </select>
+          </div>
+          <div class="col-xs-6 selectContainer">
+            <label for="maxPrice">To</label>
+            <select style="background-color:#FFFFFF !important;" id="maxPrice" name="maxPrice" class="double form-control input-border">
 
-      </div>
-       <div class="btn-area" style="margin-top:10px; ">
-        <input style="font-size:18px; padding:10px 150px;" type="submit" class="btn  btn-primary1" id="submitPropertyFormS" name="submitPropertyFormS" value="Search" />
-      </div>
+            </select>
+          </div>
 
-    </form>
+          <div class="col-xs-6 selectContainer">
+            <label for="minBedrooms">Beds</label>
+            <select style="background-color:#FFFFFF !important;" id="minBedrooms" name="minBedrooms" class="double form-control input-border">
+              <option value="" selected="selected">No min</option>
+              <option value="0">Studio</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <div class="col-xs-6 selectContainer">
+            <label for="maxBedrooms">to</label>
+            <select style="background-color:#FFFFFF !important;" id="maxBedrooms" name="maxBedrooms" class="double form-control input-border">
+              <option value="" selected="selected">No max</option>
+              <option value="0">Studio</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+
+          </div>
+
+        <br/>
+
+          </div>
+           <div class="btn-area" style="margin-top:10px; ">
+            <input style="font-size:18px; padding:10px 150px;" type="submit" class="btn  btn-primary1" id="submitPropertyFormS" name="submitPropertyFormS" value="Search" />
+          </div>
+
+        </form>
+      </div>
+    </div>
+
     <br/>
     <span class="sell-box-search">The new way to sell your home</span>
   </div>
