@@ -932,6 +932,9 @@ THIS IS AN AUTOMATED RESPONSE.
 	}
 
   function postcodeExist($key){
+    if ($key == '') {
+      return false ;
+    }
 		$sql = "SELECT * FROM  `postcode` WHERE `postcode` = '$key'";
 
 		if ( ! ($res = $this->db->query($sql))){
@@ -1048,7 +1051,6 @@ THIS IS AN AUTOMATED RESPONSE.
 
 	// Haversine formula
 function Haversine($start, $finish) {
-
 	$theta = $start[1] - $finish[1];
 	$distance = (sin(deg2rad($start[0])) * sin(deg2rad($finish[0]))) + (cos(deg2rad($start[0])) * cos(deg2rad($finish[0])) * cos(deg2rad($theta)));
 	$distance = acos($distance);
