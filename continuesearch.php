@@ -178,13 +178,12 @@ else{
            <div class="btn-area" style="margin-top:10px; ">
             <input style="font-size:18px; padding:10px 150px;" type="submit" class="btn  btn-primary1" id="submitPropertyFormS" name="submitPropertyFormS" value="Search" />
           </div>
-
+          <br/>
+          <span class="sell-box-search">The new way to sell your home</span>
         </form>
       </div>
     </div>
 
-    <br/>
-    <span class="sell-box-search">The new way to sell your home</span>
   </div>
 </div>
 <div class="container">
