@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 
 		require_once ('dbc.php');
 		//page_protect();
