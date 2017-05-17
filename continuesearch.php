@@ -71,7 +71,12 @@ else{
 
 
 ?>
-
+<style media="screen">
+  .sell-box-search {
+    float: none;
+    text-align: center;
+  }
+</style>
 
 <div class="row">
   <div class="container-fluid  bg-image-fixed">
