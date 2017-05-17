@@ -339,7 +339,7 @@ background-repeat:no-repeat;
             Find Your Home
           </p>
           <div class="input-group banner-search">
-            <input type="text" class="form-control" name="whattosearch" id="whattosearch" placeholder="Search for..." required>
+            <input type="text" class="form-control" name="whattosearch" id="whattosearch" placeholder="Enter Postcode" required>
             <span class="input-group-btn">
               <button class="btn btn-default btn-search" type="submit"><span class="glyphicon glyphicon-search"></span></button>
             </span>
