@@ -75,6 +75,8 @@ else{
   .sell-box-search {
     float: none;
     text-align: center;
+    margin-left: 0;
+    margin-right: 0;
   }
 </style>
 
