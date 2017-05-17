@@ -75,7 +75,7 @@ else{
   .sell-box-search {
     float: none;
     text-align: center;
-    margin-left: 0;
+    margin-left: 0 !important;
     margin-right: 0;
   }
 </style>
@@ -89,16 +89,18 @@ else{
           <div style="background-color:rgba(46,109,164,0.85) !important;" class="set-bg-white">
           <br/>
           <div class="col-xs-12 selectContainer">
-          <div class="btn-group" data-toggle="buttons">
-          <label class="btn btn-primary active">
-             <input type="radio" onchange="price(this.value)" name="status" id="option1" value="1" autocomplete="off" checked> Property For Sale
-          </label>
-          <label class="btn btn-primary">
-            <input type="radio" onchange="price(this.value)"  name="status" id="option2" value="2" autocomplete="off"> Property To Let
-          </label>
+          <center>
+            <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-primary active">
+               <input type="radio" onchange="price(this.value)" name="status" id="option1" value="1" autocomplete="off" checked> Property For Sale
+            </label>
+            <label class="btn btn-primary">
+              <input type="radio" onchange="price(this.value)"  name="status" id="option2" value="2" autocomplete="off"> Property To Let
+            </label>
 
 
-        </div>
+          </div>
+          </center>
 
 
 
