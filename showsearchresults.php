@@ -13,8 +13,9 @@ else{
 }
 /*           include 'includes/sidebar.html';
 */
-
+$error = "";
  	?>
+
 <div class=" bg-image-fixed">
 <div class="container">
   <div class="row">
@@ -139,7 +140,7 @@ else{
 		  $results = $dbc->searchProperties($sqlSearch) ;
     }
     else {
-      echo "Please enter a postcode to search" ;
+      $error = "Please enter a postcode to search.";
     }
 
 
@@ -148,7 +149,7 @@ else{
 		//get all properties
 		$allprops = array();
 		if ($results == 0 )
-			echo "No results ! " ;
+			$error .=  "No results ! " ;
 		else
 		{
 		 	while ($row = $results->fetch_assoc())
@@ -158,7 +159,7 @@ else{
 		$propsInRange = $allprops;
 
 		if (sizeof($propsInRange) == 0 )
-			echo "No results !";
+			$error .= "No results !";
 		else {
 		foreach( $propsInRange as $row){
         	//	printf ("%s (%s)\n", $row["Name"], $row["CountryCode"]);
@@ -257,6 +258,10 @@ echo '
       <?php
 	}?>
       <?php }
+
+      if ($error != "") {
+        echo "<div class='col-sm-12 form-back'> " . $error . "</div>";
+      }
 ?>
     </div>
 
